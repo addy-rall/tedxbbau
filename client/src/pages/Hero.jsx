@@ -1,7 +1,8 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import hero from "../assets/hero.gif";
-import backgroundImage from '../assets/herobg.jpg'
+import backgroundImage from "../assets/herobg.jpg";
+
 const SplitText = ({ text }) => {
   const words = text.split(" ");
   const ref = React.useRef(null);
@@ -39,31 +40,63 @@ const App = () => {
   return (
     <>
       {/* TEDxBBAU Heading */}
-      <div className="h-screen flex flex-col justify-center bg-black text-center"
-         style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <motion.div 
+        className="h-screen flex flex-col justify-center bg-black text-center"
+        style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
         <h1 className="text-white text-4xl md:text-5xl mt-12 font-bold">
           <SplitText text="First Time In History In BBAU" />
         </h1>
-        <h1 className="text-red-500 mt-10 text-6xl md:text-7xl font-bold">TEDx<span className="text-white">BBAU</span></h1>
-      </div>
+        <div className="relative overflow-hidden w-full">
+          <motion.h1 
+            className="text-red-500 mt-10 text-6xl md:text-7xl font-bold inline-block"
+            initial={{ x: -300, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            TED
+          </motion.h1>
+          <h1 className="text-red-500 mt-10 text-6xl md:text-7xl font-bold inline-block">x</h1>
+          <motion.h1 
+            className="text-white mt-10 text-6xl md:text-7xl font-bold inline-block"
+            initial={{ x: 300, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            BBAU
+          </motion.h1>
+        </div>
+      </motion.div>
 
       {/* Left Side: GIF | Right Side: Heading */}
-      <div className="min-h-screen w-full p-6 flex flex-col md:flex-row items-center justify-center bg-black text-white">
+      <motion.div
+        className="min-h-screen w-full p-6 flex flex-col md:flex-row items-center justify-center bg-black text-white"
+      >
         {/* Left Side - GIF */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center"
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <img
             src={hero}
             alt="Animation"
             className="max-w-sm md:max-w-md lg:max-w-lg rounded-lg shadow-2xl"
           />
-        </div>
+        </motion.div>
 
         {/* Right Side - Heading */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
+        <motion.div
+          className="w-full md:w-1/2 flex flex-col justify-center items-center"
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <h1 className="text-5xl md:text-7xl font-bold">Unveiling</h1>
           <h1 className="text-5xl md:text-7xl font-bold text-red-500">Hidden Truths</h1>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };
