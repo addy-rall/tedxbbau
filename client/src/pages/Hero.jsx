@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import hero from "../assets/hero.gif";
-import backgroundImage from "../assets/herobg.jpg";
 
 const SplitText = ({ text }) => {
   const words = text.split(" ");
@@ -41,8 +40,7 @@ const App = () => {
     <>
       {/* TEDxBBAU Heading */}
       <motion.div 
-        className="h-screen flex flex-col justify-center bg-black text-center"
-        style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        className="min-h-[50vh] flex flex-col justify-center bg-black text-center"
       >
         <h1 className="text-white text-4xl md:text-5xl mt-12 font-bold">
           <SplitText text="First Time In History In BBAU" />
@@ -56,7 +54,8 @@ const App = () => {
           >
             TED
           </motion.h1>
-          <h1 className="text-red-500 mt-10 text-6xl md:text-7xl font-bold inline-block">x</h1>
+            <h1             className="text-red-500 mt-10 text-6xl md:text-7xl font-bold inline-block"
+>x</h1>
           <motion.h1 
             className="text-white mt-10 text-6xl md:text-7xl font-bold inline-block"
             initial={{ x: 300, opacity: 0 }}
@@ -70,7 +69,7 @@ const App = () => {
 
       {/* Left Side: GIF | Right Side: Heading */}
       <motion.div
-        className="min-h-screen w-full p-6 flex flex-col md:flex-row items-center justify-center bg-black text-white"
+        className="min-h-[50vh] w-full p-6 flex flex-col md:flex-row items-center justify-center bg-black text-white"
       >
         {/* Left Side - GIF */}
         <motion.div

@@ -17,7 +17,7 @@ const ThemeSection = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black pt-10 text-white">
       {/* Theme Section */}
       <div id="theme-section" className="flex flex-col md:flex-row items-center justify-between p-8 shadow-lg">
         {/* Left Side: Motto and Vision */}
