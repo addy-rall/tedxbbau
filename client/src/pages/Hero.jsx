@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import hero from "../assets/hero.gif";
-
+import backgroundImage from '../assets/herobg.jpg'
 const SplitText = ({ text }) => {
   const words = text.split(" ");
   const ref = React.useRef(null);
@@ -38,11 +38,13 @@ const SplitText = ({ text }) => {
 const App = () => {
   return (
     <>
-      {/* Centered Header */}
-      <div className="py-16 bg-black text-center">
-        <h1 className="text-white text-4xl md:text-5xl mt-32 font-bold">
+      {/* TEDxBBAU Heading */}
+      <div className="h-screen flex flex-col justify-center bg-black text-center"
+         style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <h1 className="text-white text-4xl md:text-5xl mt-12 font-bold">
           <SplitText text="First Time In History In BBAU" />
         </h1>
+        <h1 className="text-red-500 mt-10 text-6xl md:text-7xl font-bold">TEDx<span className="text-white">BBAU</span></h1>
       </div>
 
       {/* Left Side: GIF | Right Side: Heading */}
@@ -57,10 +59,9 @@ const App = () => {
         </div>
 
         {/* Right Side - Heading */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <h1 className="text-3xl md:text-5xl font-bold border-b-4 border-red-500 pb-4">
-            Unveiling Hidden Truths
-          </h1>
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
+          <h1 className="text-5xl md:text-7xl font-bold">Unveiling</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-red-500">Hidden Truths</h1>
         </div>
       </div>
     </>
