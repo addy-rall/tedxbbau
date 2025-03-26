@@ -20,29 +20,30 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
+
   return (
-    <nav
-      className="fixed w-full top-0 z-50 transition-all duration-300"
-      style={{ backgroundColor: `rgb(200, 0, 0, ${scrollPercentage / 100})` }}
-    >
+    <nav className="fixed w-full top-0 z-50 transition-all duration-300" style={{ backgroundColor: `rgb(200, 0, 0, ${scrollPercentage / 100})` }}>
       <div className="h-1 bg-red-500 fixed top-0 left-0" style={{ width: `${scrollPercentage}%` }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="flex-shrink-0">
-          <NavLink to="/" className="cursor-pointer">
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
-          </NavLink>
+          <img src={logo} alt="Logo" className="h-12 w-auto cursor-pointer" onClick={() => scrollToSection('home')} />
         </div>
 
         <div className="hidden md:flex space-x-6 text-lg font-semibold text-white">
-          <NavLink to="/" className={({ isActive }) => isActive ? 'text-red-500' : 'hover:text-gray-200 transition flex items-center'}>
-            <FaHome size={24} className="mr-2 text-white" />
-          </NavLink>
+          <FaHome size={24} className="mr-2 text-white cursor-pointer" onClick={() => scrollToSection('home')} />
           <a href="https://www.ted.com/tedx/events/62035" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition">TED</a>
-          <NavLink to="/about" className={({ isActive }) => isActive ? 'text-red-500' : 'hover:text-gray-200 transition'}>About</NavLink>
-          <NavLink to="/speakers" className={({ isActive }) => isActive ? 'text-red-500' : 'hover:text-gray-200 transition'}>Speakers</NavLink>
-          <NavLink to="/team" className={({ isActive }) => isActive ? 'text-red-500' : 'hover:text-gray-200 transition'}>Team</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? 'text-red-500' : 'hover:text-gray-200 transition'}>Contact</NavLink>
+          <div className="hover:text-gray-200 transition cursor-pointer" onClick={() => scrollToSection('about')}>About</div>
+          <div className="hover:text-gray-200 transition cursor-pointer" onClick={() => scrollToSection('speakers')}>Speakers</div>
+          <div className="hover:text-gray-200 transition cursor-pointer" onClick={() => scrollToSection('team')}>Team</div>
+          <div className="hover:text-gray-200 transition cursor-pointer" onClick={() => scrollToSection('contact')}>Contact</div>
         </div>
 
         <div className="hidden md:block">
@@ -58,12 +59,12 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden bg-black text-center py-4 space-y-4 text-white">
-          <NavLink to="/" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? 'text-red-500 block' : 'block hover:text-gray-300'}>Home</NavLink>
+          <div onClick={() => scrollToSection('home')} className="block hover:text-gray-300 cursor-pointer">Home</div>
           <a href="https://www.ted.com/tedx/events/62035" target="_blank" rel="noopener noreferrer" className="block hover:text-gray-300">TED</a>
-          <NavLink to="/about" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? 'text-red-500 block' : 'block hover:text-gray-300'}>About</NavLink>
-          <NavLink to="/speakers" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? 'text-red-500 block' : 'block hover:text-gray-300'}>Speakers</NavLink>
-          <NavLink to="/team" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? 'text-red-500 block' : 'block hover:text-gray-300'}>Team</NavLink>
-          <NavLink to="/contact" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? 'text-red-500 block' : 'block hover:text-gray-300'}>Contact</NavLink>
+          <div onClick={() => scrollToSection('about')} className="block hover:text-gray-300 cursor-pointer">About</div>
+          <div onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer">Speakers</div>
+          <div onClick={() => scrollToSection('team')} className="block hover:text-gray-300 cursor-pointer">Team</div>
+          <div onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer">Contact</div>
           <a href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg transition w-full" style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}>Book Ticket</a>
         </div>
       )}

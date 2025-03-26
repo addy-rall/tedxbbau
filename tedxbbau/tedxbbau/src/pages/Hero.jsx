@@ -80,7 +80,7 @@ const App = () => {
             transform: "translate(-50%, -50%)",
           }}
         >
-          <div className="block mx-auto leading-snug">
+          <div className="block mx-auto leading-snug ">
             <SplitText text="Unveiling" />
           </div>
           <div className="block mx-auto leading-snug">
