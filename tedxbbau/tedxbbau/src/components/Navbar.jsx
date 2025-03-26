@@ -19,6 +19,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Smooth scroll function
   const scrollToSection = (elementId) => {
     const element = document.getElementById(elementId);
     if (element) {
@@ -26,7 +27,7 @@ const Navbar = () => {
         behavior: 'smooth',
         block: 'start'
       });
-      setIsOpen(false); 
+      setIsOpen(false); // Close mobile menu after clicking
     }
   };
 
