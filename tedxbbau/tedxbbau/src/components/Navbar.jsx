@@ -55,7 +55,7 @@ const Navbar = () => {
           <div onClick={() => scrollToSection('home')} className="hover:text-gray-200 transition flex items-center cursor-pointer">
             <FaHome size={24} className="mr-2 text-white" />
           </div>
-          <a href="https://www.ted.com" className="hover:text-gray-200 transition" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.ted.com/tedx/events/62035" className="hover:text-gray-200 transition" target="_blank" rel="noopener noreferrer">
             TED
           </a>
           <div onClick={() => scrollToSection('about')} className="hover:text-gray-200 transition cursor-pointer">About</div>
