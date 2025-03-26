@@ -89,10 +89,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-black text-center py-4 space-y-4 text-white">
           <div onClick={() => scrollToSection('home')} className="block hover:text-gray-300 cursor-pointer">Home</div>
-          <a href="https://www.ted.com" className="block hover:text-gray-300" target="_blank" rel="noopener noreferrer">TED</a>
-          <div onClick={() => scrollToSection('about')} className="block hover:text-gray-300 cursor-pointer">About</div>
-          <div onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer">Contact</div>
-          <div onClick={() => scrollToSection('team')} className="block hover:text-gray-300 cursor-pointer">About Team</div>
+          <a href="https://www.ted.com/tedx/events/62035" className="block hover:text-gray-300" target="_blank" rel="noopener noreferrer">TED</a>
+          <div onClick={() => scrollToSection('about')} className="block hover:text-gray-300 cursor-pointer">Speaker</div>
+          <div onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer">Team</div>
+          <div onClick={() => scrollToSection('team')} className="block hover:text-gray-300 cursor-pointer">Contact</div>
           <a
             href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=572148&ticketCl=572148&btnColor=fb5850&fontFamily=Prompt&borderRadius=10"
             target="_blank"
