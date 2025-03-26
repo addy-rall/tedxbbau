@@ -89,7 +89,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-black text-center py-4 space-y-4 text-white">
           <div onClick={() => scrollToSection('home')} className="block hover:text-gray-300 cursor-pointer">Home</div>
-          <a href="https://www.ted.com" className="block hover:text-gray-300" target="_blank" rel="noopener noreferrer">TED</a>
+          <a href="https://www.ted.com/tedx/events/62035" className="block hover:text-gray-300" target="_blank" rel="noopener noreferrer">TED</a>
           <div onClick={() => scrollToSection('about')} className="block hover:text-gray-300 cursor-pointer">About</div>
           <div onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer">Speakers</div>
           <div onClick={() => scrollToSection('team')} className="block hover:text-gray-300 cursor-pointer">Team</div>
