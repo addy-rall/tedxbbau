@@ -51,12 +51,12 @@ const ThemeSection = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
           
-          <div className="p-4 bg-red-700 rounded-xl shadow-lg md:w-3/5 h-23 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="p-4 bg-red-700 rounded-xl shadow-lg md:w-3/5 h-25 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-bold text-white">Our Motto</h2>
             <p className="mt-2 text-gray-200 text-sm">"Inspiring Ideas, Igniting Change"</p>
           </div>
 
-          <div className="p-4 bg-red-700 rounded-xl shadow-lg md:w-3/5 h-23 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="p-4 bg-red-700 rounded-xl shadow-lg md:w-3/5 h-25 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-bold text-white">Our Vision</h2>
             <p className="mt-2 text-gray-200 text-sm">"Shaping a Better Tomorrow Through Innovation and Collaboration"</p>
           </div>
