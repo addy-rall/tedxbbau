@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Theme from "./components/Theme";
 import Hero from "./pages/Hero";
 import Graph from "./components/Graph"; 
-import TeamPage from "./components/TeamPage"; 
 import SpeakerSection from "./components/SpeakerSection";
  
 
