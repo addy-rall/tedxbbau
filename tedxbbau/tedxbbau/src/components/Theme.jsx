@@ -25,7 +25,7 @@ const ThemeSection = () => {
     <div id="about" ref={sectionRef} className="bg-black text-white">
       <div className="flex flex-col items-center justify-center p-8">
        
-        <h1 className="text-6xl font-extrabold text-red-900 text-center">
+        <h1 className="text-6xl font-extrabold text-red-600 text-center">
           Theme 2025
         </h1>
 

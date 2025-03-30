@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaHome } from "react-icons/fa";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/tedxlogo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +25,42 @@ const Navbar = () => {
   // Check if we're on the homepage
   const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
+  const scrollToTop = () => {
+    // Close mobile menu first
+    setIsOpen(false);
+    
+    // Scroll to top of the page with smooth animation
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  const navigateToTeam = () => {
+    // Close mobile menu first
+    setIsOpen(false);
+    
+    // Navigate to team page
+    navigate('/team');
+  };
+
   const scrollToSection = (sectionId) => {
     // Close mobile menu first
     setIsOpen(false);
     
-    if (!isHomePage && ["home", "about", "speakers", "team", "contact"].includes(sectionId)) {
+    // If home icon is clicked, scroll to top
+    if (sectionId === 'home') {
+      scrollToTop();
+      return;
+    }
+    
+    // If team is clicked, navigate to team page
+    if (sectionId === 'team') {
+      navigateToTeam();
+      return;
+    }
+    
+    if (!isHomePage && ["home", "about", "speakers", "contact"].includes(sectionId)) {
       // Navigate to homepage first with the hash
       window.location.href = `/#${sectionId}`;
       return;
@@ -36,7 +68,6 @@ const Navbar = () => {
     
     const section = document.getElementById(sectionId);
     if (section) {
-    
       const navbarHeight = 64; 
       const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
@@ -63,7 +94,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6 text-lg font-semibold text-white">
           <button 
             className="flex items-center hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
-            onClick={() => scrollToSection('home')}
+            onClick={() => scrollToTop()}
           >
             <FaHome size={24} className="text-white" />
           </button>
@@ -91,12 +122,12 @@ const Navbar = () => {
             Speakers
           </button>
           
-          <button 
-            className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
-            onClick={() => scrollToSection('team')}
+          <NavLink 
+            to="/team"
+            className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0"
           >
             Team
-          </button>
+          </NavLink>
           
           <button 
             className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
@@ -128,7 +159,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-black text-center py-4 space-y-4 text-white">
           <button 
-            onClick={() => scrollToSection('home')} 
+            onClick={() => scrollToTop()} 
             className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
           >
             Home
@@ -153,12 +184,13 @@ const Navbar = () => {
           >
             Speakers
           </button>
-          <button 
-            onClick={() => scrollToSection('team')} 
+          <NavLink 
+            to="/team"
             className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
+            onClick={() => setIsOpen(false)}
           >
             Team
-          </button>
+          </NavLink>
           <button 
             onClick={() => scrollToSection('contact')} 
             className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"

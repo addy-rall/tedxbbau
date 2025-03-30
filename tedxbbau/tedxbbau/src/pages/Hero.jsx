@@ -141,7 +141,7 @@ const App = () => {
           }}
         >
           <h1 
-            className="text-center text-3xl md:text-5xl font-extrabold text-gray-700 leading-tight"
+            className="text-center text-3xl md:text-5xl font-extrabold text-gray-500 leading-tight"
           >
             Breaking Myths, 
             Unveiling Reality
