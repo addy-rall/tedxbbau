@@ -30,23 +30,14 @@ const ToBeAnnounced = () => {
   }, []);
   
   return (
-    <div 
-      id="speakers" // Added id for scrolling
-      className="relative h-screen flex items-center justify-center bg-black text-white"
+    <div  
+      className="relative h-[60vh] flex items-center justify-center bg-black text-white"
     >
       <div className="absolute inset-0 bg-[url('/path-to-your-image.jpg')] bg-cover bg-center opacity-30"></div>
       
       <div className="text-center relative z-10">
-        <h1 className="text-center text-6xl md:text-8xl mb-10 text-red-800 p-3">
-          Voices That Inspire
-        </h1>
-        
-        <p className="text-gray-300 text-lg tracking-widest">
-          TO BE ANNOUNCED
-        </p>
-        
-        <h1 className="text-6xl md:text-8xl font-bold tracking-wider">
-          <span className="block sm:inline">COMING</span> <span className="block sm:inline text-red-800">SOON</span>
+        <h1 className="text-center text-2xl md:text-6xl text-red-800 p-3">
+          Event Will Be LIVE in:
         </h1>
         
         <div className="flex flex-col sm:flex-row justify-center gap-8 mt-8 text-3xl">
@@ -67,6 +58,10 @@ const ToBeAnnounced = () => {
             </div>
           </div>
         </div>
+        
+        <h1 className="py-6 text-4xl md:text-3xl font-bold tracking-wider">
+          <span className="block sm:inline">BOOK YOUR TICKETS</span> <span className="block sm:inline text-red-800">NOW</span>
+        </h1>
         
         <p className="mt-10 text-gray-400">STAY TUNED!</p>
       </div>

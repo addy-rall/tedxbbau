@@ -19,3 +19,25 @@
 .animate-fade-in {
   animation: fade-in 1.5s ease-in-out;
 }
+.film-roll {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+}
+
+.film-roll::before,
+.film-roll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right, black, transparent);
+  z-index: 10;
+}
+
+.film-roll::after {
+  right: 0;
+  background: linear-gradient(to left, black, transparent);
+}

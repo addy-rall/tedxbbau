@@ -17,15 +17,14 @@ const Graph = () => {
       .append("svg")
       .attr("width", "100%")
       .attr("height", "100%")
-      .style("background", "#111827"); // Gray-900 background
-
-    const nodeCount = 550;
+      .style("background", "#111827"); 
+    const nodeCount = 450;
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
       radius: Math.random() * 6 + 3,
-      color: "#7F1D1D", // Blood red
+      color: "#7F1D1D", 
       connections: 0,
-      vx: (Math.random() - 0.5) * 0.8, // Random velocity
+      vx: (Math.random() - 0.5) * 0.8, 
       vy: (Math.random() - 0.5) * 0.8,
     }));
 

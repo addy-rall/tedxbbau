@@ -41,7 +41,7 @@ const WhyAttend = () => {
         (endOffset - startOffset) * 100
       ));
 
-      const bufferedProgress = Math.max(0.5, Math.min(99, progress));
+      const bufferedProgress = Math.max(0.5, Math.min(98.8, progress));
       setScrollProgress(bufferedProgress);
     };
 

@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Theme from "./components/Theme";
 import Hero from "./pages/Hero";
 import Graph from "./components/Graph"; 
+import SpeakerSection from "./components/SpeakerSection";
  
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <Theme />
       <Attend /> 
+      <SpeakerSection />
       <Banner />
       <Footer />
     </div>
