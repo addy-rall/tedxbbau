@@ -69,25 +69,31 @@ const App = () => {
       </style>
 
       <div className="py-23 w-full flex justify-center text-center">
-        <h1
-          className="text-white text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            textShadow:
-              "0 0 100px rgba(0, 0, 0, 0.8), 0 0 300px rgba(0, 0, 0, 0.6)",
-            top: "20%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <div className="block mx-auto leading-snug ">
-            <SplitText text="Unveiling" />
-          </div>
-          <div className="block mx-auto leading-snug">
-            <SplitText text="Hidden Truths" />
-          </div>
-        </h1>
-      </div>
+  <h1
+    className="text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
+    style={{
+      fontFamily: "Poppins, sans-serif",
+      textShadow:
+        "0 0 100px rgba(0, 0, 0, 0.8), 0 0 300px rgba(0, 0, 0, 0.6)",
+      top: "20%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+    }}
+  >
+    <div className="block  mx-auto leading-snug">
+      <SplitText text="Unveiling" />
+    </div>
+    <div className="block mx-auto leading-snug">
+      <SplitText text="Hidden Truths" />
+    </div>
+
+    {/* Stylish Underline */}
+    <div className="absolute inset-x-0 bottom-0 w-full">
+      <div className="w-24 mx-auto mt-2 border-b-4 border-red-500 opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
+    </div>
+  </h1>
+</div>
+
 
       <div className="w-full text-center py-45 mt-20">
         <motion.div

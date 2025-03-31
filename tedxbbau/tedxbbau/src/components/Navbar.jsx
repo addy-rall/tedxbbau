@@ -92,13 +92,17 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-6 text-lg font-semibold text-white">
+          <NavLink 
+            to="/">
           <button 
             className="flex items-center hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
             onClick={() => scrollToTop()}
           >
             <FaHome size={24} className="text-white" />
           </button>
+            </NavLink>
           
+              
           <a 
             href="https://www.ted.com/tedx/events/62035" 
             target="_blank" 
