@@ -26,8 +26,10 @@ const ThemeSection = () => {
       <div className="flex flex-col items-center justify-center p-8">
        
         <h1 className="text-6xl font-extrabold text-red-600 text-center">
-          Theme 2025
+          Theme <span className="text-white">2025</span>
         </h1>
+      
+        <div className="w-24 h-1 bg-red-700 mx-auto mt-3"></div>
 
         <motion.p className="mt-6 max-w-3xl text-gray-300 text-center leading-relaxed overflow-hidden relative">
           <motion.span
@@ -51,12 +53,12 @@ const ThemeSection = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
           
-          <div className="p-6 bg-red-700 rounded-xl shadow-lg md:w-3/5 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="p-6 bg-red-800 rounded-xl shadow-lg md:w-3/5 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-red-900">
             <h2 className="text-lg font-bold text-white">Our Motto</h2>
             <p className="mt-2 text-gray-200 text-sm">"Inspiring Ideas, Igniting Change"</p>
           </div>
 
-          <div className="p-6 bg-red-700 rounded-xl shadow-lg md:w-3/5 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="p-6 bg-red-800 rounded-xl shadow-lg md:w-3/5 flex flex-col text-center transform transition duration-300 hover:scale-105 hover:shadow-xl hover:bg-red-900">
             <h2 className="text-lg font-bold text-white">Our Vision</h2>
             <p className="mt-2 text-gray-200 text-sm">"Shaping a Better Tomorrow Through Innovation and Collaboration"</p>
           </div>
@@ -64,8 +66,13 @@ const ThemeSection = () => {
         </div>
 
         <div className="relative w-full mt-9">
-          <img src={bg} alt="Background" className="w-full h-auto object-cover" />
-        </div>
+  <img
+    src={bg}
+    alt="Background"
+    className="w-full h-[180px] sm:h-[600px] md:h-[500px] lg:h-[400px] object-cover"
+  />
+</div>
+
 
       </div>
     </div>

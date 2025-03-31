@@ -17,7 +17,7 @@ const Graph = () => {
       .append("svg")
       .attr("width", "100%")
       .attr("height", "100%")
-      .style("background", "#111827"); 
+      .style("background", "#000"); 
     const nodeCount = 350;
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,

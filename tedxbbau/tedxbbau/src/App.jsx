@@ -9,6 +9,7 @@ import Graph from "./components/Graph";
 import TeamPage from './components/TeamPage';
 import SpeakerSection from "./components/SpeakerSection";
 import { Route, Routes } from "react-router-dom";
+import Line from "./components/Line";
 
 function App() {
   return (
@@ -21,10 +22,15 @@ function App() {
               <Navbar />
               <Graph />
               <Hero />
+              <Line/>
               <Theme />
+              <Line/>
               <Attend />
               <SpeakerSection />
+              <Line/>
               <Banner />
+
+              <Line/>
               <Footer />
             </div>
           </>
@@ -37,6 +43,7 @@ function App() {
       
         <Navbar/>
         <TeamPage />
+        <Line/>
         <Footer/>
   </div>
      </>

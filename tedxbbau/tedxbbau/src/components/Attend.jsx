@@ -67,7 +67,7 @@ const WhyAttend = () => {
         className="hidden md:block absolute left-1/2 top-[250px] bottom-0 w-1 bg-gray-700 transform -translate-x-1/2 z-20"
       >
         <div 
-          className="absolute left-1/2 w-4 h-4 bg-red-800 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out"
+          className="absolute left-1/2 w-4 h-4 bg-red-700 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out"
           style={{ top: `${scrollProgress}%` }}
         />
       </div>

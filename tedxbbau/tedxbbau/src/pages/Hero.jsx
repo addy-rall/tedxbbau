@@ -80,16 +80,16 @@ const App = () => {
       transform: "translate(-50%, -50%)",
     }}
   >
-    <div className="block  mx-auto leading-snug">
+    <div className="block   mx-auto leading-snug">
       <SplitText text="Unveiling" />
     </div>
-    <div className="block mx-auto leading-snug">
+    <div className="block text-red-700 mx-auto leading-snug">
       <SplitText text="Hidden Truths" />
     </div>
 
     {/* Stylish Underline */}
     <div className="absolute inset-x-0 bottom-0 w-full">
-      <div className="w-24 mx-auto mt-2 border-b-4 border-red-500 opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
+      <div className="w-24 mx-auto mt-2 border-b-4 border-white opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
     </div>
   </h1>
 </div>
@@ -109,66 +109,52 @@ const App = () => {
         </motion.div>
       </div>
 
-      <div className="min-h-screen w-full py-15 flex flex-col md:flex-row items-center justify-center text-white relative container mx-auto px-4">
-        <div className="w-full md:w-1/2 flex items-center justify-center mb-10 md:mb-0 md:mt-32">
-          <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
-            <div className="relative">
-              <img
-                src={hero}
-                alt="Animation"
-                className="w-full h-auto rounded-lg shadow-2xl"
-                style={{
-                  position: "relative",
-                  zIndex: "0",
-                  pointerEvents: "none",
-                }}
-              />
-
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.1) 5%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,1) 100%)",
-                  zIndex: "1",
-                }}
-              ></div>
-            </div>
+      <div className="min-h-screen w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
+      {/* Left Side - Image */}
+      <div className="w-full md:w-1/2 flex items-center justify-center md:mt-16 lg:mt-32">
+        <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-full">
+          <img
+            src={hero}
+            alt="Animation"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ pointerEvents: 'none' }}
+          />
+          <div className="absolute inset-0 pointer-events-none">
+            <div
+              className="w-full h-full"
+              style={{
+                background:
+                  'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%)',
+              }}
+            ></div>
           </div>
         </div>
+      </div>
 
-        <motion.div
-          className="w-full md:w-1/2 flex flex-col items-center text-center px-6"
+      {/* Right Side - Content */}
+      <motion.div
+        className="w-full md:w-1/2 flex flex-col items-center justify-center px-6"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
+      >
+        <h1 className="text-center text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
+          Breaking <span className="text-red-700">Myths,</span> <br />
+          <span className="text-red-700">Unveiling</span> Reality
+        </h1>
+
+        <motion.p
+          className="text-center mt-4 px-4 md:px-6 text-lg leading-loose"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            maxWidth: "600px",
-          }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          style={{ maxWidth: '700px', textAlign: 'justify' }}
         >
-          <h1 
-            className="text-center text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight"
-          >
-            Breaking Myths, 
-            Unveiling Reality
-          </h1>
-
-          <motion.p
-            ref={paragraphRef}
-            className="text-center mt-4 px-1.5 md:px-6 text-lg md:text-lg leading-loose"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isParagraphInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            style={{ maxWidth: "700px", textAlign: "justify" }}
-          >
-            Some truths remain buried, waiting to be discovered. This TED event
-            peels back the layers of illusion, shatters misconceptions, and
-            reveals the unseen forces shaping our world. Prepare to challenge
-            what you know, question the unquestioned, and see reality in a whole
-            new light. The truth is out there—are you ready to uncover it?
-          </motion.p>
-        </motion.div>
-      </div>
+          Some truths remain buried, waiting to be discovered. This TED event peels back the layers of illusion, shatters misconceptions, and reveals the unseen forces shaping our world. Prepare to challenge what you know, question the unquestioned, and see reality in a whole new light. The truth is out there—are you ready to uncover it?
+        </motion.p>
+      </motion.div>
+    </div>
     </>
   );
 };

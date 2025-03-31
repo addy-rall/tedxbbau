@@ -292,6 +292,7 @@ const SpeakersTimeline = () => {
         
         {/* Indicator dots for mobile navigation */}
         <div className="flex justify-center gap-2 mt-8 mb-16">
+        
           {speakers.map((speaker) => (
             <button
               key={`nav-${speaker.id}`}
@@ -307,6 +308,10 @@ const SpeakersTimeline = () => {
             />
           ))}
         </div>
+
+      
+
+        
       </div>
     </div>
   );

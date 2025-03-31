@@ -60,10 +60,14 @@ const ToBeAnnounced = () => {
         </div>
         
         <h1 className="py-6 text-4xl md:text-3xl font-bold tracking-wider">
-          <span className="block sm:inline">BOOK YOUR TICKETS</span> <span className="block sm:inline text-red-800">NOW</span>
+          <span className="block sm:inline">BOOK YOUR TICKETS</span> <span className="block sm:inline text-red-800">NOW</span> 
         </h1>
+        <a href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" target="_blank" rel="noopener noreferrer">
+
+          <button className="px-6 py-3 bg-red-700 cursor-pointer text-white text-sm md:text-base lg-text-lg font-semibold rounded-lg hover:bg-red-800 transition duration-300">Book Ticket</button>
+        </a>
         
-        <p className="mt-10 text-gray-400">STAY TUNED!</p>
+        <p className="mt-5 text-[30px] text-gray-400">STAY TUNED!</p>
       </div>
     </div>
   );
