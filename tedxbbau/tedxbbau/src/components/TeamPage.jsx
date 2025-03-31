@@ -1,6 +1,6 @@
 import React from "react";
 import OrganiserImg from "../assets/Lakhan Varshney.png";
-import CoorganiserImg from "../assets/Aditya Kumar.png";
+import CoorganiserImg from "../assets/Aditya kumar.png";
 import PinImage from "../assets/pin.png";
 
 const teamMembers = [
