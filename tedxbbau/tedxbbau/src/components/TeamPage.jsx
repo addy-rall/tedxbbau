@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Lakhan Varshney",
     role: "Organiser",
     image: OrganiserImg,
-    description: "Have more than 3 years experience working with Top Ed-tech Youtubers (Managing their social media account, Video Production, Content Writing, Content Planning).\n\nDone 50+ Podcast with India's greatest educators.\n\nHave Experience of managing 100+ events(Tedx, Ecell, College fest, Rendezvous , University events) all over the India.\n\nHe enjoy traveling and meeting new people, as well as learning about their contributions to the nation.",
+    description: "Have more than 3 years experience working with the Top Ed-tech Youtubers (Managing their social media account, Video Production, Content Writing, Content Planning).\n\nDone 50+ Podcast with India's greatest educators.\n\nHave Experience of managing 100+ events(Tedx, Ecell, College fest, Rendezvous , University events) all over the India.\n\nHe enjoy traveling and meeting new people, as well as learning about their contributions to the nation.",
     linkedin: "https://www.linkedin.com/in/lakhanvarshney/"
   },
   {
