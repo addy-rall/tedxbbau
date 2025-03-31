@@ -6,21 +6,44 @@ import Navbar from "./components/Navbar";
 import Theme from "./components/Theme";
 import Hero from "./pages/Hero";
 import Graph from "./components/Graph";  
+import TeamPage from './components/TeamPage';
 import SpeakerSection from "./components/SpeakerSection";
- 
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "black", color: "white", minHeight: "100vh" }}>
-      <Navbar />
-      <Graph/>
-      <Hero />
-      <Theme />
-      <Attend />  
-      <SpeakerSection />
-      <Banner />
-      <Footer />
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <div style={{ backgroundColor: "black", color: "white", minHeight: "100vh" }}>
+              <Navbar />
+              <Graph />
+              <Hero />
+              <Theme />
+              <Attend />
+              <SpeakerSection />
+              <Banner />
+              <Footer />
+            </div>
+          </>
+        }
+      />
+      <Route path="/team" element={
+     <>
+  <div style={{ backgroundColor: "black", color: "white", minHeight: "100vh" }}>
+
+      
+        <Navbar/>
+        <TeamPage />
+        <Footer/>
+  </div>
+     </>
+        }
+        
+         />
+    </Routes>
   );
 }
 
