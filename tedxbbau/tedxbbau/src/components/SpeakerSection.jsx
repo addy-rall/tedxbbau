@@ -259,10 +259,10 @@ const SpeakersTimeline = () => {
       {/* Mobile View - Keep navigation since it's needed for mobile */}
       <div className="md:hidden container mx-auto px-4 relative z-10">
         {/* Navigation buttons for mobile view */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="relative flex justify-between items-center mb-6">
           <button 
             onClick={prevSpeaker}
-            className="bg-red-800 hover:bg-red-600 text-white p-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+            className="absolute m-3 left-0 top-[100px] z-50 bg-red-800 hover:bg-red-600 text-white p-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
             aria-label="Previous speaker"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -270,7 +270,7 @@ const SpeakersTimeline = () => {
             </svg>
           </button>
           
-          <div className="text-center">
+          <div className="text-center mx-auto">
             <span className="text-gray-400 text-sm">
               Speaker {speakers.findIndex(s => s.id === activeSpeaker) + 1} of {speakers.length}
             </span>
@@ -278,7 +278,7 @@ const SpeakersTimeline = () => {
           
           <button 
             onClick={nextSpeaker}
-            className="bg-red-800 hover:bg-red-600 text-white p-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+            className="absolute m-3 right-0 top-[100px] z-50 bg-red-800 hover:bg-red-600 text-white p-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
             aria-label="Next speaker"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -310,7 +310,7 @@ const SpeakersTimeline = () => {
         </div>
 
       
-
+       
         
       </div>
     </div>
