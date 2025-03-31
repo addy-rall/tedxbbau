@@ -218,7 +218,7 @@ const SpeakersTimeline = () => {
                     
                     <div className={`absolute inset-1 rounded-full border-2 ${
                       activeSpeaker === speaker.id ? 'border-red-500' : 'border-gray-700 group-hover:border-red-500'
-                      } overflow-hidden shadow-lg transition-colors duration-300 bg-gray-800 group-hover:shadow-red-500/30`}
+                      } overflow-hidden shadow-lg transition-colors duration-300 bg-black group-hover:shadow-red-500/30`}
                     >
                       <img 
                         src={speaker.image} 

@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Theme from "./components/Theme";
 import Hero from "./pages/Hero";
-import Graph from "./components/Graph"; 
+import Graph from "./components/Graph";  
 import SpeakerSection from "./components/SpeakerSection";
  
 
@@ -16,7 +16,7 @@ function App() {
       <Graph/>
       <Hero />
       <Theme />
-      <Attend /> 
+      <Attend />  
       <SpeakerSection />
       <Banner />
       <Footer />

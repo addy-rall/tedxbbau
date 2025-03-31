@@ -18,7 +18,7 @@ const Graph = () => {
       .attr("width", "100%")
       .attr("height", "100%")
       .style("background", "#111827"); 
-    const nodeCount = 450;
+    const nodeCount = 350;
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
       radius: Math.random() * 6 + 3,
