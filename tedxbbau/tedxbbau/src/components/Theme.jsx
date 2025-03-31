@@ -69,7 +69,7 @@ const ThemeSection = () => {
   <img
     src={bg}
     alt="Background"
-    className="w-full h-[180px] sm:h-[600px] md:h-[500px] lg:h-[400px] object-cover"
+    className="w-full h-[180px] sm:h-[600px] md:h-[300px] lg:h-[300px] object-cover"
   />
 </div>
 

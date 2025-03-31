@@ -22,7 +22,7 @@ function App() {
               <Navbar />
               <Graph />
               <Hero />
-              <Line/>
+              
               <Theme />
               <Line/>
               <Attend />
