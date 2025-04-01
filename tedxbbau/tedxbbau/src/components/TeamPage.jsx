@@ -15,7 +15,7 @@ const teamMembers = [
     name: "Aditya Kumar Bharti",
     role: "Co-Organiser",
     image: CoorganiserImg,
-    description: "TEDx event coordinator and community organizer. Currently pursuing M.C.A. from B.B.A.U (Babasaheb Bhimrao Ambedkar University, Lucknow), B.Sc. Graduate from University Of Lucknow.",
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow.He loves traveling and connecting with people, always learning from new experiences. By participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
     linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
   }
 ];
