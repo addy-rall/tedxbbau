@@ -22,8 +22,8 @@ const ThemeSection = () => {
   }, []);
 
   return (
-    <div id="about" ref={sectionRef} className="bg-black text-white">
-      <div className="flex flex-col items-center justify-center p-8">
+    <div id="about" ref={sectionRef} className="bg-black text-white overflow-hidden">
+      <div className="flex flex-col items-center justify-center p-8 max-w-screen-lg mx-auto">
        
         <h1 className="text-5xl sm:text-6xl font-extrabold text-red-600 text-center">
           Theme <span className="text-white">2025</span>
@@ -33,8 +33,8 @@ const ThemeSection = () => {
 
         <motion.p className="mt-6 max-w-3xl text-gray-300 text-center leading-relaxed">
           <motion.span
-            initial={{ opacity: 0, x: "-100vw" }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "-100vw" }}
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "-100%" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="block"
           >
@@ -42,8 +42,8 @@ const ThemeSection = () => {
           </motion.span>
 
           <motion.span
-            initial={{ opacity: 0, x: "100vw" }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "100vw" }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
             className="block mt-2"
           >
@@ -52,8 +52,6 @@ const ThemeSection = () => {
         </motion.p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
-          
-          {/* ✅ Simple Hover Effect on Tabs */}
           <div className="p-6 bg-red-800 rounded-xl shadow-lg md:w-3/5 flex flex-col text-center transition-all duration-300 hover:scale-105 hover:bg-red-900">
             <h2 className="text-lg font-bold text-white">Our Motto</h2>
             <p className="mt-2 text-gray-200 text-sm">"Inspiring Ideas, Igniting Change"</p>
@@ -63,15 +61,13 @@ const ThemeSection = () => {
             <h2 className="text-lg font-bold text-white">Our Vision</h2>
             <p className="mt-2 text-gray-200 text-sm">"Shaping a Better Tomorrow Through Innovation and Collaboration"</p>
           </div>
-
         </div>
 
-        {/* ✅ Image with No Fading, Fully Visible */}
-        <div className="relative w-full mx-auto mt-9">
+        <div className="relative max-w-screen-lg mx-auto mt-9 overflow-hidden">
           <img
             src={bg}
             alt="Background"
-            className="w-full h-auto max-h-[600px] sm:max-h-screen object-contain mx-auto rounded-lg shadow-lg"
+            className="max-w-full h-auto rounded-lg shadow-lg"
           />
         </div>
 

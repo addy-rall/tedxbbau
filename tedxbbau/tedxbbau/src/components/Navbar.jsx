@@ -63,8 +63,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed w-full top-0 z-40 h-16 bg-black overflow-hidden"></div>
-      <nav className="fixed w-full top-0 z-50 transition-all duration-300 max-w-full overflow-hidden" style={{ backgroundColor: `rgba(200, 0, 0, ${scrollPercentage / 100})` }}>
+      <div className="fixed w-full top-0 z-40 h-16 bg-black"></div>
+      <nav className="fixed w-full top-0 z-50 transition-all duration-300" style={{ backgroundColor: `rgba(200, 0, 0, ${scrollPercentage / 100})` }}>
         <div className="h-1 bg-red-500 fixed top-0 left-0" style={{ width: `${scrollPercentage}%` }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -135,13 +135,23 @@ const Navbar = () => {
           </div>
         </div>
         {isOpen && (
-          <div className="md:hidden bg-black text-center py-4 space-y-4 text-white max-w-full overflow-hidden">
-            <button onClick={() => scrollToTop()} className="block hover:text-gray-300 cursor-pointer w-full">Home</button>
-            <a href="https://www.ted.com/tedx/events/62035" target="_blank" rel="noopener noreferrer" className="block hover:text-gray-300">TED</a>
-            <button onClick={() => scrollToSection('about')} className="block hover:text-gray-300 cursor-pointer w-full">About</button>
-            <button onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer w-full">Speakers</button>
-            <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full" onClick={() => setIsOpen(false)}>Team</NavLink>
-            <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full">Contact</button>
+          <div className="md:hidden bg-black text-center py-4 w-full text-white">
+            <div className="flex flex-col px-4">
+              <button onClick={() => scrollToTop()} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Home</button>
+              <a href="https://www.ted.com/tedx/events/62035" target="_blank" rel="noopener noreferrer" className="block hover:text-gray-300 py-2 text-left">TED</a>
+              <button onClick={() => scrollToSection('about')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">About</button>
+              <button onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Speakers</button>
+              <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left" onClick={() => setIsOpen(false)}>Team</NavLink>
+              <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Contact</button>
+              <a 
+                href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-center"
+              >
+                Book Ticket
+              </a>
+            </div>
           </div>
         )}
       </nav>
