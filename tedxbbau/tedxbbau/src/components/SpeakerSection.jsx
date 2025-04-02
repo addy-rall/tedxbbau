@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import speaker1 from "../assets/speaker1.png";
 import speaker2 from "../assets/speaker2.png";
 import speaker3 from "../assets/speaker3.png";
@@ -15,6 +15,11 @@ const SpeakersTimeline = () => {
     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom"
   ]);
   const timelineRef = useRef(null);
+  
+  // For touch swipe functionality
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+  const MIN_SWIPE_DISTANCE = 50;
   
   const speakers = [
     { 
@@ -118,10 +123,44 @@ const SpeakersTimeline = () => {
     const prevIndex = (currentIndex - 1 + speakers.length) % speakers.length;
     setActiveSpeaker(speakers[prevIndex].id);
   };
+  
+  // Touch event handlers for swipe functionality
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+  
+  const handleTouchEnd = useCallback(() => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distanceX = touchEndX.current - touchStartX.current;
+    
+    if (Math.abs(distanceX) > MIN_SWIPE_DISTANCE) {
+      if (distanceX > 0) {
+        // Swipe right (previous)
+        prevSpeaker();
+      } else {
+        // Swipe left (next)
+        nextSpeaker();
+      }
+    }
+    
+    // Reset values
+    touchStartX.current = null;
+    touchEndX.current = null;
+  }, []);
 
   // Function to render a speaker card
   const renderSpeakerCard = (speaker, isAnimating) => (
-    <div className={`transition-all duration-500 ease-in-out mb-6 ${isAnimating && activeSpeaker === speaker.id ? 'scale-105' : 'scale-100'}`}>
+    <div 
+      className={`transition-all duration-500 ease-in-out mb-24 ${isAnimating && activeSpeaker === speaker.id ? 'scale-105' : 'scale-100'}`}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="relative bg-gradient-to-r from-gray-900 to-black p-6 sm:p-8 rounded-xl border border-gray-800">
         <div className="absolute -top-5 -left-5 w-10 h-10 bg-red-600 rounded-full"></div>
         <div className="absolute -bottom-5 -right-5 w-10 h-10 bg-red-600 rounded-full"></div>
@@ -180,14 +219,15 @@ const SpeakersTimeline = () => {
       <div className="hidden md:block container mx-auto px-4 mb-16 relative z-10">
         {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
 
-        {/* Added margin-top here to increase spacing between speaker card and timeline */}
-        <div ref={timelineRef} className="relative mt-35">
-          <div className="h-3 bg-red-600 w-full my-64 rounded-full relative">
-            <div className="absolute -left-2 -top-1 w-4 h-4 bg-red-600 rounded-full"></div>
-            <div className="absolute -right-2 -top-1 w-4 h-4 bg-red-600 rounded-full"></div>
+        {/* Keeping the same margin-top to maintain timeline position */}
+        <div ref={timelineRef} className="relative mt-80">
+          {/* Timeline bar - thinner height */}
+          <div className="h-1 bg-red-600 w-full my-80 rounded-full relative">
+            <div className="absolute -left-1 top-0 w-2 h-2 bg-red-600 rounded-full"></div>
+            <div className="absolute -right-1 top-0 w-2 h-2 bg-red-600 rounded-full"></div>
           </div>
           
-          {/* Speakers on timeline */}
+          {/* Speakers on timeline - adjusted top values and shortened connector lines */}
           {speakers.map((speaker, index) => {
             const position = speakerPositions[index];
             const leftPosition = `${(index / (speakers.length - 1)) * 100}%`;
@@ -196,7 +236,7 @@ const SpeakersTimeline = () => {
               <div 
                 key={speaker.id}
                 className={`absolute transform -translate-x-1/2 transition-all duration-300 w-36 
-                  ${position === 'top' ? '-top-64' : 'top-16'}`}
+                  ${position === 'top' ? '-top-60' : 'top-16'}`}
                 style={{ left: leftPosition }}
               >
                 <div 
@@ -209,7 +249,7 @@ const SpeakersTimeline = () => {
                     togglePosition(index);
                   }}
                 >
-                  {/* Photo wrapper with increased size */}
+                  {/* Photo wrapper */}
                   <div className="relative mb-3 w-full aspect-square">
                     <div 
                       className="absolute inset-0 bg-gradient-to-br from-red-800 to-red-950 rounded-full transform -z-10 shadow-lg scale-90 
@@ -238,15 +278,16 @@ const SpeakersTimeline = () => {
                     <p className="text-xs text-red-500 mt-1 line-clamp-2">{speaker.title}</p>
                   </div>
                   
+                  {/* Thinner connector lines */}
                   <div 
                     className={`absolute left-1/2 w-px bg-red-600 ${
-                      position === 'top' ? 'h-28 -bottom-28' : 'h-16 -top-16'
+                      position === 'top' ? 'h-16 -bottom-16' : 'h-16 -top-16'
                     }`}
                   ></div>
                   
                   <div 
-                    className={`absolute left-1/2 w-2 h-2 bg-red-600 rounded-full -translate-x-1/2 ${
-                      position === 'top' ? '-bottom-28' : '-top-16'
+                    className={`absolute left-1/2 w-1 h-1 bg-red-600 rounded-full -translate-x-1/2 ${
+                      position === 'top' ? '-bottom-16' : '-top-16'
                     }`}
                   ></div>
                 </div>
@@ -256,43 +297,22 @@ const SpeakersTimeline = () => {
         </div>
       </div>
       
-      {/* Mobile View - Keep navigation since it's needed for mobile */}
+      {/* Mobile View - Removed navigation buttons, added swipe functionality */}
       <div className="md:hidden container mx-auto px-4 relative z-10">
-        {/* Navigation buttons for mobile view */}
-        <div className="relative flex justify-between items-center mb-6">
-          <button 
-            onClick={prevSpeaker}
-            className="absolute m-3 left-0 top-[100px] z-50 bg-red-800 hover:bg-red-600 text-white p-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-            aria-label="Previous speaker"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <div className="text-center mx-auto">
-            <span className="text-gray-400 text-sm">
-              Speaker {speakers.findIndex(s => s.id === activeSpeaker) + 1} of {speakers.length}
-            </span>
-          </div>
-          
-          <button 
-            onClick={nextSpeaker}
-            className="absolute m-3 right-0 top-[100px] z-50 bg-red-800 hover:bg-red-600 text-white p-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
-            aria-label="Next speaker"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        {/* Swipe instruction */}
+        <div className="text-center mx-auto mb-4">
+          <span className="text-gray-400 text-sm">
+            • Speaker {speakers.findIndex(s => s.id === activeSpeaker) + 1} of {speakers.length}
+          </span>
         </div>
         
-        {/* Active speaker card only for mobile */}
-        {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
+        {/* Active speaker card with swipe functionality */}
+        <div className="mb-16">
+          {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
+        </div>
         
         {/* Indicator dots for mobile navigation */}
         <div className="flex justify-center gap-2 mt-8 mb-16">
-        
           {speakers.map((speaker) => (
             <button
               key={`nav-${speaker.id}`}
@@ -308,10 +328,6 @@ const SpeakersTimeline = () => {
             />
           ))}
         </div>
-
-      
-       
-        
       </div>
     </div>
   );

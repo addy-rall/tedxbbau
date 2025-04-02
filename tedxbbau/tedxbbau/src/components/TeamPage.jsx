@@ -15,7 +15,7 @@ const teamMembers = [
     name: "Aditya Kumar Bharti",
     role: "Co-Organiser",
     image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow.He loves traveling and connecting with people, always learning from new experiences. By participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
     linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
   }
 ];
@@ -32,9 +32,9 @@ const TeamPage = () => {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className="relative w-full md:w-1/2 lg:w-1/3 p-8 rounded-lg shadow-lg bg-gray-900 text-white border-4 border-red-500 flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="relative w-full md:w-1/2 lg:w-1/3 p-8 rounded-full shadow-lg bg-gray-900 text-white border-4 border-red-500 flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-xl"
             style={{
-              boxShadow: "5px 5px 15px rgba(255, 0, 0, 0.5)",
+              boxShadow: "5px 5px 15px rgba(255, 0, 0, 0.2)",
               borderRadius: "12px",
               position: "relative",
               padding: "20px",
@@ -50,9 +50,9 @@ const TeamPage = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-32 h-32 rounded-lg border-4 border-red-500 object-cover transition-transform transform hover:scale-110 shadow-lg hover:shadow-red-500"
+                className="w-32 h-32 rounded-full border-4 border-red-500 object-cover transition-transform transform hover:scale-110 shadow-lg hover:shadow-red-500"
                 style={{
-                  filter: "drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.8))",
+                  filter: "drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.2))",
                   padding: "5px",
                   backgroundColor: "white"
                 }}

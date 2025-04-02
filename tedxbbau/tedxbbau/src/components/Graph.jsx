@@ -9,23 +9,24 @@ const Graph = () => {
 
     d3.select(containerRef.current).selectAll("svg").remove();
 
-    const width = containerRef.current.clientWidth;
-    const height = containerRef.current.clientHeight;
+    let width = containerRef.current.clientWidth;
+    let height = containerRef.current.clientHeight;
 
     const svg = d3
       .select(containerRef.current)
       .append("svg")
       .attr("width", "100%")
       .attr("height", "100%")
-      .style("background", "#000"); 
-    const nodeCount = 350;
+      .style("background", "#000");
+
+    const nodeCount = 180;
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
       radius: Math.random() * 6 + 3,
-      color: "#7F1D1D", 
+      color: "#7F1D1D",
       connections: 0,
-      vx: (Math.random() - 0.5) * 0.8, 
-      vy: (Math.random() - 0.5) * 0.8,
+      vx: (Math.random() - 0.5) * 1.2, // Faster velocity
+      vy: (Math.random() - 0.5) * 1.2,
     }));
 
     const links = [];
@@ -58,19 +59,19 @@ const Graph = () => {
     const simulation = d3
       .forceSimulation(nodes)
       .force("link", d3.forceLink(links).id((d) => d.id).distance(50))
-      .force("charge", d3.forceManyBody().strength(-30))
+      .force("charge", d3.forceManyBody().strength(-40))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide(8))
-      .alphaDecay(0); // Prevents stopping
+      .alphaDecay(0); // Keeps motion running indefinitely
 
     const link = svg
       .selectAll(".link")
       .data(links)
       .enter()
       .append("line")
-      .attr("stroke", "#991B1B") // Slightly brighter blood red for contrast
-      .attr("stroke-width", 0.4)
-      .attr("stroke-opacity", 0.6);
+      .attr("stroke", "#991B1B")
+      .attr("stroke-width", 0.6)
+      .attr("stroke-opacity", 0.7);
 
     const node = svg
       .selectAll(".node")
@@ -79,7 +80,7 @@ const Graph = () => {
       .append("circle")
       .attr("r", (d) => d.radius)
       .attr("fill", (d) => d.color)
-      .style("cursor", "grab") // Removed white outline
+      .style("cursor", "grab")
       .call(
         d3
           .drag()
@@ -113,33 +114,58 @@ const Graph = () => {
       d.fy = null;
     }
 
-    // Velocity update on each tick
+    // Continuous motion with faster movement
     simulation.on("tick", () => {
       nodes.forEach((node) => {
+        // Update positions based on velocity
         node.x += node.vx;
         node.y += node.vy;
 
-        // Boundary check to keep nodes inside the viewport
+        // Apply light damping to keep motion smooth
+        node.vx *= 0.995;
+        node.vy *= 0.995;
+
+        // If velocity is too low, boost it
+        if (Math.abs(node.vx) < 0.1) node.vx += (Math.random() - 0.5) * 0.2;
+        if (Math.abs(node.vy) < 0.1) node.vy += (Math.random() - 0.5) * 0.2;
+
+        // Bounce off edges
         if (node.x < 0 || node.x > width) node.vx *= -1;
         if (node.y < 0 || node.y > height) node.vy *= -1;
       });
 
+      // Update link positions
       link
         .attr("x1", (d) => d.source.x)
         .attr("y1", (d) => d.source.y)
         .attr("x2", (d) => d.target.x)
         .attr("y2", (d) => d.target.y);
 
+      // Update node positions
       node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
     });
 
-    // Periodically restart simulation
-    setInterval(() => {
+    // Maintain motion even when scrolling
+    const handleScroll = () => {
       simulation.alpha(0.3).restart();
-    }, 5000);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Resize handling
+    const handleResize = () => {
+      if (!containerRef.current) return;
+      width = containerRef.current.clientWidth;
+      height = containerRef.current.clientHeight;
+      simulation.force("center", d3.forceCenter(width / 2, height / 2)).restart();
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
       simulation.stop();
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -153,6 +179,7 @@ const Graph = () => {
         top: 0,
         left: 0,
         overflow: "hidden",
+         // Ensures it stays in the background
       }}
     ></div>
   );

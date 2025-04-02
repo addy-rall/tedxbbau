@@ -87,7 +87,6 @@ const App = () => {
       <SplitText text="Hidden Truths" />
     </div>
 
-    {/* Stylish Underline */}
     <div className="absolute inset-x-0 bottom-0 w-full">
       <div className="w-24 mx-auto mt-2 border-b-4 border-white opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
     </div>
@@ -103,14 +102,14 @@ const App = () => {
           animate={{ opacity: [0.3, 1, 0.3] }}
           transition={{ repeat: Infinity, duration: 0.5 }}
         >
-          <span className="block">First 100 get an</span>  
+          <span className="block">First 100 members get an</span>  
     <span className="block">Early Bird DISCOUNT!</span>  
     <span className="block sm:inline">Use code <strong>TEDxBBAU100</strong> now!</span>
         </motion.div>
       </div>
 
       <div className="min-h-screen w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
-      {/* Left Side - Image */}
+
       <div className="w-full md:w-1/2 flex items-center justify-center md:mt-16 lg:mt-32">
         <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-full">
           <img

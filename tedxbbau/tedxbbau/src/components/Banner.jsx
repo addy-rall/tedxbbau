@@ -36,8 +36,8 @@ const ToBeAnnounced = () => {
       <div className="absolute inset-0 bg-[url('/path-to-your-image.jpg')] bg-cover bg-center opacity-30"></div>
       
       <div className="text-center relative z-10">
-        <h1 className="text-center text-2xl md:text-6xl text-red-800 p-3">
-          Event Will Be LIVE in:
+        <h1 className="font-bold text-center text-2xl md:text-7xl text-red-800 p-3">
+          Event Will Be <span className="text-white">LIVE</span> in:
         </h1>
         
         <div className="flex flex-col sm:flex-row justify-center gap-8 mt-8 text-3xl">
@@ -67,7 +67,7 @@ const ToBeAnnounced = () => {
           <button className="px-6 py-3 bg-red-700 cursor-pointer text-white text-sm md:text-base lg-text-lg font-semibold rounded-lg hover:bg-red-800 transition duration-300">Book Ticket</button>
         </a>
         
-        <p className="mt-5 text-[30px] text-gray-400">STAY TUNED!</p>
+        <p className="font-bold mt-5 text-[30px] text-gray-400">STAY TUNED!</p>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaHome } from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/tedxlogo.png";
 
@@ -78,141 +77,145 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-50 transition-all duration-300" style={{ backgroundColor: `rgba(200, 0, 0, ${scrollPercentage / 100})` }}>
-      <div className="h-1 bg-red-500 fixed top-0 left-0" style={{ width: `${scrollPercentage}%` }}></div>
+    <>
+      {/* Black background div that sits behind the navbar */}
+      <div className="fixed w-full top-0 z-40 h-16 bg-black"></div>
+      
+      {/* Colored navbar overlay with transition */}
+      <nav className="fixed w-full top-0 z-50 transition-all duration-300" style={{ backgroundColor: `rgba(200, 0, 0, ${scrollPercentage / 100})` }}>
+        <div className="h-1 bg-red-500 fixed top-0 left-0" style={{ width: `${scrollPercentage}%` }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div className="flex-shrink-0">
-          <img 
-            src={logo} 
-            alt="Logo" 
-            className="h-12 w-auto cursor-pointer" 
-            onClick={() => scrollToSection('home')} 
-          />
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+          <div className="flex-shrink-0">
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className="h-12 w-auto cursor-pointer" 
+              onClick={() => scrollToSection('home')} 
+            />
+          </div>
 
-        <div className="hidden md:flex items-center space-x-6 text-lg font-semibold text-white">
-          <NavLink 
-            to="/">
-          <button 
-            className="flex items-center hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
-            onClick={() => scrollToTop()}
-          >
-            <FaHome size={24} className="text-white" />
-          </button>
+          <div className="hidden md:flex items-center space-x-6 text-lg font-semibold text-white">
+            <NavLink to="/">
+              <button 
+                className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
+                onClick={() => scrollToTop()}
+              >
+                Home
+              </button>
             </NavLink>
-          
-              
-          <a 
-            href="https://www.ted.com/tedx/events/62035" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="hover:text-gray-200 transition"
-          >
-            TED
-          </a>
-          
-          <button 
-            className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
-            onClick={() => scrollToSection('about')}
-          >
-            About
-          </button>
-          
-          <button 
-            className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
-            onClick={() => scrollToSection('speakers')}
-          >
-            Speakers
-          </button>
-          
-          <NavLink 
-            to="/team"
-            className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0"
-          >
-            Team
-          </NavLink>
-          
-          <button 
-            className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
-            onClick={() => scrollToSection('contact')}
-          >
-            Contact
-          </button>
+            
+            <a 
+              href="https://www.ted.com/tedx/events/62035" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-gray-200 transition"
+            >
+              TED
+            </a>
+            
+            <button 
+              className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
+              onClick={() => scrollToSection('about')}
+            >
+              About
+            </button>
+            
+            <button 
+              className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
+              onClick={() => scrollToSection('speakers')}
+            >
+              Speakers
+            </button>
+            
+            <NavLink 
+              to="/team"
+              className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0"
+            >
+              Team
+            </NavLink>
+            
+            <button 
+              className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
+              onClick={() => scrollToSection('contact')}
+            >
+              Contact
+            </button>
+          </div>
+
+          <div className="hidden md:block">
+            <a 
+              href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-4 py-2 rounded-lg transition-all duration-300" 
+              style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}
+            >
+              Book Ticket
+            </a>
+          </div>
+
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white bg-transparent border-none">
+              {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:block">
-          <a 
-            href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="px-4 py-2 rounded-lg transition" 
-            style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}
-          >
-            Book Ticket
-          </a>
-        </div>
-
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white bg-transparent border-none">
-            {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
-          </button>
-        </div>
-      </div>
-
-      {isOpen && (
-        <div className="md:hidden bg-black text-center py-4 space-y-4 text-white">
-          <button 
-            onClick={() => scrollToTop()} 
-            className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
-          >
-            Home
-          </button>
-          <a 
-            href="https://www.ted.com/tedx/events/62035" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="block hover:text-gray-300"
-          >
-            TED
-          </a>
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
-          >
-            About
-          </button>
-          <button 
-            onClick={() => scrollToSection('speakers')} 
-            className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
-          >
-            Speakers
-          </button>
-          <NavLink 
-            to="/team"
-            className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
-            onClick={() => setIsOpen(false)}
-          >
-            Team
-          </NavLink>
-          <button 
-            onClick={() => scrollToSection('contact')} 
-            className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
-          >
-            Contact
-          </button>
-          <a 
-            href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-block px-4 py-2 rounded-lg transition mx-auto" 
-            style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}
-          >
-            Book Ticket
-          </a>
-        </div>
-      )}
-    </nav>
+        {isOpen && (
+          <div className="md:hidden bg-black text-center py-4 space-y-4 text-white">
+            <button 
+              onClick={() => scrollToTop()} 
+              className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
+            >
+              Home
+            </button>
+            <a 
+              href="https://www.ted.com/tedx/events/62035" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block hover:text-gray-300"
+            >
+              TED
+            </a>
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => scrollToSection('speakers')} 
+              className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
+            >
+              Speakers
+            </button>
+            <NavLink 
+              to="/team"
+              className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              Team
+            </NavLink>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="block hover:text-gray-300 cursor-pointer w-full bg-transparent border-none text-white"
+            >
+              Contact
+            </button>
+            <a 
+              href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block px-4 py-2 rounded-lg transition-all duration-300 mx-auto" 
+              style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}
+            >
+              Book Ticket
+            </a>
+          </div>
+        )}
+      </nav>
+    </>
   );
 };
 
