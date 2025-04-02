@@ -11,21 +11,27 @@ import speaker8 from "../assets/speaker8.png";
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [swipeDirection, setSwipeDirection] = useState(null);
   const [speakerPositions, setSpeakerPositions] = useState([
     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom"
   ]);
   const timelineRef = useRef(null);
-  
-  // For touch swipe functionality
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
-  const MIN_SWIPE_DISTANCE = 50;
+  const touchStartY = useRef(null);
+  const touchEndY = useRef(null);
+  const swipeInProgress = useRef(false);
+  
+  // Increase minimum swipe distance for better detection
+  const MIN_SWIPE_DISTANCE = 40;
+  // Add maximum vertical movement to prevent triggering swipes during scroll
+  const MAX_VERTICAL_MOVEMENT = 50;
   
   const speakers = [
     { 
       id: 1, 
       name: "Amresh Bharti", 
-      title: "Digital creator and Founder of WemakeCreators", 
+      title: "Founder of WemakeCreators", 
       topic: "", 
       image: speaker1,
       about: "Amresh Bharti is the visionary behind Mahatmaji Technical, a YouTube channel with over 6.9 million subscribers and 446 million views, empowering millions with insights on online earning, personal growth, and education. With a Bachelor of Science in Agriculture (B.Sc Ag) from PGC Ghazipur, His journey from a home tutor to a digital mentor is truly inspiring. His dedication has earned him multiple YouTube Creator Awards, including the Silver and Gold Play Buttons, and recognition in top media outlets. Through his practical, step-by-step guidance, Amresh continues to inspire individuals to pursue their goals with confidence and clarity."
@@ -44,7 +50,7 @@ const SpeakersTimeline = () => {
       title: "Business Mentor and Financial Expert", 
       topic: "", 
       image: speaker3,
-      about: "With over 15 years of experience in financial markets, Abhishek Kar has mentored hundreds of entrepreneurs. His practical approach to business strategy and finance has helped startups raise over $10M in funding."
+      about: "Abhishek Kar is a prominent Indian stock trader, investor, educator, and social media influencer.He pursued a Bachelor of Technology (B.Tech) and an MBA from KIIT University in Bhubaneswar. Currently residing in Mumbai, Abhishek has gained recognition for his educational content on financial markets, particularly through his YouTube channel, which has amassed a significant following. He has trained over 15,000 students through his courses and webinars, aiming to simplify complex financial concepts for a broader audience. Abhishek is also a four-time TEDx and JoshTalk speaker and the author of Stocks and Life, an Amazon bestseller. His net worth is estimated between ₹7.5 to ₹8 crores (approximately $900,000 to $960,000). "
     },
     { 
       id: 4, 
@@ -60,7 +66,7 @@ const SpeakersTimeline = () => {
       title: "Educator and Founder of Adhyayan Mantra", 
       topic: "", 
       image: speaker6,
-      about: "Rohit Vaidwan's Adhyayan Mantra has become a beacon for students preparing for competitive exams. His unique teaching methodology has resulted in a 95% success rate for his students across various examinations."
+      about: "Rohit Vaidwan is the founder of Adhyayan Mantra, leading institute for TET and teaching exam preparation of India, established in 2013. Under his leadership, over 200,000 students have qualified, including 84,000+ in CTET and 12,000+ in UGC-NET/JRF. His YouTube channel, with 1.71 million subscribers and 9,600+ videos, offers accessible, high-quality content to aspiring educators. Rohit is also the author of Child Development with Pedagogy & Methodology, empowering thousands of teachers with his expertise."
     },
     { 
       id: 6, 
@@ -68,7 +74,7 @@ const SpeakersTimeline = () => {
       title: "Tech Creator", 
       topic: "", 
       image: speaker5,
-      about: "Saumya Singh is at the forefront of technology content creation, simplifying complex tech concepts for the masses. Her tutorials and insights have helped thousands break into the tech industry and start their coding journey."
+      about: "Saumya Singh is a Software Engineer at Red Hat and a tech influencer with over 400,000 followers on Instagram. Recognized as a LinkedIn Top Voice, she has earned accolades like the International Open Source Award, Google Connect Winner (2019), and GHCI Scholar (2020). Passionate about mentoring, she uses her platform to demystify coding, share career insights, and empower aspiring technologists with practical skills and industry knowledge."
     },
     { 
       id: 7, 
@@ -76,7 +82,7 @@ const SpeakersTimeline = () => {
       title: "Founder of Data Science Masterminds", 
       topic: "", 
       image: speaker7,
-      about: "Kunal Naik has revolutionized data science education in India. Through Data Science Masterminds, he has trained over 10,000 professionals who now work with leading tech companies around the globe."
+      about: "Kunaal Naik is the founder of Data Science Masterminds, an organization dedicated to bridging the gap between theoretical knowledge and practical application in data science. With extensive experience in the field, he has taught over 10,000 students and collaborated with more than 50 corporations and institutes, including CITI Bank, Genpact, Fidelity, and the Madras School of Economics.  Currently, Kunaal serves as a Senior Data Scientist at Dell Technologies in Bengaluru, India.  He is also a YouTuber and podcast host, focusing on data science education and discussions. "
     },
     { 
       id: 8, 
@@ -84,7 +90,7 @@ const SpeakersTimeline = () => {
       title: "Business Coach", 
       topic: "", 
       image: speaker8,
-      about: "Priyank Bharadwaj's practical business coaching has transformed struggling entrepreneurs into successful business owners. His frameworks for growth and scalability have been adopted by businesses of all sizes."
+      about: "Priyank Bhardwaj is a dedicated business coach, committed to helping coaches and service providers expand their businesses. As the founder of The Super Scale, he has guided numerous entrepreneurs toward financial growth and stability. Through his signature program, The ATTRACTION System, Priyank offers step-by-step strategies for client acquisition, business expansion, and LinkedIn optimization. His coaching has helped individuals establish a steady lead flow and achieve consistent revenue growth. With a growing online presence, Priyank continues to inspire and mentor ambitious professionals, showing that with the right approach, scaling a business is both achievable and fulfilling. "
     },
   ];
 
@@ -106,103 +112,222 @@ const SpeakersTimeline = () => {
     setSpeakerPositions(newPositions);
   };
 
-  // Function to navigate to next speaker (cyclic)
-  const nextSpeaker = () => {
+  const nextSpeaker = useCallback(() => {
+    if (swipeInProgress.current) return;
+    swipeInProgress.current = true;
+    
+    setSwipeDirection('left');
     setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 500);
+    
     const currentIndex = speakers.findIndex(s => s.id === activeSpeaker);
     const nextIndex = (currentIndex + 1) % speakers.length;
-    setActiveSpeaker(speakers[nextIndex].id);
-  };
+    
+    // Delay the actual state change to allow animation to start
+    setTimeout(() => {
+      setActiveSpeaker(speakers[nextIndex].id);
+    }, 50);
+    
+    // Reset animation states after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+      setSwipeDirection(null);
+      swipeInProgress.current = false;
+    }, 500);
+  }, [activeSpeaker, speakers]);
 
-  // Function to navigate to previous speaker (cyclic)
-  const prevSpeaker = () => {
+  const prevSpeaker = useCallback(() => {
+    if (swipeInProgress.current) return;
+    swipeInProgress.current = true;
+    
+    setSwipeDirection('right');
     setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 500);
+    
     const currentIndex = speakers.findIndex(s => s.id === activeSpeaker);
     const prevIndex = (currentIndex - 1 + speakers.length) % speakers.length;
-    setActiveSpeaker(speakers[prevIndex].id);
-  };
+    
+    // Delay the actual state change to allow animation to start
+    setTimeout(() => {
+      setActiveSpeaker(speakers[prevIndex].id);
+    }, 50);
+    
+    // Reset animation states after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+      setSwipeDirection(null);
+      swipeInProgress.current = false;
+    }, 500);
+  }, [activeSpeaker, speakers]);
   
-  // Touch event handlers for swipe functionality
+  // Enhanced touch handlers for better swipe experience
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   };
   
   const handleTouchMove = (e) => {
+    if (!touchStartX.current) return;
+    
     touchEndX.current = e.touches[0].clientX;
+    touchEndY.current = e.touches[0].clientY;
+    
+    // Calculate distances
+    const distanceX = touchEndX.current - touchStartX.current;
+    const distanceY = Math.abs(touchEndY.current - touchStartY.current);
+    
+    // Only apply real-time movement if horizontal swipe seems intentional
+    if (Math.abs(distanceX) > 10 && distanceY < MAX_VERTICAL_MOVEMENT) {
+      // Apply direct transform based on finger position (with a damping factor)
+      const dampingFactor = 0.5; // Reduce movement to make it feel more natural
+      const transform = `translateX(${distanceX * dampingFactor}px)`;
+      
+      // Get the active card element and apply direct style
+      const activeCard = document.querySelector('.active-speaker-card');
+      if (activeCard) {
+        activeCard.style.transform = transform;
+        activeCard.style.transition = 'none'; // Remove transition for direct manipulation
+      }
+    }
   };
   
-  const handleTouchEnd = useCallback(() => {
+  const handleTouchEnd = useCallback((e) => {
+    // Get the active card element and restore transition
+    const activeCard = document.querySelector('.active-speaker-card');
+    if (activeCard) {
+      activeCard.style.transition = 'transform 300ms ease-out';
+      activeCard.style.transform = 'translateX(0)';
+    }
+    
     if (!touchStartX.current || !touchEndX.current) return;
     
     const distanceX = touchEndX.current - touchStartX.current;
+    const distanceY = Math.abs(touchEndY.current - touchStartY.current);
     
-    if (Math.abs(distanceX) > MIN_SWIPE_DISTANCE) {
+    // Only trigger swipe if horizontal movement is significant and vertical movement is minimal
+    if (Math.abs(distanceX) > MIN_SWIPE_DISTANCE && distanceY < MAX_VERTICAL_MOVEMENT) {
       if (distanceX > 0) {
-        // Swipe right (previous)
+        // Swipe right -> previous speaker
         prevSpeaker();
       } else {
-        // Swipe left (next)
+        // Swipe left -> next speaker
         nextSpeaker();
       }
     }
     
-    // Reset values
+    // Clean up touch references
     touchStartX.current = null;
     touchEndX.current = null;
-  }, []);
+    touchStartY.current = null;
+    touchEndY.current = null;
+  }, [nextSpeaker, prevSpeaker]);
 
-  // Function to render a speaker card
-  const renderSpeakerCard = (speaker, isAnimating) => (
-    <div 
-      className={`transition-all duration-500 ease-in-out mb-16 sm:mb-24 ${isAnimating && activeSpeaker === speaker.id ? 'scale-105' : 'scale-100'} overflow-hidden`}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      <div className="relative bg-gradient-to-r from-gray-900 to-black p-4 sm:p-6 md:p-8 rounded-xl border border-gray-800">
-        <div className="absolute -top-5 -left-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
-        <div className="absolute -bottom-5 -right-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
-        
-        <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-8">
-          <div className="w-28 h-28 xs:w-36 xs:h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center shrink-0">
-            <div className="w-24 h-24 xs:w-32 xs:h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-red-500 border-4 border-black overflow-hidden">
-              <img 
-                src={speaker.image} 
-                alt={speaker.name} 
-                className="w-full h-full object-cover" 
-              />
-            </div>
-          </div>
-          
-          <div className="flex-1 w-full">
-            <h2 className="text-lg sm:text-xl md:text-3xl font-bold mb-1 sm:mb-2 text-center md:text-left">
-              {speaker.name}
-            </h2>
-            <h3 className="text-base sm:text-lg text-red-500 mb-2 md:mb-4 text-center md:text-left">
-              {speaker.title}
-            </h3>
-            {speaker.topic && (
-              <div className="mb-4 inline-block bg-red-900 bg-opacity-40 px-3 py-1 rounded-full text-sm">
-                {speaker.topic}
-              </div>
-            )}
-            
-            <div className="bg-gray-900 bg-opacity-50 p-2 sm:p-3 md:p-4 rounded-lg border border-gray-800 mt-3 md:mt-4">
-              <h4 className="text-red-600 text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2">About</h4>
-              <p className="text-gray-300 text-xs sm:text-sm md:text-base max-h-32 sm:max-h-48 md:max-h-none overflow-y-auto">
-                {speaker.about}
-              </p>
-            </div>
-          </div>
-        </div>
+  // Add gesture instructions component
+  const SwipeInstructions = () => (
+    <div className="text-center mx-auto mb-6 animate-pulse">
+      <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        <span>Swipe</span>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
       </div>
     </div>
   );
 
+  const renderSpeakerCard = (speaker, isAnimating) => {
+    // Determine animation classes based on swipe direction
+    let animationClass = '';
+    
+    if (isAnimating) {
+      if (swipeDirection === 'left') {
+        animationClass = '-translate-x-full opacity-0';
+      } else if (swipeDirection === 'right') {
+        animationClass = 'translate-x-full opacity-0';
+      }
+    }
+    
+    return (
+      <div 
+        className={`active-speaker-card transition-all duration-300 ease-out mb-16 sm:mb-24 ${isAnimating ? animationClass : ''} overflow-hidden`}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div className="relative bg-gradient-to-r from-gray-900 to-black p-4 sm:p-6 md:p-8 rounded-xl border border-gray-800">
+          <div className="absolute -top-5 -left-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
+          <div className="absolute -bottom-5 -right-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
+          
+          <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-8">
+            <div className="w-28 h-28 xs:w-36 xs:h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center shrink-0">
+              <div className="w-24 h-24 xs:w-32 xs:h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-black border-4 border-black overflow-hidden">
+                <img 
+                  src={speaker.image} 
+                  alt={speaker.name} 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+            </div>
+            
+            <div className="flex-1 w-full">
+              <h2 className="text-lg sm:text-xl md:text-3xl font-bold mb-1 sm:mb-2 text-center md:text-left">
+                {speaker.name}
+              </h2>
+              <h3 className="text-base sm:text-lg text-red-500 mb-2 md:mb-4 text-center md:text-left">
+                {speaker.title}
+              </h3>
+              {speaker.topic && (
+                <div className="mb-4 inline-block bg-red-900 bg-opacity-40 px-3 py-1 rounded-full text-sm">
+                  {speaker.topic}
+                </div>
+              )}
+              
+              <div className="bg-gray-900 bg-opacity-50 p-2 sm:p-3 md:p-4 rounded-lg border border-gray-800 mt-3 md:mt-4">
+                <h4 className="text-red-600 text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2">About</h4>
+                <p className="text-gray-300 text-xs sm:text-sm md:text-base max-h-32 sm:max-h-48 md:max-h-none overflow-y-auto">
+                  {speaker.about}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Dynamic entrance animation for incoming cards
+  const getEntranceAnimation = () => {
+    if (swipeDirection === 'left') {
+      return 'animate-slide-in-right';
+    } else if (swipeDirection === 'right') {
+      return 'animate-slide-in-left';
+    }
+    return '';
+  };
+
   return (
     <div id="speakers" className="bg-black min-h-screen text-white relative overflow-hidden py-12 sm:py-16">
+      {/* Custom animations */}
+      <style jsx>{`
+        @keyframes slideInLeft {
+          from { transform: translateX(-100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .animate-slide-in-left {
+          animation: slideInLeft 0.3s forwards;
+        }
+        
+        .animate-slide-in-right {
+          animation: slideInRight 0.3s forwards;
+        }
+      `}</style>
+    
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-red-900 opacity-10 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-red-700 opacity-10 blur-3xl"></div>
@@ -214,20 +339,16 @@ const SpeakersTimeline = () => {
         </h1>
         <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto mt-4 sm:mt-6"></div>
       </div>
-      
-      {/* Desktop View with Timeline - Navigation removed */}
+
       <div className="hidden md:block container mx-auto px-4 mb-16 relative z-10">
         {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
 
-        {/* Keeping the same margin-top to maintain timeline position */}
         <div ref={timelineRef} className="relative mt-80">
-          {/* Timeline bar - thinner height */}
           <div className="h-1 bg-red-600 w-full my-80 rounded-full relative">
             <div className="absolute -left-1 top-0 w-2 h-2 bg-red-600 rounded-full"></div>
             <div className="absolute -right-1 top-0 w-2 h-2 bg-red-600 rounded-full"></div>
           </div>
-          
-          {/* Speakers on timeline - adjusted top values and shortened connector lines */}
+
           {speakers.map((speaker, index) => {
             const position = speakerPositions[index];
             const leftPosition = `${(index / (speakers.length - 1)) * 100}%`;
@@ -297,18 +418,26 @@ const SpeakersTimeline = () => {
         </div>
       </div>
       
-      {/* Mobile View - Improved layout and spacing */}
+      {/* Mobile View - Enhanced with direct swipe feedback */}
       <div className="md:hidden container mx-auto px-2 sm:px-4 relative z-10">
-        {/* Swipe instruction */}
+        {/* Speaker counter and swipe instruction */}
         <div className="text-center mx-auto mb-4">
           <span className="text-gray-400 text-sm">
-            • Speaker {speakers.findIndex(s => s.id === activeSpeaker) + 1} of {speakers.length}
+            • Speaker {speakers.findIndex(s => s.id === activeSpeaker) + 1} of {speakers.length} •
           </span>
         </div>
         
-        {/* Active speaker card with swipe functionality */}
-        <div className="mb-8 sm:mb-12 max-w-lg mx-auto">
-          {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
+        {/* Swipe instructions for first-time users */}
+        <SwipeInstructions />
+        
+        {/* Speaker cards container with improved swipe behavior */}
+        <div className="relative max-w-lg mx-auto overflow-hidden">
+          {/* Active speaker card with improved swipe functionality */}
+          <div className="mb-8 sm:mb-12 relative touch-pan-y touch-pan-x overflow-hidden">
+            <div className={`w-full ${getEntranceAnimation()}`}>
+              {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
+            </div>
+          </div>
         </div>
         
         {/* Indicator dots for mobile navigation */}

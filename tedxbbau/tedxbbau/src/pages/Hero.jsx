@@ -31,7 +31,7 @@ const SplitText = ({ text }) => {
       animate={isInView ? "visible" : "hidden"}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.1 } },
+        visible: { transition: { staggerChildren: 0.2 } },
       }}
     >
       {words.map(renderWord)}
@@ -69,30 +69,29 @@ const App = () => {
       </style>
 
       <div className="py-23 w-full flex justify-center text-center">
-  <h1
-    className="text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
-    style={{
-      fontFamily: "Poppins, sans-serif",
-      textShadow:
-        "0 0 100px rgba(0, 0, 0, 0.8), 0 0 300px rgba(0, 0, 0, 0.6)",
-      top: "20%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-    }}
-  >
-    <div className="block   mx-auto leading-snug">
-      <SplitText text="Unveiling" />
-    </div>
-    <div className="block text-red-700 mx-auto leading-snug">
-      <SplitText text="Hidden Truths" />
-    </div>
+        <h1
+          className="text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            textShadow:
+              "0 0 100px rgba(0, 0, 0, 0.8), 0 0 300px rgba(0, 0, 0, 0.6)",
+            top: "20%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div className="block mx-auto leading-snug">
+            <SplitText text="Unveiling" />
+          </div>
+          <div className="block text-red-700 mx-auto leading-snug">
+            <SplitText text="Hidden Truths" />
+          </div>
 
-    <div className="absolute inset-x-0 bottom-0 w-full">
-      <div className="w-24 mx-auto mt-2 border-b-4 border-white opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
-    </div>
-  </h1>
-</div>
-
+          <div className="absolute inset-x-0 bottom-0 w-full">
+            <div className="w-24 mx-auto mt-2 border-b-4 border-white opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
+          </div>
+        </h1>
+      </div>
 
       <div className="w-full text-center py-45 mt-20">
         <motion.div
@@ -103,57 +102,57 @@ const App = () => {
           transition={{ repeat: Infinity, duration: 0.5 }}
         >
           <span className="block">First 100 members get an</span>  
-    <span className="block">Early Bird DISCOUNT!</span>  
-    <span className="block sm:inline">Use code <strong>TEDxBBAU100</strong> now!</span>
+          <span className="block">Early Bird DISCOUNT!</span>  
+          <span className="block sm:inline">Use code <strong>TEDxBBAU100</strong> now!</span>
         </motion.div>
       </div>
 
       <div className="min-h-screen w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
 
-      <div className="w-full md:w-1/2 flex items-center justify-center md:mt-16 lg:mt-32">
-        <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-full">
-          <img
-            src={hero}
-            alt="Animation"
-            className="w-full h-full object-cover rounded-lg"
-            style={{ pointerEvents: 'none' }}
-          />
-          <div className="absolute inset-0 pointer-events-none">
-            <div
-              className="w-full h-full"
-              style={{
-                background:
-                  'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%)',
-              }}
-            ></div>
+        <div className="w-full md:w-1/2 flex items-center justify-center md:mt-24 lg:mt-40">
+          <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-full mt-8">
+            <img
+              src={hero}
+              alt="Animation"
+              className="w-full h-full object-cover rounded-lg"
+              style={{ pointerEvents: 'none' }}
+            />
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="w-full h-full"
+                style={{
+                  background:
+                    'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%)',
+                }}
+              ></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Right Side - Content */}
-      <motion.div
-        className="w-full md:w-1/2 flex flex-col items-center justify-center px-6"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
-      >
-        <h1 className="text-center text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
-          Breaking <span className="text-red-700">Myths,</span> <br />
-          <span className="text-red-700">Unveiling</span> Reality
-        </h1>
-
-        <motion.p
-          className="text-center mt-4 px-4 md:px-6 text-lg leading-loose"
+        {/* Right Side - Content */}
+        <motion.div
+          className="w-full md:w-1/2 flex flex-col items-center justify-center px-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          style={{ maxWidth: '700px', textAlign: 'justify' }}
+          style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
         >
-          Some truths remain buried, waiting to be discovered. This TED event peels back the layers of illusion, shatters misconceptions, and reveals the unseen forces shaping our world. Prepare to challenge what you know, question the unquestioned, and see reality in a whole new light. The truth is out there—are you ready to uncover it?
-        </motion.p>
-      </motion.div>
-    </div>
+          <h1 className="text-center text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
+            Breaking <span className="text-red-700">Myths,</span> <br />
+            <span className="text-red-700">Unveiling</span> Reality
+          </h1>
+
+          <motion.p
+            className="text-center mt-4 px-4 md:px-6 text-lg leading-loose"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            style={{ maxWidth: '700px', textAlign: 'justify' }}
+          >
+            Some truths remain buried, waiting to be discovered. This TED event peels back the layers of illusion, shatters misconceptions, and reveals the unseen forces shaping our world. Prepare to challenge what you know, question the unquestioned, and see reality in a whole new light. The truth is out there—are you ready to uncover it?
+          </motion.p>
+        </motion.div>
+      </div>
     </>
   );
 };

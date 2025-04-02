@@ -19,13 +19,13 @@ const Graph = () => {
       .attr("height", "100%")
       .style("background", "#000");
 
-    const nodeCount = 180;
+    const nodeCount = 150;
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
       radius: Math.random() * 6 + 3,
       color: "#7F1D1D",
       connections: 0,
-      vx: (Math.random() - 0.5) * 1.2, // Faster velocity
+      vx: (Math.random() - 0.5) * 1.2, 
       vy: (Math.random() - 0.5) * 1.2,
     }));
 
@@ -114,17 +114,14 @@ const Graph = () => {
       d.fy = null;
     }
 
-    // Continuous motion with controlled velocity
     simulation.on("tick", () => {
       nodes.forEach((node) => {
         node.x += node.vx;
         node.y += node.vy;
 
-        // Apply damping to control velocity
         node.vx *= 0.99;
         node.vy *= 0.99;
 
-        // Ensure nodes don’t go out of bounds
         if (node.x < 0 || node.x > width) node.vx *= -1;
         if (node.y < 0 || node.y > height) node.vy *= -1;
       });
@@ -162,7 +159,7 @@ const Graph = () => {
         position: "absolute",
         top: 0,
         left: 0,
-        overflow: "hidden", // Prevents overflow issues
+        overflow: "hidden", 
       }}
     ></div>
   );
