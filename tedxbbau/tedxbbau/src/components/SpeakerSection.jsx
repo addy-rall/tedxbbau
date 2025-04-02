@@ -156,18 +156,18 @@ const SpeakersTimeline = () => {
   // Function to render a speaker card
   const renderSpeakerCard = (speaker, isAnimating) => (
     <div 
-      className={`transition-all duration-500 ease-in-out mb-24 ${isAnimating && activeSpeaker === speaker.id ? 'scale-105' : 'scale-100'}`}
+      className={`transition-all duration-500 ease-in-out mb-16 sm:mb-24 ${isAnimating && activeSpeaker === speaker.id ? 'scale-105' : 'scale-100'} overflow-hidden`}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="relative bg-gradient-to-r from-gray-900 to-black p-6 sm:p-8 rounded-xl border border-gray-800">
-        <div className="absolute -top-5 -left-5 w-10 h-10 bg-red-600 rounded-full"></div>
-        <div className="absolute -bottom-5 -right-5 w-10 h-10 bg-red-600 rounded-full"></div>
+      <div className="relative bg-gradient-to-r from-gray-900 to-black p-4 sm:p-6 md:p-8 rounded-xl border border-gray-800">
+        <div className="absolute -top-5 -left-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
+        <div className="absolute -bottom-5 -right-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
         
         <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-8">
-          <div className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center shrink-0">
-            <div className="w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-red-500 border-4 border-black overflow-hidden">
+          <div className="w-28 h-28 xs:w-36 xs:h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center shrink-0">
+            <div className="w-24 h-24 xs:w-32 xs:h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-red-500 border-4 border-black overflow-hidden">
               <img 
                 src={speaker.image} 
                 alt={speaker.name} 
@@ -176,22 +176,22 @@ const SpeakersTimeline = () => {
             </div>
           </div>
           
-          <div className="flex-1">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-center md:text-left">
+          <div className="flex-1 w-full">
+            <h2 className="text-lg sm:text-xl md:text-3xl font-bold mb-1 sm:mb-2 text-center md:text-left">
               {speaker.name}
             </h2>
-            <h3 className="text-lg sm:text-xl text-red-500 mb-2 md:mb-4 text-center md:text-left">
+            <h3 className="text-base sm:text-lg text-red-500 mb-2 md:mb-4 text-center md:text-left">
               {speaker.title}
             </h3>
             {speaker.topic && (
-              <div className="mb-4 inline-block bg-red-900 bg-opacity-40 px-4 py-1 rounded-full">
+              <div className="mb-4 inline-block bg-red-900 bg-opacity-40 px-3 py-1 rounded-full text-sm">
                 {speaker.topic}
               </div>
             )}
             
-            <div className="bg-gray-900 bg-opacity-50 p-3 sm:p-4 rounded-lg border border-gray-800 mt-4">
-              <h4 className="text-red-600 text-base sm:text-lg font-medium mb-2">About</h4>
-              <p className="text-gray-300 text-sm sm:text-base">
+            <div className="bg-gray-900 bg-opacity-50 p-2 sm:p-3 md:p-4 rounded-lg border border-gray-800 mt-3 md:mt-4">
+              <h4 className="text-red-600 text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2">About</h4>
+              <p className="text-gray-300 text-xs sm:text-sm md:text-base max-h-32 sm:max-h-48 md:max-h-none overflow-y-auto">
                 {speaker.about}
               </p>
             </div>
@@ -202,17 +202,17 @@ const SpeakersTimeline = () => {
   );
 
   return (
-    <div id="speakers" className="bg-black min-h-screen text-white relative overflow-hidden py-16">
+    <div id="speakers" className="bg-black min-h-screen text-white relative overflow-hidden py-12 sm:py-16">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-red-900 opacity-10 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-red-700 opacity-10 blur-3xl"></div>
       </div>
       
-      <div className="container mx-auto px-4 mb-12 relative z-10">
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <div className="container mx-auto px-4 mb-8 sm:mb-12 relative z-10">
+        <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
           <span className="text-red-600">Voices that</span> Inspire
         </h1>
-        <div className="w-24 h-1 bg-red-600 mx-auto mt-6"></div>
+        <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto mt-4 sm:mt-6"></div>
       </div>
       
       {/* Desktop View with Timeline - Navigation removed */}
@@ -297,8 +297,8 @@ const SpeakersTimeline = () => {
         </div>
       </div>
       
-      {/* Mobile View - Removed navigation buttons, added swipe functionality */}
-      <div className="md:hidden container mx-auto px-4 relative z-10">
+      {/* Mobile View - Improved layout and spacing */}
+      <div className="md:hidden container mx-auto px-2 sm:px-4 relative z-10">
         {/* Swipe instruction */}
         <div className="text-center mx-auto mb-4">
           <span className="text-gray-400 text-sm">
@@ -307,16 +307,16 @@ const SpeakersTimeline = () => {
         </div>
         
         {/* Active speaker card with swipe functionality */}
-        <div className="mb-16">
+        <div className="mb-8 sm:mb-12 max-w-lg mx-auto">
           {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
         </div>
         
         {/* Indicator dots for mobile navigation */}
-        <div className="flex justify-center gap-2 mt-8 mb-16">
+        <div className="flex justify-center gap-2 mt-4 sm:mt-8 mb-8 sm:mb-16">
           {speakers.map((speaker) => (
             <button
               key={`nav-${speaker.id}`}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                 activeSpeaker === speaker.id ? 'bg-red-600 scale-125' : 'bg-gray-700 hover:bg-red-500'
               }`}
               onClick={() => {
