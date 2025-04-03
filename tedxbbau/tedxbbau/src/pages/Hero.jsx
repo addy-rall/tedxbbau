@@ -54,6 +54,8 @@ const App = () => {
         {`
           body {
             font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
           }
           
           @keyframes flicker {
@@ -65,12 +67,20 @@ const App = () => {
           .flicker {
             animation: flicker 1s infinite;
           }
+
+          /* Safari-specific adjustments */
+          @supports (-webkit-touch-callout: none) {
+            .safari-fix {
+              /* Fix for iOS Safari 100vh issue */
+              min-height: -webkit-fill-available;
+            }
+          }
         `}
       </style>
 
       <div className="py-23 w-full flex justify-center text-center">
         <h1
-          className="text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
+          className="text-4xl sm:text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
           style={{
             fontFamily: "Poppins, sans-serif",
             textShadow:
@@ -95,7 +105,7 @@ const App = () => {
 
       <div className="w-full text-center py-45 mt-20">
         <motion.div
-          className="bg-red-700 text-white text-lg md:text-xl font-bold py-2 px-8 flicker"
+          className="bg-red-700 text-white text-base sm:text-lg md:text-xl font-bold py-2 px-4 sm:px-8 flicker mx-4 sm:mx-auto sm:max-w-xl"
           style={{ fontFamily: "Poppins, sans-serif" }}
           initial={{ opacity: 0.3 }}
           animate={{ opacity: [0.3, 1, 0.3] }}
@@ -107,7 +117,7 @@ const App = () => {
         </motion.div>
       </div>
 
-      <div className="min-h-screen w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
+      <div className="min-h-screen safari-fix w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
 
         <div className="w-full md:w-1/2 flex items-center justify-center md:mt-24 lg:mt-40">
           <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-full mt-8">
@@ -115,7 +125,11 @@ const App = () => {
               src={hero}
               alt="Animation"
               className="w-full h-full object-cover rounded-lg"
-              style={{ pointerEvents: 'none' }}
+              style={{ 
+                pointerEvents: 'none',
+                WebkitUserSelect: 'none',
+                userSelect: 'none'
+              }}
             />
             <div className="absolute inset-0 pointer-events-none">
               <div
@@ -137,17 +151,23 @@ const App = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
         >
-          <h1 className="text-center text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
+          <h1 className="text-center text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
             Breaking <span className="text-red-700">Myths,</span> <br />
             <span className="text-red-700">Unveiling</span> Reality
           </h1>
 
           <motion.p
-            className="text-center mt-4 px-4 md:px-6 text-lg leading-loose"
+            ref={paragraphRef}
+            className="text-center mt-4 px-4 md:px-6 text-base sm:text-lg leading-loose"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            style={{ maxWidth: '700px', textAlign: 'justify' }}
+            style={{ 
+              maxWidth: '700px', 
+              textAlign: 'justify',
+              WebkitHyphens: 'auto',
+              hyphens: 'auto'
+            }}
           >
             Some truths remain buried, waiting to be discovered. This TED event peels back the layers of illusion, shatters misconceptions, and reveals the unseen forces shaping our world. Prepare to challenge what you know, question the unquestioned, and see reality in a whole new light. The truth is out there—are you ready to uncover it?
           </motion.p>
