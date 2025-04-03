@@ -20,7 +20,9 @@ function App() {
           <>
             <div style={{ backgroundColor: "black", color: "white", minHeight: "100vh" }}>
               <Navbar />
+             
               <Graph />
+              
               <Hero />
               
               <Theme />
