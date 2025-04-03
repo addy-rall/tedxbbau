@@ -78,7 +78,7 @@ const App = () => {
         `}
       </style>
 
-      <div className=" w-full flex justify-center text-center sm:py-40 md:py-40  ">
+      <div className=" w-full flex justify-center text-center sm:py-60 md:py-40  ">
         <h1
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
           style={{
