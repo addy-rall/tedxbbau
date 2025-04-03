@@ -259,8 +259,8 @@ const SpeakersTimeline = () => {
           <div className="absolute -bottom-5 -right-5 w-8 h-8 sm:w-10 sm:h-10 bg-red-600 rounded-full"></div>
           
           <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-8">
-            <div className="w-28 h-28 xs:w-36 xs:h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center shrink-0">
-              <div className="w-24 h-24 xs:w-32 xs:h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-black border-4 border-black overflow-hidden">
+           <div className="w-36 h-36 xs:w-44 xs:h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center shrink-0">
+              <div className="w-32 h-32 xs:w-40 xs:h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full bg-black border-4 border-black overflow-hidden">
                 <img 
                   src={speaker.image} 
                   alt={speaker.name} 
@@ -284,7 +284,7 @@ const SpeakersTimeline = () => {
               
               <div className="bg-gray-900 bg-opacity-50 p-2 sm:p-3 md:p-4 rounded-lg border border-gray-800 mt-3 md:mt-4">
                 <h4 className="text-red-600 text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2">About</h4>
-                <p className="text-gray-300 text-xs sm:text-sm md:text-base max-h-32 sm:max-h-48 md:max-h-none overflow-y-auto">
+                <p className="text-gray-300 text-xs sm:text-sm md:text-base max-h-32 sm:max-h-58 md:max-h-none overflow-y-auto">
                   {speaker.about}
                 </p>
               </div>

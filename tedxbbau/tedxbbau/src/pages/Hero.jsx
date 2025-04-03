@@ -105,7 +105,7 @@ const App = () => {
 
       <div className="w-full text-center py-45 mt-20">
         <motion.div
-          className="bg-red-700 text-white text-base sm:text-lg md:text-xl font-bold py-2 px-4 sm:px-8 flicker mx-4 sm:mx-auto sm:max-w-xl"
+          className="bg-red-700 text-white text-base sm:text-lg md:text-xl font-bold py-2 px-8 flicker"
           style={{ fontFamily: "Poppins, sans-serif" }}
           initial={{ opacity: 0.3 }}
           animate={{ opacity: [0.3, 1, 0.3] }}
