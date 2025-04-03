@@ -12,6 +12,8 @@ const Graph = () => {
     let width = containerRef.current.clientWidth;
     let height = containerRef.current.clientHeight;
 
+    let nodeCount = width < 500 ? 70 : 150;
+
     const svg = d3
       .select(containerRef.current)
       .append("svg")
@@ -19,7 +21,6 @@ const Graph = () => {
       .attr("height", "100%")
       .style("background", "#000");
 
-    const nodeCount = 150;
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
       radius: Math.random() * 6 + 3,
@@ -139,6 +140,7 @@ const Graph = () => {
       if (!containerRef.current) return;
       width = containerRef.current.clientWidth;
       height = containerRef.current.clientHeight;
+      nodeCount = width < 500 ? 70 : 150;
       simulation.force("center", d3.forceCenter(width / 2, height / 2)).restart();
     };
 

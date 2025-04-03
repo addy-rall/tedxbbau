@@ -80,7 +80,7 @@ const App = () => {
 
       <div className="py-23 w-full flex justify-center text-center">
         <h1
-          className="text-4xl sm:text-5xl md:text-7xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
           style={{
             fontFamily: "Poppins, sans-serif",
             textShadow:
@@ -105,7 +105,7 @@ const App = () => {
 
       <div className="w-full text-center py-45 mt-20">
         <motion.div
-          className="bg-red-700 text-white text-base sm:text-lg md:text-xl font-bold py-2 px-8 flicker"
+          className="bg-red-700 text-white text-base sm:text-lg md:text-xl lg:mt-[170px] font-bold py-2 px-8 flicker"
           style={{ fontFamily: "Poppins, sans-serif" }}
           initial={{ opacity: 0.3 }}
           animate={{ opacity: [0.3, 1, 0.3] }}
@@ -145,13 +145,13 @@ const App = () => {
 
         {/* Right Side - Content */}
         <motion.div
-          className="w-full md:w-1/2 flex flex-col items-center justify-center px-6"
+          className="w-full md:w-1/2 lg:w-1/2 flex flex-col items-center justify-center px-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
         >
-          <h1 className="text-center text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
+          <h1 className="text-center text-2xl sm:text-3xl md:text-5xl lg:text-3xl lg:z-10 font-extrabold text-gray-100 leading-tight">
             Breaking <span className="text-red-700">Myths,</span> <br />
             <span className="text-red-700">Unveiling</span> Reality
           </h1>

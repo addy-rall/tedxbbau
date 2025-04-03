@@ -26,6 +26,7 @@ function App() {
               <Theme />
               <Line/>
               <Attend />
+              <Line/>
               <SpeakerSection />
               <Line/>
               <Banner />

@@ -62,8 +62,8 @@ const WhyAttend = () => {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-center p-6 md:p-12 relative overflow-hidden">
-      <div className="relative flex justify-center items-center mb-16 h-40">
+    <div ref={containerRef} className="max-h-screen lg:h-50vh bg-black text-center p-6 md:p-12 relative overflow-hidden">
+      <div className="relative flex justify-center items-center mb-16 lg:m-5 h-40">
         <h1 className="absolute text-[4rem] md:text-[8rem] font-bold text-red-600 opacity-30 tracking-wide">
           Why to Attend?
         </h1>
@@ -72,7 +72,7 @@ const WhyAttend = () => {
         </h2>
       </div>
       <div 
-        className="hidden md:block absolute left-1/2 top-[250px] bottom-0 w-1 bg-gray-700 transform -translate-x-1/2 z-20"
+        className="hidden md:block absolute left-1/2 top-[310px] bottom-0 w-1 bg-gray-700 transform -translate-x-1/2 z-20"
       >
         <div 
           className="absolute left-1/2 w-4 h-4 bg-red-700 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"

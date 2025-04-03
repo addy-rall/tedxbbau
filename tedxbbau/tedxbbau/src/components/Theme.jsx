@@ -22,8 +22,8 @@ const ThemeSection = () => {
   }, []);
 
   return (
-    <div id="about" ref={sectionRef} className="bg-black text-white overflow-hidden">
-      <div className="flex flex-col items-center justify-center p-8 max-w-screen-lg mx-auto">
+    <div id="about" ref={sectionRef} className="bg-black text-white overflow-hidden ">
+      <div className="flex flex-col items-center justify-center p-8 lg:p-2 max-w-screen-lg mx-auto">
        
         <h1 className="text-5xl sm:text-6xl font-extrabold text-red-600 text-center">
           Theme <span className="text-white">2025</span>

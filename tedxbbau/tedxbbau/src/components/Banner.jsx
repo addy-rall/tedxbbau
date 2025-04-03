@@ -31,12 +31,12 @@ const ToBeAnnounced = () => {
   
   return (
     <div  
-      className="relative h-[60vh] flex items-center justify-center bg-black text-white"
+      className="relative h-[50%]  flex items-center justify-center bg-black text-white"
     >
       <div className="absolute inset-0 bg-[url('/path-to-your-image.jpg')] bg-cover bg-center opacity-30"></div>
       
       <div className="text-center relative z-10">
-        <h1 className="font-bold text-center text-2xl md:text-7xl text-red-800 p-3">
+        <h1 className="font-bold text-center text-5xl md:text-6xl text-red-800 p-3">
           Event Will Be <span className="text-white">LIVE</span> in:
         </h1>
         

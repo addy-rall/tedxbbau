@@ -328,7 +328,7 @@ const SpeakersTimeline = () => {
         }
       `}</style>
     
-      <div className="absolute top-0 left-0 w-full h-full">
+      <div className="absolute top-0 left-0 w-full h-full ">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-red-900 opacity-10 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-red-700 opacity-10 blur-3xl"></div>
       </div>
@@ -340,10 +340,10 @@ const SpeakersTimeline = () => {
         <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto mt-4 sm:mt-6"></div>
       </div>
 
-      <div className="hidden md:block container mx-auto px-4 mb-16 relative z-10">
+      <div className="hidden md:block  container mx-auto px-4 mb-16 relative z-10">
         {activeSpeaker && renderSpeakerCard(speakers.find(s => s.id === activeSpeaker), isAnimating)}
 
-        <div ref={timelineRef} className="relative mt-80">
+        <div ref={timelineRef} className="relative mt-80 lg:ml-[70px] lg:mr-[60px] ">
           <div className="h-1 bg-red-600 w-full my-80 rounded-full relative">
             <div className="absolute -left-1 top-0 w-2 h-2 bg-red-600 rounded-full"></div>
             <div className="absolute -right-1 top-0 w-2 h-2 bg-red-600 rounded-full"></div>
@@ -431,7 +431,7 @@ const SpeakersTimeline = () => {
         <SwipeInstructions />
         
         {/* Speaker cards container with improved swipe behavior */}
-        <div className="relative max-w-lg mx-auto overflow-hidden">
+        <div className="relative  max-w-lg mx-auto overflow-hidden">
           {/* Active speaker card with improved swipe functionality */}
           <div className="mb-8 sm:mb-12 relative touch-pan-y touch-pan-x overflow-hidden">
             <div className={`w-full ${getEntranceAnimation()}`}>
@@ -441,7 +441,7 @@ const SpeakersTimeline = () => {
         </div>
         
         {/* Indicator dots for mobile navigation */}
-        <div className="flex justify-center gap-2 mt-4 sm:mt-8 mb-8 sm:mb-16">
+        <div className="flex justify-center gap-2  sm:mt-1  sm:mb-2">
           {speakers.map((speaker) => (
             <button
               key={`nav-${speaker.id}`}

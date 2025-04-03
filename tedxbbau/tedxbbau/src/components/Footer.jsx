@@ -9,7 +9,7 @@ const Footer = () => {
       id="contact" // Added ID for scrolling
       className="bg-black text-white py-8 px-6"
     >
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start space-y-6 lg:space-y-0">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start lg:gap-4 space-y-6 lg:space-y-0">
         
         {/* Logo Section */}
         <div className="flex-shrink-0 text-center lg:text-left lg:w-1/4">
@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media Links */}
-        <div className="flex flex-col lg:w-1/4 space-y-6 lg:space-y-0 lg:space-x-8 lg:flex-row">
+        <div className="flex flex-col lg:w-1/4 space-y-6 lg:space-y-0 lg:space-x-8 lg:flex-row ">
           <div>
             <h3 className="text-lg font-semibold text-red-700 text-center lg:text-left">Follow Us:</h3>
             <div className="flex justify-center lg:justify-start space-x-4 mt-2">
