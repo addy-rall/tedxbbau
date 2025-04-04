@@ -78,7 +78,7 @@ const App = () => {
         `}
       </style>
 
-      <div className="w-full flex justify-center text-center sm:py-60 md:py-40">
+      <div className=" w-full flex justify-center text-center sm:py-60 md:py-40  ">
         <h1
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl mt-32 font-bold absolute z-10 inset-x-0 w-full px-1 text-center"
           style={{
@@ -103,10 +103,9 @@ const App = () => {
         </h1>
       </div>
 
-      {/* Keep the banner with similar structure to original but adjust spacing */}
-      <div className="w-full text-center mt-20">
+      <div className="w-full text-center py-70 mt-20">
         <motion.div
-          className="bg-red-700 text-white text-base sm:text-lg md:text-xl font-bold py-2 px-8 flicker"
+          className="bg-red-700 text-white text-base sm:text-lg md:text-xl lg:mt-[170px] font-bold py-2 px-8 flicker"
           style={{ fontFamily: "Poppins, sans-serif" }}
           initial={{ opacity: 0.3 }}
           animate={{ opacity: [0.3, 1, 0.3] }}
@@ -119,6 +118,7 @@ const App = () => {
       </div>
 
       <div className="min-h-screen safari-fix w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
+
         <div className="w-full md:w-1/2 flex items-center justify-center md:mt-24 lg:mt-40">
           <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg h-full mt-8">
             <img
