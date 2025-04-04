@@ -82,7 +82,7 @@ const SpeakersTimeline = () => {
       title: "Founder of Data Science Masterminds", 
       topic: "", 
       image: speaker7,
-      about: "Kunaal Naik is the founder of Data Science Masterminds, an organization dedicated to bridging the gap between theoretical knowledge and practical application in data science. With extensive experience in the field, he has taught over 10,000 students and collaborated with more than 50 corporations and institutes, including CITI Bank, Genpact, Fidelity, and the Madras School of Economics.  Currently, Kunaal serves as a Senior Data Scientist at Dell Technologies in Bengaluru, India.  He is also a YouTuber and podcast host, focusing on data science education and discussions. "
+      about: "Kunal Naik is the founder of Data Science Masterminds, an organization dedicated to bridging the gap between theoretical knowledge and practical application in data science. With extensive experience in the field, he has taught over 10,000 students and collaborated with more than 50 corporations and institutes, including CITI Bank, Genpact, Fidelity, and the Madras School of Economics.  Currently, Kunaal serves as a Senior Data Scientist at Dell Technologies in Bengaluru, India.  He is also a YouTuber and podcast host, focusing on data science education and discussions. "
     },
     { 
       id: 8, 
