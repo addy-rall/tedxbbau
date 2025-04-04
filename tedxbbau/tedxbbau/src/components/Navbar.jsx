@@ -125,7 +125,7 @@ const Navbar = () => {
               className="px-4 py-2 rounded-lg transition-all duration-300" 
               style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}
             >
-              Book Ticket
+              Register Now
             </a>
           </div>
           <div className="md:hidden">
@@ -144,7 +144,7 @@ const Navbar = () => {
               <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left" onClick={() => setIsOpen(false)}>Team</NavLink>
               <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Contact</button>
               <a 
-                href="https://konfhub.com/widget/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
+                href="https://konfhub.com/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-center"
