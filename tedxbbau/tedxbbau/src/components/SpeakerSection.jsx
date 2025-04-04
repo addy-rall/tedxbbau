@@ -86,7 +86,7 @@ const SpeakersTimeline = () => {
     },
     { 
       id: 8, 
-      name: "Priyank Bharadwaj", 
+      name: "Priyank Bhardwaj", 
       title: "Business Coach", 
       topic: "", 
       image: speaker8,
