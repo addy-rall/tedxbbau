@@ -103,7 +103,7 @@ const App = () => {
         </h1>
       </div>
 
-      <div className="w-full text-center mt-20 mb-6">
+      <div className="w-full text-center py-70 mt-20">
         <motion.div
           className="bg-red-700 text-white text-base sm:text-lg md:text-xl lg:mt-[170px] font-bold py-2 px-8 flicker"
           style={{ fontFamily: "Poppins, sans-serif" }}
