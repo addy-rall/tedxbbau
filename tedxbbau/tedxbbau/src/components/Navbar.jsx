@@ -149,7 +149,7 @@ const Navbar = () => {
                 rel="noopener noreferrer" 
                 className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-center"
               >
-                Book Ticket
+                Register Now
               </a>
             </div>
           </div>
