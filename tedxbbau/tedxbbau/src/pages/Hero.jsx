@@ -113,7 +113,7 @@ const App = () => {
         >
           <span className="block">First 100 members get an</span>  
           <span className="block">Early Bird DISCOUNT!</span>  
-          <span className="block sm:inline">Use code <strong>TEDxBBAU100</strong> now!</span>
+          <span className="block sm:inline">Use code <strong>TEDXBBAU100</strong> now!</span>
         </motion.div>
       </div>
 
