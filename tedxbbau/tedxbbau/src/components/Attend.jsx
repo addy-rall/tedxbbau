@@ -62,7 +62,7 @@ const WhyAttend = () => {
   };
 
   return (
-    <div ref={containerRef} className="max-h-screen lg:h-50vh bg-black text-center p-6 md:p-12 relative overflow-hidden">
+    <div ref={containerRef} className="min-h-screen lg:h-50vh bg-black text-center p-6 md:p-12 relative overflow-hidden">
       <div className="relative flex justify-center items-center mb-16 lg:m-5 h-40">
         <h1 className="absolute text-[4rem] md:text-[8rem] font-bold text-red-600 opacity-30 tracking-wide">
           Why to Attend?

@@ -45,14 +45,6 @@ const SpeakersTimeline = () => {
       about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
   },
     { 
-      id: 3, 
-      name: "Abhishek Kar", 
-      title: "Business Mentor and Financial Expert", 
-      topic: "", 
-      image: speaker3,
-      about: "Abhishek Kar is a prominent Indian stock trader, investor, educator, and social media influencer.He pursued a Bachelor of Technology (B.Tech) and an MBA from KIIT University in Bhubaneswar. Currently residing in Mumbai, Abhishek has gained recognition for his educational content on financial markets, particularly through his YouTube channel, which has amassed a significant following. He has trained over 15,000 students through his courses and webinars, aiming to simplify complex financial concepts for a broader audience. Abhishek is also a four-time TEDx and JoshTalk speaker and the author of Stocks and Life, an Amazon bestseller. His net worth is estimated between ₹7.5 to ₹8 crores (approximately $900,000 to $960,000). "
-    },
-    { 
       id: 4, 
       name: "Dr. Parth Goyal", 
       title: "Author, Founder of Medulla", 
