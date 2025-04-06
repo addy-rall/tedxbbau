@@ -7,13 +7,15 @@ import speaker5 from "../assets/speaker5.png";
 import speaker6 from "../assets/speaker6.png";
 import speaker7 from "../assets/speaker7.png";
 import speaker8 from "../assets/speaker8.png";
+import speaker9 from "../assets/speaker9.png";
+import speaker10 from "../assets/speaker10.jpg";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState(null);
   const [speakerPositions, setSpeakerPositions] = useState([
-    "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom"
+     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom"
   ]);
   const timelineRef = useRef(null);
   const touchStartX = useRef(null);
@@ -22,9 +24,7 @@ const SpeakersTimeline = () => {
   const touchEndY = useRef(null);
   const swipeInProgress = useRef(false);
   
-  // Increase minimum swipe distance for better detection
   const MIN_SWIPE_DISTANCE = 40;
-  // Add maximum vertical movement to prevent triggering swipes during scroll
   const MAX_VERTICAL_MOVEMENT = 50;
   
   const speakers = [
@@ -83,6 +83,22 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker8,
       about: "Priyank Bhardwaj is a dedicated business coach, committed to helping coaches and service providers expand their businesses. As the founder of The Super Scale, he has guided numerous entrepreneurs toward financial growth and stability. Through his signature program, The ATTRACTION System, Priyank offers step-by-step strategies for client acquisition, business expansion, and LinkedIn optimization. His coaching has helped individuals establish a steady lead flow and achieve consistent revenue growth. With a growing online presence, Priyank continues to inspire and mentor ambitious professionals, showing that with the right approach, scaling a business is both achievable and fulfilling. "
+    },
+    { 
+      id: 9, 
+      name: "Bhavana Govil", 
+      title: "LinkedIn Growth Strategist", 
+      topic: "", 
+      image: speaker9,
+      about: "Bhavana Govil is a renowned LinkedIn Growth Strategist and Personal Branding Consultant, dedicated to helping job seekers, freelancers, startups, and recruiters leverage Linkedin to accelerate growth, generate leads, and achieve career breakthroughs. As the founder of Brand Bhava, she has transformed numerous professionals' online presence, enabling them to attract global opportunities through impactful LinkedIn profiles. Bhavana is also a sought-after speaker, sharing her expertise on platforms like Amplefy® World Transformation Day 2023, where she discussed enhancing search rankings on Google using LinkedIn. Her passion lies in empowering individuals to harness the power of LinkedIn for personal and professional growth."
+    },
+    { 
+      id: 10, 
+      name: "Rashed Kazi", 
+      title: "Trader, Investor & Entrepreneur", 
+      topic: "", 
+      image: speaker10,
+      about: "Rashed Kazi is a trader, investor, and entrepreneur, known for his expertise in financial markets and investment strategies. As the founder of Kazi Investment Firm, he has helped countless individuals navigate the world of trading and investing. A sought-after speaker, he has delivered impactful talks at TEDx and Josh Talks, inspiring audiences with his journey and insights. Through his content and mentorship, Rashed is on a mission to simplify finance and empower people to achieve financial independence."
     },
   ];
 
@@ -194,7 +210,6 @@ const SpeakersTimeline = () => {
     const distanceX = touchEndX.current - touchStartX.current;
     const distanceY = Math.abs(touchEndY.current - touchStartY.current);
     
-    // Only trigger swipe if horizontal movement is significant and vertical movement is minimal
     if (Math.abs(distanceX) > MIN_SWIPE_DISTANCE && distanceY < MAX_VERTICAL_MOVEMENT) {
       if (distanceX > 0) {
         // Swipe right -> previous speaker
@@ -204,15 +219,13 @@ const SpeakersTimeline = () => {
         nextSpeaker();
       }
     }
-    
-    // Clean up touch references
+
     touchStartX.current = null;
     touchEndX.current = null;
     touchStartY.current = null;
     touchEndY.current = null;
   }, [nextSpeaker, prevSpeaker]);
 
-  // Add gesture instructions component
   const SwipeInstructions = () => (
     <div className="text-center mx-auto mb-6 animate-pulse">
       <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
