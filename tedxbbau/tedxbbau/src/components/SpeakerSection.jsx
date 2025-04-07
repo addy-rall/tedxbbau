@@ -9,13 +9,14 @@ import speaker7 from "../assets/speaker7.png";
 import speaker8 from "../assets/speaker8.png";
 import speaker9 from "../assets/speaker9.png";
 import speaker10 from "../assets/speaker10.jpg";
+import speaker11 from "../assets/speaker11.png";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState(null);
   const [speakerPositions, setSpeakerPositions] = useState([
-     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom"
+     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top"
   ]);
   const timelineRef = useRef(null);
   const touchStartX = useRef(null);
@@ -43,6 +44,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker2,
       about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
+  },
+  { 
+    id: 3, 
+    name: "Abhishek Kar", 
+    title: "Financial Expert", 
+    topic: "", 
+    image: speaker3,
+    about: "Abhishek Kar is a prominent Indian stock trader, investor, educator, and social media influencer. He pursued a Bachelor of Technology (B.Tech) and an MBA from KIIT University in Bhubaneswar. Currently residing in Mumbai, Abhishek has gained recognition for his educational content on financial markets, particularly through his YouTube channel, which has amassed a significant following. He has trained over 15,000 students through his courses and webinars, aiming to simplify complex financial concepts for a broader audience. Abhishek is also a four-time TEDx and JoshTalk speaker and the author of Stocks and Life, an Amazon bestseller. His net worth is estimated between ₹7.5 to ₹8 crores (approximately $900,000 to $960,000).  Despite facing scrutiny from financial journalists , he remains an influential figure in financial education."
   },
     { 
       id: 4, 
@@ -100,6 +109,14 @@ const SpeakersTimeline = () => {
       image: speaker10,
       about: "Rashed Kazi is a trader, investor, and entrepreneur, known for his expertise in financial markets and investment strategies. As the founder of Kazi Investment Firm, he has helped countless individuals navigate the world of trading and investing. A sought-after speaker, he has delivered impactful talks at TEDx and Josh Talks, inspiring audiences with his journey and insights. Through his content and mentorship, Rashed is on a mission to simplify finance and empower people to achieve financial independence."
     },
+    { 
+      id: 11, 
+      name: "Raktim Singh", 
+      title: "Author and Thought Leader", 
+      topic: "", 
+      image: speaker11,
+      about: "Raktim Singh has done his B.TECH from IIT-BHU. He joined Infosys in 1995. He describes himself “As one of the few lucky software champions, who are Digital Software Product Native”. From day 1, Raktim got the opportunity to work on Infosys FINACLE suite of Products. With more than 25 years of experience in Infosys FINACLE, he had developed new products and played various roles, from Strategy, Product evangelization, Product Development and implementation of these product across globe. He had implemented Agile & DevOps practices in FINACLE Product. Raktim is certified SAFe 4.0 ( Scaled Agile Framework) Agilist. He had successfully executed business transformation program to achieve agility across various functions. As part of this transformation program, he came up mental models of the organization and cultivated the habit of system thinking in organization. This had helped in successfully changing the culture of organization and transformed the Product team into an Agile & Learning Organization. Current he is playing pivotal role in digital banking transformation strategy and development of various product, which will help banks in becoming really digital. He had developed many product in Wealth management & Corporate banking domain from scratch. Raktim is an Avid book reader, with personal library of more than 600 books. He is a TEDx speaker. His talk on How Digital Transformation will help common man was appreciated across the globe. He also mentors IIM graduates in Software Product Principles. He is part of international Toastmaster Club and won many awards here. Raktim is also a member of India FIN-TECH group & “Bangalore FIN-TECH” group."
+    }
   ];
 
   useEffect(() => {
@@ -178,21 +195,17 @@ const SpeakersTimeline = () => {
     touchEndX.current = e.touches[0].clientX;
     touchEndY.current = e.touches[0].clientY;
     
-    // Calculate distances
     const distanceX = touchEndX.current - touchStartX.current;
     const distanceY = Math.abs(touchEndY.current - touchStartY.current);
-    
-    // Only apply real-time movement if horizontal swipe seems intentional
+
     if (Math.abs(distanceX) > 10 && distanceY < MAX_VERTICAL_MOVEMENT) {
-      // Apply direct transform based on finger position (with a damping factor)
       const dampingFactor = 0.5; // Reduce movement to make it feel more natural
       const transform = `translateX(${distanceX * dampingFactor}px)`;
-      
-      // Get the active card element and apply direct style
+
       const activeCard = document.querySelector('.active-speaker-card');
       if (activeCard) {
         activeCard.style.transform = transform;
-        activeCard.style.transition = 'none'; // Remove transition for direct manipulation
+        activeCard.style.transition = 'none'; 
       }
     }
   };
