@@ -130,7 +130,7 @@ const LocationSection = () => {
           
           <div className="flex flex-wrap gap-4 mt-8">
             <a 
-              href={`https://www.openstreetmap.org/directions?from=&to=${collegeLocation.lat}%2C${collegeLocation.lng}`}
+              href={`https://maps.app.goo.gl/AfAU1MrD7cvhWVoA7`}
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-red-700 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition font-medium"
@@ -144,7 +144,7 @@ const LocationSection = () => {
             </a>
             
             <a 
-              href={`tel:+911234567890`}
+              href={`tel:1800-180-5789`}
               className="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition font-medium"
             >
               <span className="flex items-center">
