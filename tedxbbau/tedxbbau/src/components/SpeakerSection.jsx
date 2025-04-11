@@ -10,6 +10,7 @@ import speaker8 from "../assets/speaker8.png";
 import speaker9 from "../assets/speaker9.png";
 import speaker10 from "../assets/speaker10.jpg";
 import speaker11 from "../assets/speaker11.png";
+import speaker12 from "../assets/speaker12.png";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
@@ -47,20 +48,20 @@ const SpeakersTimeline = () => {
   },
   { 
     id: 3, 
-    name: "Abhishek Kar", 
-    title: "Financial Expert", 
+    name: "Dr. Parth Goyal", 
+    title: "Author, Founder of Medulla", 
+    topic: "", 
+    image: speaker4,
+    about: "Dr. Parth Goyal, is a multifaceted professional excelling as a doctor, educator, author, and entrepreneur. He secured an impressive All India Rank (AIR) of 223 in the National Eligibility cum Entrance Test (NEET) and AIR 5364 in the Joint Entrance Examination (JEE) Advanced. He authored the Biohack and Chemhack books, designed for rapid revision of biology and chemistry concepts, enabling students to review entire chapters in just 15-20 minutes. Dr. Goyal's entrepreneurial spirit is further exemplified by his co-founding of Medulla, a venture focused on healthcare innovation.  His dedication to improving health and education has made him a respected figure among students and professionals alike."
+  },
+  { 
+    id: 4, 
+    name: "Capt. Deval Soni", 
+    title: "A320 Commander", 
     topic: "", 
     image: speaker3,
-    about: "Abhishek Kar is a prominent Indian stock trader, investor, educator, and social media influencer. He pursued a Bachelor of Technology (B.Tech) and an MBA from KIIT University in Bhubaneswar. Currently residing in Mumbai, Abhishek has gained recognition for his educational content on financial markets, particularly through his YouTube channel, which has amassed a significant following. He has trained over 15,000 students through his courses and webinars, aiming to simplify complex financial concepts for a broader audience. Abhishek is also a four-time TEDx and JoshTalk speaker and the author of Stocks and Life, an Amazon bestseller. His net worth is estimated between ₹7.5 to ₹8 crores (approximately $900,000 to $960,000).  Despite facing scrutiny from financial journalists , he remains an influential figure in financial education."
+    about: "A pilot by profession, a mentor at heart—Capt. Deval Soni’s journey is one of perseverance, passion, and purpose. With over 6,000 flying hours as an Pilot and more than 3,500 aspiring pilots mentored over 15 years, he knows the skies—and the struggles. \n Coming from a middle-class background, Capt. Deval understands how tough the path to becoming a pilot can be. That’s why he co-founded Golden Epaulettes Aviation—a leading pilot training organization—to offer the guidance, clarity, and mentorship he once longed for. \nFor Capt. Deval, flying isn’t just a profession—it’s a purpose. And his mission is clear: “To give wings to the dreams of aspiring pilots.”"
   },
-    { 
-      id: 4, 
-      name: "Dr. Parth Goyal", 
-      title: "Author, Founder of Medulla", 
-      topic: "", 
-      image: speaker4,
-      about: "Dr. Parth Goyal, is a multifaceted professional excelling as a doctor, educator, author, and entrepreneur. He secured an impressive All India Rank (AIR) of 223 in the National Eligibility cum Entrance Test (NEET) and AIR 5364 in the Joint Entrance Examination (JEE) Advanced. He authored the Biohack and Chemhack books, designed for rapid revision of biology and chemistry concepts, enabling students to review entire chapters in just 15-20 minutes. Dr. Goyal's entrepreneurial spirit is further exemplified by his co-founding of Medulla, a venture focused on healthcare innovation.  His dedication to improving health and education has made him a respected figure among students and professionals alike."
-    },
     { 
       id: 5, 
       name: "Rohit Vaidwan", 
@@ -116,6 +117,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker11,
       about: "Raktim Singh has done his B.TECH from IIT-BHU. He joined Infosys in 1995. He describes himself “As one of the few lucky software champions, who are Digital Software Product Native”. From day 1, Raktim got the opportunity to work on Infosys FINACLE suite of Products. With more than 25 years of experience in Infosys FINACLE, he had developed new products and played various roles, from Strategy, Product evangelization, Product Development and implementation of these product across globe. He had implemented Agile & DevOps practices in FINACLE Product. Raktim is certified SAFe 4.0 ( Scaled Agile Framework) Agilist. He had successfully executed business transformation program to achieve agility across various functions. As part of this transformation program, he came up mental models of the organization and cultivated the habit of system thinking in organization. This had helped in successfully changing the culture of organization and transformed the Product team into an Agile & Learning Organization. Current he is playing pivotal role in digital banking transformation strategy and development of various product, which will help banks in becoming really digital. He had developed many product in Wealth management & Corporate banking domain from scratch. Raktim is an Avid book reader, with personal library of more than 600 books. He is a TEDx speaker. His talk on How Digital Transformation will help common man was appreciated across the globe. He also mentors IIM graduates in Software Product Principles. He is part of international Toastmaster Club and won many awards here. Raktim is also a member of India FIN-TECH group & “Bangalore FIN-TECH” group."
+    },
+    { 
+      id: 12, 
+      name: "Rajshree Pandey", 
+      title: "Faculty Coordinator", 
+      topic: "", 
+      image: speaker12,
+      about: "Prof. Raj Shree is a Head of Department of  Department of Information Technology at Babasaheb Bhimrao Ambedkar University (BBAU) in Lucknow. She has extensive academic qualifications, including a Ph.D. (IT) from BBAU, Lucknow. Her teaching experience spans over 15 years and more than 14 years of research experience, during which she has made significant contributions to the field of Information Technology through her research and academic work. She has published more than 80 research articles in various reputed national and International journal. Apart from this she has successfully completed four research projects as PI and CO-PI (two are funded by CST-UP, One is funded by CERT, and one is funded by BBAU Lucknow). Moreover, she is actively involved in several administrative roles at the university, including serving as the Nodal Officer for the UGC Grievance Redressal Portal."
     }
   ];
 

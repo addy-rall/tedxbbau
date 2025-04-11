@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const ToBeAnnounced = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-04-25T00:00:00");
+    const targetDate = new Date("2025-04-29T00:00:00");
     
     const now = new Date();
     const difference = targetDate - now;

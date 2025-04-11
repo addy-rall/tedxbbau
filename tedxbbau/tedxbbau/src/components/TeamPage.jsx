@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import FacultyImg from "../assets/imgwho.jpg";
 import OrganiserImg from "../assets/Lakhan.png";
 import CoorganiserImg from "../assets/Aditya.png";
 import PinImage from "../assets/pin.png";
 
 const teamMembers = [
+  {
+    name: "Prof. Rajshree Pandey",
+    role: "Faculty Coordinator",
+    image: FacultyImg,
+    description: "Prof. Raj Shree is a Head of Department of  Department of Information Technology at Babasaheb Bhimrao Ambedkar University (BBAU) in Lucknow. \n She has extensive academic qualifications, including a Ph.D. (IT) from BBAU, Lucknow. Her teaching experience spans over 15 years and more than 14 years of research experience, during which she has made significant contributions to the field of Information Technology through her research and academic work. \n She has published more than 80 research articles in various reputed national and International journal. Apart from this she has successfully completed four research projects as PI and CO-PI (two are funded by CST-UP, One is funded by CERT, and one is funded by BBAU Lucknow).\n Also, she has delivered the lecture in various renowned institutions. Moreover, she is actively involved in several administrative roles at the university, including serving as the Nodal Officer for the UGC Grievance Redressal Portal.",
+  },
   {
     name: "Lakhan Varshney",
     role: "Organiser",
@@ -21,6 +28,15 @@ const teamMembers = [
 ];
 
 const TeamPage = () => {
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleExpand = (index) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
     <div className="relative min-h-screen bg-black text-white flex flex-col items-center mb-20 pt-24 px-6">
       <h1 className="text-5xl font-bold mb-6 relative z-10">Meet Our Organisers</h1>
@@ -32,7 +48,7 @@ const TeamPage = () => {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className="relative w-full md:w-1/2 lg:w-1/3 p-8 rounded-full shadow-lg bg-gray-900 text-white border-4 border-red-500 flex flex-col items-center transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="relative w-full md:w-1/2 lg:w-1/3 p-8 rounded-full shadow-lg bg-gray-900 text-white border-4 border-red-500 flex flex-col items-center transition-all hover:shadow-xl"
             style={{
               boxShadow: "5px 5px 15px rgba(255, 0, 0, 0.2)",
               borderRadius: "12px",
@@ -59,17 +75,36 @@ const TeamPage = () => {
               />
               <h3 className="mt-4 text-2xl font-semibold">{member.name}</h3>
               <p className="text-md font-medium text-red-500">{member.role}</p>
-              <p className="mt-3 text-center whitespace-pre-line">{member.description}</p>
+              
+              <div className="mt-3 text-center whitespace-pre-line">
+                {expandedCards[index] ? (
+                  // Full description when expanded
+                  member.description
+                ) : (
+                  // Show only first few lines when not expanded
+                  <div className="line-clamp-3">
+                    {member.description}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="mt-auto pt-4">
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition font-medium"
+            <div className="mt-auto pt-4 flex items-center gap-4">
+              <button
+                onClick={() => toggleExpand(index)}
+                className="inline-block bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition font-medium"
               >
-                View Profile
-              </a>
+                {expandedCards[index] ? "Show Less" : "Read More"}
+              </button>
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition font-medium"
+                >
+                  Visit Profile
+                </a>
+              )}
             </div>
           </div>
         ))}
