@@ -93,8 +93,7 @@ const LocationSection = () => {
             </div>
           </div>
         </div>
-        
-        {/* Address Details - Right side on laptop */}
+
         <div className="w-full md:w-1/2 flex flex-col justify-center p-8 rounded-lg bg-gray-900 border-4 border-red-500 shadow-lg" style={{ boxShadow: "0 0 20px rgba(255, 0, 0, 0.2)", zIndex: 1 }}>
           <h2 className="text-3xl font-bold mb-6 text-red-500">Visit Us</h2>
           

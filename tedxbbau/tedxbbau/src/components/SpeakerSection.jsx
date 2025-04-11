@@ -54,16 +54,9 @@ const SpeakersTimeline = () => {
     image: speaker4,
     about: "Dr. Parth Goyal, is a multifaceted professional excelling as a doctor, educator, author, and entrepreneur. He secured an impressive All India Rank (AIR) of 223 in the National Eligibility cum Entrance Test (NEET) and AIR 5364 in the Joint Entrance Examination (JEE) Advanced. He authored the Biohack and Chemhack books, designed for rapid revision of biology and chemistry concepts, enabling students to review entire chapters in just 15-20 minutes. Dr. Goyal's entrepreneurial spirit is further exemplified by his co-founding of Medulla, a venture focused on healthcare innovation.  His dedication to improving health and education has made him a respected figure among students and professionals alike."
   },
-  { 
-    id: 4, 
-    name: "Capt. Deval Soni", 
-    title: "A320 Commander", 
-    topic: "", 
-    image: speaker3,
-    about: "A pilot by profession, a mentor at heart—Capt. Deval Soni’s journey is one of perseverance, passion, and purpose. With over 6,000 flying hours as an Pilot and more than 3,500 aspiring pilots mentored over 15 years, he knows the skies—and the struggles. \n Coming from a middle-class background, Capt. Deval understands how tough the path to becoming a pilot can be. That’s why he co-founded Golden Epaulettes Aviation—a leading pilot training organization—to offer the guidance, clarity, and mentorship he once longed for. \nFor Capt. Deval, flying isn’t just a profession—it’s a purpose. And his mission is clear: “To give wings to the dreams of aspiring pilots.”"
-  },
+  
     { 
-      id: 5, 
+      id: 4, 
       name: "Rohit Vaidwan", 
       title: "Educator and Founder of Adhyayan Mantra", 
       topic: "", 
@@ -71,12 +64,20 @@ const SpeakersTimeline = () => {
       about: "Rohit Vaidwan is the founder of Adhyayan Mantra, leading institute for TET and teaching exam preparation of India, established in 2013. Under his leadership, over 200,000 students have qualified, including 84,000+ in CTET and 12,000+ in UGC-NET/JRF. His YouTube channel, with 1.71 million subscribers and 9,600+ videos, offers accessible, high-quality content to aspiring educators. Rohit is also the author of Child Development with Pedagogy & Methodology, empowering thousands of teachers with his expertise."
     },
     { 
-      id: 6, 
+      id: 5, 
       name: "Saumya Singh", 
       title: "Tech Creator", 
       topic: "", 
       image: speaker5,
       about: "Saumya Singh is a Software Engineer at Red Hat and a tech influencer with over 400,000 followers on Instagram. Recognized as a LinkedIn Top Voice, she has earned accolades like the International Open Source Award, Google Connect Winner (2019), and GHCI Scholar (2020). Passionate about mentoring, she uses her platform to demystify coding, share career insights, and empower aspiring technologists with practical skills and industry knowledge."
+    },
+    { 
+      id: 12, 
+      name: "Rajshree Pandey", 
+      title: "HOD of IT Department", 
+      topic: "", 
+      image: speaker12,
+      about: "Prof. Raj Shree is a Head of Department of  Department of Information Technology at Babasaheb Bhimrao Ambedkar University (BBAU) in Lucknow. She has extensive academic qualifications, including a Ph.D. (IT) from BBAU, Lucknow. Her teaching experience spans over 15 years and more than 14 years of research experience, during which she has made significant contributions to the field of Information Technology through her research and academic work. She has published more than 80 research articles in various reputed national and International journal. Apart from this she has successfully completed four research projects as PI and CO-PI (two are funded by CST-UP, One is funded by CERT, and one is funded by BBAU Lucknow). Moreover, she is actively involved in several administrative roles at the university, including serving as the Nodal Officer for the UGC Grievance Redressal Portal."
     },
     { 
       id: 7, 
@@ -119,13 +120,13 @@ const SpeakersTimeline = () => {
       about: "Raktim Singh has done his B.TECH from IIT-BHU. He joined Infosys in 1995. He describes himself “As one of the few lucky software champions, who are Digital Software Product Native”. From day 1, Raktim got the opportunity to work on Infosys FINACLE suite of Products. With more than 25 years of experience in Infosys FINACLE, he had developed new products and played various roles, from Strategy, Product evangelization, Product Development and implementation of these product across globe. He had implemented Agile & DevOps practices in FINACLE Product. Raktim is certified SAFe 4.0 ( Scaled Agile Framework) Agilist. He had successfully executed business transformation program to achieve agility across various functions. As part of this transformation program, he came up mental models of the organization and cultivated the habit of system thinking in organization. This had helped in successfully changing the culture of organization and transformed the Product team into an Agile & Learning Organization. Current he is playing pivotal role in digital banking transformation strategy and development of various product, which will help banks in becoming really digital. He had developed many product in Wealth management & Corporate banking domain from scratch. Raktim is an Avid book reader, with personal library of more than 600 books. He is a TEDx speaker. His talk on How Digital Transformation will help common man was appreciated across the globe. He also mentors IIM graduates in Software Product Principles. He is part of international Toastmaster Club and won many awards here. Raktim is also a member of India FIN-TECH group & “Bangalore FIN-TECH” group."
     },
     { 
-      id: 12, 
-      name: "Rajshree Pandey", 
-      title: "Faculty Coordinator", 
+      id: 13, 
+      name: "Capt. Deval Soni", 
+      title: "A320 Commander", 
       topic: "", 
-      image: speaker12,
-      about: "Prof. Raj Shree is a Head of Department of  Department of Information Technology at Babasaheb Bhimrao Ambedkar University (BBAU) in Lucknow. She has extensive academic qualifications, including a Ph.D. (IT) from BBAU, Lucknow. Her teaching experience spans over 15 years and more than 14 years of research experience, during which she has made significant contributions to the field of Information Technology through her research and academic work. She has published more than 80 research articles in various reputed national and International journal. Apart from this she has successfully completed four research projects as PI and CO-PI (two are funded by CST-UP, One is funded by CERT, and one is funded by BBAU Lucknow). Moreover, she is actively involved in several administrative roles at the university, including serving as the Nodal Officer for the UGC Grievance Redressal Portal."
-    }
+      image: speaker3,
+      about: "A pilot by profession, a mentor at heart—Capt. Deval Soni’s journey is one of perseverance, passion, and purpose. With over 6,000 flying hours as an Pilot and more than 3,500 aspiring pilots mentored over 15 years, he knows the skies—and the struggles. \n Coming from a middle-class background, Capt. Deval understands how tough the path to becoming a pilot can be. That’s why he co-founded Golden Epaulettes Aviation—a leading pilot training organization—to offer the guidance, clarity, and mentorship he once longed for. \nFor Capt. Deval, flying isn’t just a profession—it’s a purpose. And his mission is clear: “To give wings to the dreams of aspiring pilots.”"
+    },
   ];
 
   useEffect(() => {
