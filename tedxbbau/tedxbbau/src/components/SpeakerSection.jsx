@@ -97,14 +97,6 @@ const SpeakersTimeline = () => {
     },
     { 
       id: 9, 
-      name: "Bhavana Govil", 
-      title: "LinkedIn Growth Strategist", 
-      topic: "", 
-      image: speaker9,
-      about: "Bhavana Govil is a renowned LinkedIn Growth Strategist and Personal Branding Consultant, dedicated to helping job seekers, freelancers, startups, and recruiters leverage Linkedin to accelerate growth, generate leads, and achieve career breakthroughs. As the founder of Brand Bhava, she has transformed numerous professionals' online presence, enabling them to attract global opportunities through impactful LinkedIn profiles. Bhavana is also a sought-after speaker, sharing her expertise on platforms like Amplefy® World Transformation Day 2023, where she discussed enhancing search rankings on Google using LinkedIn. Her passion lies in empowering individuals to harness the power of LinkedIn for personal and professional growth."
-    },
-    { 
-      id: 10, 
       name: "Rashed Kazi", 
       title: "Trader, Investor & Entrepreneur", 
       topic: "", 
@@ -112,7 +104,7 @@ const SpeakersTimeline = () => {
       about: "Rashed Kazi is a trader, investor, and entrepreneur, known for his expertise in financial markets and investment strategies. As the founder of Kazi Investment Firm, he has helped countless individuals navigate the world of trading and investing. A sought-after speaker, he has delivered impactful talks at TEDx and Josh Talks, inspiring audiences with his journey and insights. Through his content and mentorship, Rashed is on a mission to simplify finance and empower people to achieve financial independence."
     },
     { 
-      id: 11, 
+      id: 10, 
       name: "Raktim Singh", 
       title: "Author and Thought Leader", 
       topic: "", 
@@ -120,9 +112,18 @@ const SpeakersTimeline = () => {
       about: "Raktim Singh has done his B.Tech from IIT-BHU. He joined Infosys in 1995. \n\nHe describes himself as “one of the few lucky software champions who are Digital Software Product Natives.” \nFrom day one, Raktim got the opportunity to work on the Infosys FINACLE suite of products. \n\nWith more than 25 years of experience in FINACLE, he has developed new products and played various roles in strategy, product evangelization, product development, and global implementation. \n\nHe has implemented Agile and DevOps practices in FINACLE. Raktim is a certified SAFe 4.0 (Scaled Agile Framework) Agilist. \n\nHe has successfully executed business transformation programs to achieve agility across various functions. As part of this transformation, he developed mental models and cultivated a habit of systems thinking in the organization. \nThis helped successfully change the organizational culture and transformed the product team into an agile and learning organization. Currently, he plays a pivotal role in digital banking transformation strategy and in developing products to help banks become truly digital. He has developed many products in the wealth management and corporate banking domains from scratch. Raktim is an avid book reader, with a personal library of more than 600 books. \n\nHe is a TEDx speaker—his talk on how digital transformation will help the common man was appreciated globally. He also mentors IIM graduates in software product principles. He is part of the international Toastmasters Club and has won many awards. Raktim is also a member of India FIN-TECH and Bangalore FIN-TECH groups."
     },
     { 
+      id: 11, 
+      name: "Bhavana Govil", 
+      title: "LinkedIn Growth Strategist", 
+      topic: "", 
+      image: speaker9,
+      about: "Bhavana Govil is a renowned LinkedIn Growth Strategist and Personal Branding Consultant, dedicated to helping job seekers, freelancers, startups, and recruiters leverage Linkedin to accelerate growth, generate leads, and achieve career breakthroughs. As the founder of Brand Bhava, she has transformed numerous professionals' online presence, enabling them to attract global opportunities through impactful LinkedIn profiles. Bhavana is also a sought-after speaker, sharing her expertise on platforms like Amplefy® World Transformation Day 2023, where she discussed enhancing search rankings on Google using LinkedIn. Her passion lies in empowering individuals to harness the power of LinkedIn for personal and professional growth."
+    },
+    
+    { 
       id: 13, 
-      name: "Capt. Deval Soni", 
-      title: "A320 Commander", 
+      name: "Caption Deval Soni", 
+      title: "Pilot and Co-founder of Golden Epaulettes Aviation", 
       topic: "", 
       image: speaker3,
       about: "A pilot by profession and a mentor at heart, Capt. Deval Soni’s journey is defined by perseverance, passion, and purpose. \n\nWith over 6,000 flying hours and more than 3,500 aspiring pilots mentored over 15 years, he knows both the skies and the struggles. Coming from a middle-class background, Capt. Deval understands how challenging the path to becoming a pilot can be. \nThat’s why he co-founded Golden Epaulettes Aviation—a leading pilot training organization—to provide the guidance and mentorship he once needed. \n\nFor him, flying isn’t just a profession—it’s a mission: “To give wings to the dreams of aspiring pilots.”"
