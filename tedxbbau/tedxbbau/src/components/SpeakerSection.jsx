@@ -73,7 +73,7 @@ const SpeakersTimeline = () => {
     },
     { 
       id: 12, 
-      name: "Rajshree Pandey", 
+      name: "Captain Rajshree Pandey", 
       title: "HOD of IT Department", 
       topic: "", 
       image: speaker12,
