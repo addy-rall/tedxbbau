@@ -11,6 +11,7 @@ import speaker9 from "../assets/speaker9.png";
 import speaker10 from "../assets/speaker10.jpg";
 import speaker11 from "../assets/speaker11.png";
 import speaker12 from "../assets/speaker12.png";
+import speaker13 from "../assets/speaker13.jpg";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
@@ -128,6 +129,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker3,
       about: "A pilot by profession and a mentor at heart, Capt. Deval Soni’s journey is defined by perseverance, passion, and purpose. \n\nWith over 6,000 flying hours and more than 3,500 aspiring pilots mentored over 15 years, he knows both the skies and the struggles. Coming from a middle-class background, Capt. Deval understands how challenging the path to becoming a pilot can be. \nThat’s why he co-founded Golden Epaulettes Aviation—a leading pilot training organization—to provide the guidance and mentorship he once needed. \n\nFor him, flying isn’t just a profession—it’s a mission: “To give wings to the dreams of aspiring pilots.”"
+    },
+    { 
+      id: 14, 
+      name: "Chandan Mishra", 
+      title: "Founder of Smart Infovision", 
+      topic: "", 
+      image: speaker13,
+      about: "Chandan Mishra is the Founder and CEO of Smart Infovision, a company that has been providing digital solutions like studio setups, interactive panels, and educational software for over 12 years. Under his leadership, Smart Infovision has expanded to over 10 branches across India, including locations in Noida, Jaipur, Lucknow, Patna, Udaipur, and bihar,Ahmedabad etc.And employs more than 200 professionals.With a strong background in sales, marketing, and business management. Passed Polytechnic from Jaunpur in 2011. His YouTube channel, Chandan Mishra Consulting, features videos on mindset, growth, and technology, aiming to empower individuals and businesses. Additionally, he engages with his audience on Instagram under the handle @lets_grow_with_mishraji, where he shares motivational content and updates related to Smart Infovision."
     },
   ];
 
