@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/tedxlogo.png";
+import clgLogo from "../assets/clglogo.jpg"; // imported college logo
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,14 +68,26 @@ const Navbar = () => {
       <nav className="fixed w-full top-0 z-50 transition-all duration-300" style={{ backgroundColor: `rgba(200, 0, 0, ${scrollPercentage / 100})` }}>
         <div className="h-1 bg-red-500 fixed top-0 left-0" style={{ width: `${scrollPercentage}%` }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
+          
+          {/* LOGOS */}
+          <div className="flex items-center space-x-4">
+            {/* College Logo */}
+            <img 
+              src={clgLogo} 
+              alt="College Logo" 
+              className="h-12 w-auto cursor-pointer width-2x" 
+              onClick={() => scrollToSection('home')} 
+            />
+            {/* TEDx Logo */}
             <img 
               src={logo} 
-              alt="Logo" 
+              alt="TEDx Logo" 
               className="h-12 w-auto cursor-pointer" 
               onClick={() => scrollToSection('home')} 
             />
           </div>
+
+          {/* NAV LINKS */}
           <div className="hidden md:flex items-center space-x-6 text-lg font-semibold text-white">
             <NavLink to="/">
               <button 
@@ -117,6 +130,8 @@ const Navbar = () => {
               Contact
             </button>
           </div>
+
+          {/* REGISTER NOW BUTTON */}
           <div className="hidden md:block">
             <a 
               href="https://konfhub.com/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
@@ -128,12 +143,16 @@ const Navbar = () => {
               Register Now
             </a>
           </div>
+
+          {/* MOBILE MENU BUTTON */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white bg-transparent border-none">
               {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
             </button>
           </div>
         </div>
+
+        {/* MOBILE MENU */}
         {isOpen && (
           <div className="md:hidden bg-black text-center py-4 w-full text-white">
             <div className="flex flex-col px-4">
