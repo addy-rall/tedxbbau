@@ -12,13 +12,14 @@ import speaker10 from "../assets/speaker10.jpg";
 import speaker11 from "../assets/speaker11.png";
 import speaker12 from "../assets/speaker12.png";
 import speaker13 from "../assets/speaker13.png";
+import speaker14 from "../assets/speaker14.png";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState(null);
   const [speakerPositions, setSpeakerPositions] = useState([
-     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top"
+     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top"
   ]);
   const timelineRef = useRef(null);
   const touchStartX = useRef(null);
@@ -137,6 +138,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker13,
       about: "Chandan Mishra is the Founder and CEO of Smart Infovision, a company that has been providing digital solutions like studio setups, interactive panels, and educational software for over 12 years. Under his leadership, Smart Infovision has expanded to over 10 branches across India, including locations in Noida, Jaipur, Lucknow, Patna, Udaipur, and bihar,Ahmedabad etc.And employs more than 200 professionals.With a strong background in sales, marketing, and business management. Passed Polytechnic from Jaunpur in 2011. His YouTube channel, Chandan Mishra Consulting, features videos on mindset, growth, and technology, aiming to empower individuals and businesses. Additionally, he engages with his audience on Instagram under the handle @lets_grow_with_mishraji, where he shares motivational content and updates related to Smart Infovision."
+    },
+    { 
+      id: 15, 
+      name: "Karishma Shetty ", 
+      title: "Founder- Psychic Temples and Kay’s Nail Ritual", 
+      topic: "", 
+      image: speaker14,
+      about: "Karishma Shetty is a renowned spiritual healer, intuitive guide, and founder of Psychic Temples and Kay’s Nail Ritual. With a deep connection to both ancient wisdom and modern spiritual practices, she works across diverse modalities including psychic healing, tarot, numerology, astrology, karmic corrections, vastu, candle magick, and tantric rituals. Karishma’s mission is to help individuals reconnect with their true selves, heal emotional and spiritual wounds, and realign with their inner power. She mentors students, guides families, works with celebrities, and channels transformative energy that reshapes lives.  Known for her powerful presence and deep empathy, she describes herself as both a seeker and a spiritual force — one who rises through pain and helps others do the same. Karishma doesn’t just interpret energies, she helps rewrite destinies.  A modern mystic with timeless insight, Karishma Shetty is a mentor, mother, and intuitive leader who walks with people on their journey toward healing, truth, and transformation."
     },
   ];
 
