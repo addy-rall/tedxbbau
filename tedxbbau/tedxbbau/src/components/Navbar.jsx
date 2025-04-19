@@ -75,7 +75,7 @@ const Navbar = () => {
             <img 
               src={clgLogo} 
               alt="College Logo" 
-              className="h-12 w-auto cursor-pointer width-2x" 
+              className="h-12 w-auto cursor-pointer width-3x" 
               onClick={() => scrollToSection('home')} 
             />
             {/* TEDx Logo */}

@@ -24,11 +24,11 @@ function App() {
             <Navbar />
             <Graph />
             <Hero />
-            <ChiefSection/>
             <Theme />
             <Line />
             <Attend />
             <Line />
+            <ChiefSection/>
             <SpeakerSection />
             <Line />
             <Banner />
