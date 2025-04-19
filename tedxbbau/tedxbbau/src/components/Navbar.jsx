@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/tedxlogo.png";
-import clgLogo from "../assets/clglogo.png"; // imported college logo
+import clgLogo from "../assets/clglogo.png";
+import additionalImage from "../assets/BRBBA.png"; // <-- Your new image
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +24,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const isHomePage = location.pathname === "/" || location.pathname === "/home";
 
   const scrollToTop = () => {
     setIsOpen(false);
@@ -47,13 +48,13 @@ const Navbar = () => {
       navigateToTeam();
       return;
     }
-    if (!isHomePage && ["home", "about", "speakers", "contact"].includes(sectionId)) {
-      window.location.href = `/#${sectionId}`;
+    if (!isHomePage && ["about", "speakers", "contact"].includes(sectionId)) {
+      navigate(`/#${sectionId}`);
       return;
     }
     const section = document.getElementById(sectionId);
     if (section) {
-      const navbarHeight = 64; 
+      const navbarHeight = 64;
       const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: sectionPosition - navbarHeight,
@@ -71,20 +72,25 @@ const Navbar = () => {
           
           {/* LOGOS */}
           <div className="flex items-center space-x-4">
-            {/* College Logo */}
             <img 
               src={clgLogo} 
               alt="College Logo" 
-              className="h-12 w-auto cursor-pointer width-3x" 
+              className="h-12 w-auto cursor-pointer md:w-9" 
               onClick={() => scrollToSection('home')} 
             />
-            {/* TEDx Logo */}
-            <img 
-              src={logo} 
-              alt="TEDx Logo" 
-              className="h-12 w-auto cursor-pointer" 
-              onClick={() => scrollToSection('home')} 
-            />
+            <div className="flex items-center space-x-2">
+              <img 
+                src={logo} 
+                alt="TEDx Logo" 
+                className="h-12 w-auto cursor-pointer" 
+                onClick={() => scrollToSection('home')} 
+              />
+              <img 
+                src={additionalImage} 
+                alt="Additional" 
+                className="h-12 w-auto hidden md:block md:w-10 " // Only visible on md+
+              />
+            </div>
           </div>
 
           {/* NAV LINKS */}
@@ -146,7 +152,11 @@ const Navbar = () => {
 
           {/* MOBILE MENU BUTTON */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white bg-transparent border-none">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-white bg-transparent border-none" 
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
               {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
             </button>
           </div>
