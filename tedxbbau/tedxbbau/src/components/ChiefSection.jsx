@@ -31,13 +31,13 @@ const ChiefCard = ({ name, surname, title, image, rotateClass }) => {
 const ChiefSection = () => {
   const guests = [
     {
-      name: "Vishak G IYER",
+      name: "Vishak G Iyer",
      
-      title: "DM",
+      title: "District Magistrate, Lucknow",
       image: CG1,
     },
     {
-      name: "Heera lal",
+      name: "Dr. Heera Lal",
       
       title: "IAS",
       image: CG2,
@@ -45,7 +45,7 @@ const ChiefSection = () => {
     {
       name: "Prof. Raj K Mittal",
      
-      title: "VC",
+      title: "Vice Chancellor of BBAU, Lucknow",
       image: CG3,
     }
   ];
