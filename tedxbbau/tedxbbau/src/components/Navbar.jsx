@@ -88,7 +88,7 @@ const Navbar = () => {
               <img 
                 src={additionalImage} 
                 alt="Additional" 
-                className="h-12 w-auto hidden md:block md:w-10 " // Only visible on md+
+                className="h-12 w-auto w-10" // Now visible on all screens
               />
             </div>
           </div>
