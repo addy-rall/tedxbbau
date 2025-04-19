@@ -39,7 +39,7 @@ const ChiefSection = () => {
     {
       name: "Dr. Heera Lal",
       
-      title: "IAS",
+      title: "Commissioner and Registrar of Cooperative Societies in U.P",
       image: CG2,
     },
     {
