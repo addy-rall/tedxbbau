@@ -9,7 +9,7 @@ const ChiefCard = ({ name, surname, title, image, rotateClass }) => {
         <img 
           src={image} 
           alt={`${name} ${surname}`} 
-          className="w-full h-full object-cover z-100"
+          className="w-full h-full object-cover z-1000"
         />
         <div className="absolute inset-0 opacity-20">
           <div className="w-full h-full" style={{
