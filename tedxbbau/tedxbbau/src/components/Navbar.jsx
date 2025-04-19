@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/tedxlogo.png";
-import clgLogo from "../assets/clglogo.jpg"; // imported college logo
+import clgLogo from "../assets/clglogo.png"; // imported college logo
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

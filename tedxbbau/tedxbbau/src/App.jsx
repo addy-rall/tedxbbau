@@ -11,6 +11,7 @@ import SpeakerSection from "./components/SpeakerSection";
 import Location from "./components/Location";
 import { Route, Routes } from "react-router-dom";
 import Line from "./components/Line";
+import ChiefSection from "./components/ChiefSection";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Navbar />
             <Graph />
             <Hero />
+            <ChiefSection/>
             <Theme />
             <Line />
             <Attend />
