@@ -125,7 +125,7 @@ const SpeakersTimeline = () => {
     
     { 
       id: 13, 
-      name: "Caption Deval Soni", 
+      name: "Captain Deval Soni", 
       title: "Pilot and Co-founder of Golden Epaulettes Aviation", 
       topic: "", 
       image: speaker3,
