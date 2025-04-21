@@ -13,6 +13,7 @@ import speaker11 from "../assets/speaker11.png";
 import speaker12 from "../assets/speaker12.png";
 import speaker13 from "../assets/speaker13.png";
 import speaker14 from "../assets/speaker14.png";
+import speaker15 from "../assets/speaker15.jpg";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
@@ -146,6 +147,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker14,
       about: "Karishma Shetty is a renowned spiritual healer, intuitive guide, and founder of Psychic Temples and Kay’s Nail Ritual. With a deep connection to both ancient wisdom and modern spiritual practices, she works across diverse modalities including psychic healing, tarot, numerology, astrology, karmic corrections, vastu, candle magick, and tantric rituals. Karishma’s mission is to help individuals reconnect with their true selves, heal emotional and spiritual wounds, and realign with their inner power. She mentors students, guides families, works with celebrities, and channels transformative energy that reshapes lives.  Known for her powerful presence and deep empathy, she describes herself as both a seeker and a spiritual force — one who rises through pain and helps others do the same. Karishma doesn’t just interpret energies, she helps rewrite destinies.  A modern mystic with timeless insight, Karishma Shetty is a mentor, mother, and intuitive leader who walks with people on their journey toward healing, truth, and transformation."
+    },
+    { 
+      id: 16, 
+      name: "Suraj Sharma", 
+      title: "Founder of S’QB Pictures", 
+      topic: "", 
+      image: speaker15,
+      about: " Suraj Sharma, born in March 2000 in Delhi, is a filmmaker and founder of S’QB Pictures. He began with YouTube sketch comedies in 2017 and rose to fame with his hit web series Cocoon (2021). Known for bold storytelling, he has directed documentaries, music videos, and ad films. His upcoming series Revolution and CEM debut in 2025. Suraj now helps brands connect through powerful, relatable visual content."
     },
   ];
 
