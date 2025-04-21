@@ -13,7 +13,7 @@ import speaker11 from "../assets/speaker11.png";
 import speaker12 from "../assets/speaker12.png";
 import speaker13 from "../assets/speaker13.png";
 import speaker14 from "../assets/speaker14.png";
-import speaker15 from "../assets/speaker15.jpg";
+import speaker15 from "../assets/speaker15.png";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
