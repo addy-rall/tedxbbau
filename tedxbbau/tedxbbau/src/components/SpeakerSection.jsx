@@ -439,6 +439,7 @@ const SpeakersTimeline = () => {
                       } overflow-hidden shadow-lg transition-colors duration-300 bg-black group-hover:shadow-red-500/30`}
                     >
                       <img 
+                      loading='lazy'
                         src={speaker.image} 
                         alt={speaker.name} 
                         className="rounded-full w-full h-full object-cover" 
