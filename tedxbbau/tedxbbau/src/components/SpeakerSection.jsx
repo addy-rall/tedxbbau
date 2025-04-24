@@ -14,13 +14,14 @@ import speaker12 from "../assets/speaker12.png";
 import speaker13 from "../assets/speaker13.png";
 import speaker14 from "../assets/speaker14.png";
 import speaker15 from "../assets/speaker15.png";
+import speaker16 from "../assets/speakera.png";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState(null);
   const [speakerPositions, setSpeakerPositions] = useState([
-     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top"
+     "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top", "bottom", "top"
   ]);
   const timelineRef = useRef(null);
   const touchStartX = useRef(null);
@@ -155,6 +156,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker15,
       about: " Suraj Sharma, born in March 2000 in Delhi, is a filmmaker and founder of S’QB Pictures. He began with YouTube sketch comedies in 2017 and rose to fame with his hit web series Cocoon (2021). Known for bold storytelling, he has directed documentaries, music videos, and ad films. His upcoming series Revolution and CEM debut in 2025. Suraj now helps brands connect through powerful, relatable visual content."
+    },
+    { 
+      id: 17, 
+      name: "Mayuri Agrawal", 
+      title: "International Graphic Designer", 
+      topic: "", 
+      image: speaker16,
+      about: "Mayuri Agrawal* is a self-taught graphic designer, mother of two, and a powerful voice for women who choose to rise despite the odds. With no formal training and limited resources, she built her creative journey from scratch—learning design through free tutorials, driven by passion, resilience, and unshakable belief in her purpose. Since then, Mayuri has worked with many international clients and helped CEOs, coaches, and founders visually communicate their brands with clarity and confidence. Her work is more than just design—it’s about impact, transformation, and empowerment. Mayuri believes in the strength of self-belief, the magic of starting small, and the power of community. Her journey is proof that your story is yours to rewrite—and that even the most broken beginnings can lead to bold, beautiful futures."
     },
   ];
 
