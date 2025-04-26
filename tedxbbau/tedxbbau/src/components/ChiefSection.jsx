@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CG1 from "../assets/CG1.png";
 import CG2 from "../assets/CG2.png";
 import CG3 from "../assets/CG3.png";
+import CG4 from "../assets/guestc.png";
 
 const ChiefCard = ({ name, surname, title, image, rotateClass }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -79,6 +80,12 @@ const ChiefSection = () => {
       surname: "",
       title: "Vice Chancellor of BBAU, Lucknow",
       image: CG3,
+    },
+    {
+      name: "Sir Shishir Dixit",
+      surname: "",
+      title: "Founder-Director and Chief SSB Mentor at Centurion Defence Academy",
+      image: CG4,
     },
   ];
 
