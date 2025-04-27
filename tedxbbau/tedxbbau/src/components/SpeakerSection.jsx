@@ -15,6 +15,7 @@ import speaker13 from "../assets/speaker13.png";
 import speaker14 from "../assets/speaker14.png";
 import speaker15 from "../assets/speaker15.png";
 import speaker16 from "../assets/speakera.png";
+import speaker17 from "../assets/speakeraa.png";
 
 const SpeakersTimeline = () => {
   const [activeSpeaker, setActiveSpeaker] = useState(1);
@@ -164,6 +165,14 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker16,
       about: "Mayuri Agrawal* is a self-taught graphic designer, mother of two, and a powerful voice for women who choose to rise despite the odds. With no formal training and limited resources, she built her creative journey from scratch—learning design through free tutorials, driven by passion, resilience, and unshakable belief in her purpose. Since then, Mayuri has worked with many international clients and helped CEOs, coaches, and founders visually communicate their brands with clarity and confidence. Her work is more than just design—it’s about impact, transformation, and empowerment. Mayuri believes in the strength of self-belief, the magic of starting small, and the power of community. Her journey is proof that your story is yours to rewrite—and that even the most broken beginnings can lead to bold, beautiful futures."
+    },
+    { 
+      id: 18, 
+      name: "Shrey Sharma", 
+      title: "Youngest Salesforce MVP", 
+      topic: "", 
+      image: speaker17,
+      about: "Shrey Sharma is a Serial Entrepreneur, Educator, and Creator, leading Cyntexa — a company he grew from 5 to 300+ people in under four years without external funding, achieving 125% year-over-year growth. At 19, he started as a trainer and founded S2 Labs in 2015, which has now trained over 50,000 Salesforce professionals globally. Known as Salesforce Hulk, Shrey built the world’s largest Salesforce YouTube community with 110K+ subscribers and 11M+ views. He was named the Youngest Salesforce MVP in 2019 for his contributions to the community. An engaging speaker, Shrey presents on Salesforce, technology, entrepreneurship, and leadership at global conferences. He has judged major hackathons like the Smart India Hackathon and is known for blending technical expertise with business acumen, empathy, and a passion for revolutionizing businesses."
     },
   ];
 
