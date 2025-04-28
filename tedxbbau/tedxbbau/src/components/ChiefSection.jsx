@@ -82,9 +82,9 @@ const ChiefSection = () => {
       image: CG3,
     },
     {
-      name: "Sir Shishir Dixit",
+      name: "Mr. Shishir Dixit",
       surname: "",
-      title: "Founder-Director and Chief SSB Mentor at Centurion Defence Academy",
+      title: "Chairman & CMD Centurion Education Pvt Ltd",
       image: CG4,
     },
   ];
