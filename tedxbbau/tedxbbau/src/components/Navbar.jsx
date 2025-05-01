@@ -138,7 +138,7 @@ const Navbar = () => {
           </div>
 
           {/* REGISTER NOW BUTTON */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <a 
               href="https://konfhub.com/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
               target="_blank" 
@@ -148,7 +148,7 @@ const Navbar = () => {
             >
               Register Now
             </a>
-          </div>
+          </div> */}
 
           {/* MOBILE MENU BUTTON */}
           <div className="md:hidden">
@@ -172,14 +172,14 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Speakers</button>
               <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left" onClick={() => setIsOpen(false)}>Team</NavLink>
               <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Contact</button>
-              <a 
+              {/* <a 
                 href="https://konfhub.com/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-center"
               >
                 Register Now
-              </a>
+              </a> */}
             </div>
           </div>
         )}

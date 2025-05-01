@@ -104,7 +104,7 @@ const App = () => {
       </div>
 
       <div className="w-full text-center py-70 mt-20 lg:mt-5 lg:py-30">
-        <motion.div
+        {/* <motion.div
           className="bg-red-700 text-white text-base sm:text-lg md:text-xl lg:mt-[170px] font-bold py-2 px-8 flicker"
           style={{ fontFamily: "Poppins, sans-serif" }}
           initial={{ opacity: 0.3 }}
@@ -114,7 +114,7 @@ const App = () => {
           <span className="block">First 100 members get an</span>  
           <span className="block">Early Bird DISCOUNT!</span>  
           <span className="block sm:inline">Use code <strong>TEDXBBAU100</strong> now!</span>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <div className="min-h-screen safari-fix w-full py-10 flex flex-col md:flex-row items-center justify-center text-white container mx-auto px-4">
