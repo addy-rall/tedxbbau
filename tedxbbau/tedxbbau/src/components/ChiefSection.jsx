@@ -81,12 +81,6 @@ const ChiefSection = () => {
       title: "Vice Chancellor of BBAU, Lucknow",
       image: CG3,
     },
-    {
-      name: "Mr. Shishir Dixit",
-      surname: "",
-      title: "Chairman & CMD Centurion Education Pvt Ltd",
-      image: CG4,
-    },
   ];
 
   return (
