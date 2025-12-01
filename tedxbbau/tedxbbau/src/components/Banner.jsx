@@ -47,7 +47,7 @@ const ToBeAnnounced = () => {
         <div className="flex items-center justify-center gap-3 text-3xl md:text-4xl text-gray-300 font-medium mt-6">
           <CalendarDays size={36} className="text-white" />
           <span>
-            Date: <span className="text-white font-semibold">April 29, 2025</span>
+            Date: <span className="text-white font-semibold">June 29, 2025</span>
           </span>
         </div>
 
