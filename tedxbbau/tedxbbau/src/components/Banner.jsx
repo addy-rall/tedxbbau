@@ -37,7 +37,7 @@ const ToBeAnnounced = () => {
       <div className="text-center relative z-10 px-4">
         <h1 className="font-bold text-5xl md:text-7xl text-red-800">
           {isCountdownOver ? (
-            <>Event has been<span className="text-white"> CONCLUDED.</span> Now!</>
+            <>Event has been<span className="text-white"> CONCLUDED.</span> </>
           ) : (
             <>Event Will Be <span className="text-white">LIVE</span> in:</>
           )}
