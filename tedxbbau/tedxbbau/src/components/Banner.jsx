@@ -78,7 +78,7 @@ const ToBeAnnounced = () => {
 
             <h1 className="py-10 text-4xl md:text-5xl font-bold tracking-wide">
               <span className="block sm:inline">BOOK YOUR TICKETS</span>{" "}
-              <span className="block sm:inline text-red-800">NOW</span>
+             
             </h1>
 
             <a
