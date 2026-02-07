@@ -30,9 +30,6 @@ function App() {
             <Line />
             <ChiefSection/>
             <SpeakerSection />
-            <Line />
-            <Banner />
-            <Line />
             <Footer />
           </div>
         }
