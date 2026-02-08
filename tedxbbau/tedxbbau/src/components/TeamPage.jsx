@@ -5,12 +5,7 @@ import CoorganiserImg from "../assets/Aditya.png";
 import PinImage from "../assets/pin.png";
 
 const teamMembers = [
-  {
-    name: "Prof. Rajshree Pandey",
-    role: "Faculty Coordinator",
-    image: FacultyImg,
-    description: "Prof. Raj Shree currently leads the Department of Information Technology at Babasaheb Bhimrao Ambedkar University (BBAU), located in Lucknow. \n\nShe earned her doctorate in Information Technology from the same university. With over 15 years of teaching experience and more than 14 years dedicated to research, she has significantly advanced the field through both academic and scholarly contributions.\n\n Her work has been featured in over 80 research publications across esteemed national and international journals. Additionally, she has successfully led and collaborated on four research projects—two funded by CST-UP, one supported by CERT, and another by BBAU, Lucknow. \nAlongside her academic endeavors, Prof. Raj Shree also holds several key administrative positions within the university, including her role as the Nodal Officer for the UGC Grievance Redressal Portal.",
-  },
+ 
   {
     name: "Lakhan Varshney",
     role: "Organiser",
