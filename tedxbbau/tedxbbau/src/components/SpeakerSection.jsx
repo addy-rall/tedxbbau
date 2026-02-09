@@ -52,23 +52,15 @@ const SpeakersTimeline = () => {
       about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
   },
   */
-  { 
-    id: 3, 
-    name: "Dr. Parth Goyal", 
-    title: "Author, Founder of Medulla", 
-    topic: "", 
-    image: speaker4,
-    about: "Dr. Parth Goyal, is a multifaceted professional excelling as a doctor, educator, author, and entrepreneur. He secured an impressive All India Rank (AIR) of 223 in the National Eligibility cum Entrance Test (NEET) and AIR 5364 in the Joint Entrance Examination (JEE) Advanced. He authored the Biohack and Chemhack books, designed for rapid revision of biology and chemistry concepts, enabling students to review entire chapters in just 15-20 minutes. Dr. Goyal's entrepreneurial spirit is further exemplified by his co-founding of Medulla, a venture focused on healthcare innovation.  His dedication to improving health and education has made him a respected figure among students and professionals alike."
-  },
-  
     { 
-      id: 4, 
-      name: "Rohit Vaidwan", 
-      title: "Educator and Founder of Adhyayan Mantra", 
+      id: 3, 
+      name: "Dr. Parth Goyal", 
+      title: "Author, Founder of Medulla", 
       topic: "", 
-      image: speaker6,
-      about: "Rohit Vaidwan is the founder of Adhyayan Mantra, leading institute for TET and teaching exam preparation of India, established in 2013. Under his leadership, over 200,000 students have qualified, including 84,000+ in CTET and 12,000+ in UGC-NET/JRF. His YouTube channel, with 1.71 million subscribers and 9,600+ videos, offers accessible, high-quality content to aspiring educators. Rohit is also the author of Child Development with Pedagogy & Methodology, empowering thousands of teachers with his expertise."
+      image: speaker4,
+      about: "Dr. Parth Goyal, is a multifaceted professional excelling as a doctor, educator, author, and entrepreneur. He secured an impressive All India Rank (AIR) of 223 in the National Eligibility cum Entrance Test (NEET) and AIR 5364 in the Joint Entrance Examination (JEE) Advanced. He authored the Biohack and Chemhack books, designed for rapid revision of biology and chemistry concepts, enabling students to review entire chapters in just 15-20 minutes. Dr. Goyal's entrepreneurial spirit is further exemplified by his co-founding of Medulla, a venture focused on healthcare innovation.  His dedication to improving health and education has made him a respected figure among students and professionals alike."
     },
+  
     { 
       id: 5, 
       name: "Saumya Singh", 
@@ -76,14 +68,6 @@ const SpeakersTimeline = () => {
       topic: "", 
       image: speaker5,
       about: "Saumya Singh is a Software Engineer at Red Hat and a tech influencer with over 400,000 followers on Instagram. Recognized as a LinkedIn Top Voice, she has earned accolades like the International Open Source Award, Google Connect Winner (2019), and GHCI Scholar (2020). Passionate about mentoring, she uses her platform to demystify coding, share career insights, and empower aspiring technologists with practical skills and industry knowledge."
-    },
-    { 
-      id: 12, 
-      name: "Captain Rajshree Pandey", 
-      title: "HOD of IT Department", 
-      topic: "", 
-      image: speaker12,
-      about: "Prof. Raj Shree currently leads the Department of Information Technology at Babasaheb Bhimrao Ambedkar University (BBAU), located in Lucknow. She earned her doctorate in Information Technology from the same university. \nWith over 15 years of teaching experience and more than 14 years dedicated to research, she has significantly advanced the field through both academic and scholarly contributions. Her work has been featured in over 80 research publications across esteemed national and international journals. \nAdditionally, she has successfully led and collaborated on four research projects—two funded by CST-UP, one supported by CERT, and another by BBAU, Lucknow. \nAlongside her academic endeavors, Prof. Raj Shree also holds several key administrative positions within the university, including her role as the Nodal Officer for the UGC Grievance Redressal Portal.."
     },
     { 
       id: 7, 
@@ -142,14 +126,14 @@ const SpeakersTimeline = () => {
       image: speaker13,
       about: "Chandan Mishra is the Founder and CEO of Smart Infovision, a company that has been providing digital solutions like studio setups, interactive panels, and educational software for over 12 years. Under his leadership, Smart Infovision has expanded to over 10 branches across India, including locations in Noida, Jaipur, Lucknow, Patna, Udaipur, and bihar,Ahmedabad etc.And employs more than 200 professionals.With a strong background in sales, marketing, and business management. Passed Polytechnic from Jaunpur in 2011. His YouTube channel, Chandan Mishra Consulting, features videos on mindset, growth, and technology, aiming to empower individuals and businesses. Additionally, he engages with his audience on Instagram under the handle @lets_grow_with_mishraji, where he shares motivational content and updates related to Smart Infovision."
     },
-    { 
-      id: 15, 
-      name: "Karishma Shetty ", 
-      title: "Founder- Psychic Temples and Kay’s Nail Ritual", 
-      topic: "", 
-      image: speaker14,
-      about: "Karishma Shetty is a renowned spiritual healer, intuitive guide, and founder of Psychic Temples and Kay’s Nail Ritual. With a deep connection to both ancient wisdom and modern spiritual practices, she works across diverse modalities including psychic healing, tarot, numerology, astrology, karmic corrections, vastu, candle magick, and tantric rituals. Karishma’s mission is to help individuals reconnect with their true selves, heal emotional and spiritual wounds, and realign with their inner power. She mentors students, guides families, works with celebrities, and channels transformative energy that reshapes lives.  Known for her powerful presence and deep empathy, she describes herself as both a seeker and a spiritual force — one who rises through pain and helps others do the same. Karishma doesn’t just interpret energies, she helps rewrite destinies.  A modern mystic with timeless insight, Karishma Shetty is a mentor, mother, and intuitive leader who walks with people on their journey toward healing, truth, and transformation."
-    },
+    // { 
+    //   id: 15, 
+    //   name: "Karishma Shetty ", 
+    //   title: "Founder- Psychic Temples and Kay’s Nail Ritual", 
+    //   topic: "", 
+    //   image: speaker14,
+    //   about: "Karishma Shetty is a renowned spiritual healer, intuitive guide, and founder of Psychic Temples and Kay’s Nail Ritual. With a deep connection to both ancient wisdom and modern spiritual practices, she works across diverse modalities including psychic healing, tarot, numerology, astrology, karmic corrections, vastu, candle magick, and tantric rituals. Karishma’s mission is to help individuals reconnect with their true selves, heal emotional and spiritual wounds, and realign with their inner power. She mentors students, guides families, works with celebrities, and channels transformative energy that reshapes lives.  Known for her powerful presence and deep empathy, she describes herself as both a seeker and a spiritual force — one who rises through pain and helps others do the same. Karishma doesn’t just interpret energies, she helps rewrite destinies.  A modern mystic with timeless insight, Karishma Shetty is a mentor, mother, and intuitive leader who walks with people on their journey toward healing, truth, and transformation."
+    // },
     { 
       id: 16, 
       name: "Suraj Sharma", 
