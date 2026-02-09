@@ -63,18 +63,18 @@ const ChiefCard = ({ name, surname, title, image, rotateClass }) => {
 
 const ChiefSection = () => {
   const guests = [
-    {
-      name: "Mr. Vishak G Iyer",
-      surname: "",
-      title: "District Magistrate, Lucknow",
-      image: CG1,
-    },
-    {
-      name: "Dr. Heera Lal",
-      surname: "",
-      title: "Commissioner and Registrar of Cooperative Societies in U.P",
-      image: CG2,
-    },
+    // {
+    //   name: "Mr. Vishak G Iyer",
+    //   surname: "",
+    //   title: "District Magistrate, Lucknow",
+    //   image: CG1,
+    // },
+    // {
+    //   name: "Dr. Heera Lal",
+    //   surname: "",
+    //   title: "Commissioner and Registrar of Cooperative Societies in U.P",
+    //   image: CG2,
+    // },
     {
       name: "Prof. Raj K Mittal",
       surname: "",
