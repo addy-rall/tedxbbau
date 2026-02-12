@@ -394,7 +394,7 @@ const SpeakersTimeline = () => {
       
       <div className="container mx-auto px-4 mb-8 sm:mb-12 relative z-10">
         <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>
-          <span className="text-red-600">Voices that</span> Inspire
+          <span className="text-red-600">Speakers Of </span>TEDx2025
         </h1>
         <div className="w-16 sm:w-24 h-1 bg-red-600 mx-auto mt-4 sm:mt-6"></div>
       </div>
