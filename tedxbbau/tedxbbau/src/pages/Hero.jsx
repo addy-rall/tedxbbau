@@ -91,10 +91,10 @@ const App = () => {
           }}
         >
           <div className="block mx-auto leading-snug">
-            <SplitText text="Unveiling" />
+            <SplitText text="TEDxBBAU 2026 Season 2" />
           </div>
           <div className="block text-red-700 mx-auto leading-snug">
-            <SplitText text="Hidden Truths" />
+            <SplitText text="COMING SOON" />
           </div>
 
           <div className="absolute inset-x-0 bottom-0 w-full">
