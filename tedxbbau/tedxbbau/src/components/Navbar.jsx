@@ -123,6 +123,12 @@ const Navbar = () => {
             >
               Speakers
             </button>
+            <button 
+              className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0" 
+            >
+              Sponsors
+            </button>
+            
             <NavLink 
               to="/team"
               className="hover:text-gray-200 transition cursor-pointer bg-transparent border-none text-white text-lg font-semibold p-0"
