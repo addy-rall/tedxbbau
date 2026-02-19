@@ -19,6 +19,41 @@ const teamMembers = [
     image: CoorganiserImg,
     description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
     linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
+  },
+  {
+    name: "Aditya Kumar Bharti",
+    role: "Co-Organiser",
+    image: CoorganiserImg,
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
+    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
+  },
+  {
+    name: "Aditya Kumar Bharti",
+    role: "Co-Organiser",
+    image: CoorganiserImg,
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
+    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
+  },
+  {
+    name: "Aditya Kumar Bharti",
+    role: "Co-Organiser",
+    image: CoorganiserImg,
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
+    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
+  },
+  {
+    name: "Aditya Kumar Bharti",
+    role: "Co-Organiser",
+    image: CoorganiserImg,
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
+    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
+  },
+  {
+    name: "Aditya Kumar Bharti",
+    role: "Co-Organiser",
+    image: CoorganiserImg,
+    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
+    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
   }
 ];
 
