@@ -74,7 +74,7 @@ const TeamPage = () => {
         The dedicated team behind TEDx working to bring innovative ideas and inspiring speakers to our community.
       </p>
       
-      <div className="mt-3 flex flex-col md:flex-row justify-center gap-10 px-5 w-full max-w-6xl relative z-10">
+      <div className="mt-3 flex flex-col md:flex-row flex-wrap justify-center gap-10 px-5 w-full max-w-6xl relative z-10">
         {teamMembers.map((member, index) => (
           <div
             key={index}
