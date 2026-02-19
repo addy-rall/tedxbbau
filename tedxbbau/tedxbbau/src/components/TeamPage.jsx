@@ -69,7 +69,7 @@ const TeamPage = () => {
 
   return (
     <div className="relative min-h-screen bg-black text-white flex flex-col items-center mb-20 pt-24 px-6">
-      <h1 className="text-5xl font-bold mb-6 relative z-10">Meet Our Organisers</h1>
+      <h1 className="text-5xl font-bold mb-6 relative z-10">Our Team Behind TEDxBBAU2025</h1>
       <p className="text-lg max-w-2xl text-center mb-8 relative z-10">
         The dedicated team behind TEDx working to bring innovative ideas and inspiring speakers to our community.
       </p>
