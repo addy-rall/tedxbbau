@@ -141,7 +141,7 @@ const TeamPage = () => {
 
       {/* TITLE */}
       <h1 className="text-5xl font-bold text-center mb-10">
-        Meet Our Team
+        Meet Our Team Of TEDxBBAU 2025
       </h1>
       <p className="mb-12 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
        The passionate individuals working behind the scenes to bring ideas worth spreading to life through TEDx.
