@@ -1,144 +1,159 @@
 import React, { useState } from "react";
-import FacultyImg from "../assets/imgwho.jpg";
+import { FaLinkedinIn } from "react-icons/fa";
+
+/* ===== IMAGES ===== */
+
 import OrganiserImg from "../assets/Lakhan.png";
 import CoorganiserImg from "../assets/Aditya.png";
-import PinImage from "../assets/pin.png";
+import abc from "../assets/abc.jpeg";
+import nisha from "../assets/nisha.jpeg";
+import jai from "../assets/jai.jpeg";
+import umra from "../assets/umra.jpeg";
+import kanak from "../assets/kanak.jpeg";
+import pankaj from "../assets/pankaj.jpeg";
+import saumya from "../assets/saumya.jpeg";
+import harshika from "../assets/harshika.jpeg";
+import divi from "../assets/divi.jpeg";
+import dev from "../assets/dev.jpeg";
+import a from "../assets/a.png";
+
+/* ===== TEAM MEMBERS ===== */
 
 const teamMembers = [
+  { name: "Lakhan Varshney", role: "Organizer", image: OrganiserImg, linkedin: "#" },
+  { name: "Aditya Kumar Bharti", role: "Co-Organizer", image: CoorganiserImg, linkedin: "#" },
+  { name: "Divyanshi Vishwakarma", role: "Head Operations", image: divi, linkedin: "#" },
+  { name: "Harshika Singh", role: "Web Operations Team", image: harshika, linkedin: "#" },
+  { name: "Jai Kishan Dhurwe", role: "Web Operations Team", image: jai, linkedin: "#" },
+  { name: "Pankaj Pal", role: "Web Operations Team", image: pankaj, linkedin: "#" },
+  { name: "Adya Misra", role: "Head of Web Operations Team", image: a, linkedin: "#" },
+  { name: "Nisha Tiwari", role: "Design Team", image: nisha, linkedin: "#" },
+  { name: "Umra Shaheen", role: "Design Team", image: umra, linkedin: "#" },
+  { name: "Kanak Singh", role: "Design Team", image: kanak, linkedin: "#" },
+  { name: "Devansh Giri", role: "Head of Content Team", image: dev, linkedin: "#" },
+  { name: "Saumya Rani", role: "Marketing Lead", image: saumya, linkedin: "#" },
+  { name: "Raman Choudhary", role: "Head of Design Team", image: abc, linkedin: "#" },
  
-  {
-    name: "Lakhan Varshney",
-    role: "Organiser",
-    image: OrganiserImg,
-    description: "Have more than 3 years experience working with the Top Ed-tech Youtubers (Managing their social media account, Video Production, Content Writing, Content Planning).\n\nDone 50+ Podcast with India's greatest educators.\n\nHave Experience of managing 100+ events(Tedx, Ecell, College fest, Rendezvous , University events) all over the India.\n\nHe enjoy traveling and meeting new people, as well as learning about their contributions to the nation.",
-    linkedin: "https://www.linkedin.com/in/lakhanvarshney/"
-  },
-  {
-    name: "Aditya Kumar Bharti",
-    role: "Co-Organiser",
-    image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
-  },
-  {
-    name: "Aditya Kumar Bharti",
-    role: "Co-Organiser",
-    image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
-  },
-  {
-    name: "Aditya Kumar Bharti",
-    role: "Co-Organiser",
-    image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
-  },
-  {
-    name: "Aditya Kumar Bharti",
-    role: "Co-Organiser",
-    image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
-  },
-  {
-    name: "Aditya Kumar Bharti",
-    role: "Co-Organiser",
-    image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
-  },
-  {
-    name: "Aditya Kumar Bharti",
-    role: "Co-Organiser",
-    image: CoorganiserImg,
-    description: "He is a TEDx coordinator and community organizer, currently pursuing an M.C.A. at Babasaheb Bhimrao Ambedkar University, Lucknow. \n\nHe loves traveling and connecting with people, always learning from new experiences. \n\nBy participating in events at Lucknow University, he has gained skills that have helped him grow personally and professionally, and contribute to his community.",
-    linkedin: "https://www.linkedin.com/in/aditya-kumar-bharti-4589b32b9/"
-  }
+  
+
 ];
 
-const TeamPage = () => {
-  const [expandedCards, setExpandedCards] = useState({});
+/* ===== TEAM CARD ===== */
 
-  const toggleExpand = (index) => {
-    setExpandedCards(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
-  };
+const TeamCard = ({ member }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const radius = 92;
+  const circumference = 2 * Math.PI * radius;
 
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col items-center mb-20 pt-24 px-6">
-      <h1 className="text-5xl font-bold mb-6 relative z-10">Our Team Behind TEDxBBAU2025</h1>
-      <p className="text-lg max-w-2xl text-center mb-8 relative z-10">
-        The dedicated team behind TEDx working to bring innovative ideas and inspiring speakers to our community.
-      </p>
-      
-      <div className="mt-3 flex flex-col md:flex-row flex-wrap justify-center gap-10 px-5 w-full max-w-6xl relative z-10">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="relative w-full md:w-1/2 lg:w-1/3 p-8 rounded-full shadow-lg bg-gray-900 text-white border-4 border-red-500 flex flex-col items-center transition-all hover:shadow-xl"
+    <div
+      className="flex flex-col items-center cursor-pointer group"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* CIRCLE CONTAINER */}
+      <div className="relative w-56 h-56 flex items-center justify-center">
+
+        {/* SVG RING */}
+        <svg
+          className="absolute w-full h-full -rotate-90"
+          viewBox="0 0 200 200"
+        >
+          {/* BASE RING */}
+          <circle
+            cx="100"
+            cy="100"
+            r={radius}
+            stroke="rgba(255,80,80,0.25)"
+            strokeWidth="3"
+            fill="transparent"
+          />
+
+          {/* PROGRESS RING */}
+          <circle
+            cx="100"
+            cy="100"
+            r={radius}
+            stroke="rgba(255,80,80,0.65)"
+            strokeWidth="3"
+            fill="transparent"
+            strokeDasharray={circumference}
+            strokeDashoffset={hovered ? 0 : circumference}
             style={{
-              boxShadow: "5px 5px 15px rgba(255, 0, 0, 0.2)",
-              borderRadius: "12px",
-              position: "relative",
-              padding: "20px",
-              backgroundColor: "#1a1a1a"
+              transition:
+                "stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1)",
             }}
-          >
-            <img
-              src={PinImage}
-              alt="Pin"
-              className="absolute top-[-30px] left-[-15px] w-16 h-16 rotate-[-20deg]"
-            />
-            <div className="flex flex-col items-center">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-32 h-32 rounded-full border-4 border-red-500 object-cover transition-transform transform hover:scale-110 shadow-lg hover:shadow-red-500"
-                style={{
-                  filter: "drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.2))",
-                  padding: "5px",
-                  backgroundColor: "white"
-                }}
-              />
-              <h3 className="mt-4 text-2xl font-semibold">{member.name}</h3>
-              <p className="text-md font-medium text-red-500">{member.role}</p>
-              
-              <div className="mt-3 text-center whitespace-pre-line">
-                {expandedCards[index] ? (
-                  // Full description when expanded
-                  member.description
-                ) : (
-                  // Show only first few lines when not expanded
-                  <div className="line-clamp-3">
-                    {member.description}
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="mt-auto pt-4 flex items-center gap-4">
-              <button
-                onClick={() => toggleExpand(index)}
-                className="inline-block bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition font-medium"
-              >
-                {expandedCards[index] ? "Show Less" : "Read More"}
-              </button>
-              {member.linkedin && (
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition font-medium"
-                >
-                  Visit Profile
-                </a>
-              )}
-            </div>
-          </div>
+          />
+        </svg>
+
+        {/* IMAGE */}
+        <img
+          src={member.image}
+          alt={member.name}
+          className="
+            w-48 h-48 rounded-full object-cover z-10
+            transition duration-500
+            group-hover:scale-95
+          "
+        />
+      </div>
+
+      {/* NAME */}
+      <h3 className="mt-6 text-xl font-semibold text-white text-center">
+        {member.name}
+      </h3>
+
+      {/* ROLE */}
+      <span
+        className="
+          mt-2 text-sm px-4 py-1 rounded-full
+          bg-red-900/30 text-red-300
+          transition duration-300
+          group-hover:bg-red-500 group-hover:text-white
+        "
+      >
+        {member.role}
+      </span>
+
+      {/* LINKEDIN */}
+      <a
+        href={member.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          mt-4 text-gray-400 text-lg
+          transition duration-300
+          group-hover:text-red-400
+        "
+      >
+        <FaLinkedinIn />
+      </a>
+    </div>
+  );
+};
+
+/* ===== TEAM PAGE ===== */
+
+const TeamPage = () => {
+  return (
+    <div className="min-h-screen bg-black text-white pt-24 pb-20 px-6">
+
+      {/* TITLE */}
+      <h1 className="text-5xl font-bold text-center mb-10">
+        Meet Our Team
+      </h1>
+      <p className="mb-12 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+       The passionate individuals working behind the scenes to bring ideas worth spreading to life through TEDx.
+  </p>
+
+      {/* GRID */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14">
+        {teamMembers.map((member, index) => (
+          <TeamCard key={index} member={member} />
         ))}
       </div>
+
     </div>
   );
 };
