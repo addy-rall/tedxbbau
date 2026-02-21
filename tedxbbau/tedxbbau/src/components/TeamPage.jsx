@@ -20,8 +20,8 @@ import a from "../assets/a.png";
 /* ===== TEAM MEMBERS ===== */
 
 const teamMembers = [
-  { name: "Lakhan Varshney", role: "Organizer", image: OrganiserImg, linkedin: "#" },
-  { name: "Aditya Kumar Bharti", role: "Co-Organizer", image: CoorganiserImg, linkedin: "#" },
+  { name: "Lakhan Varshney", role: "Organizer", image: OrganiserImg, linkedin: "https://www.linkedin.com/in/lakhanvarshney/" },
+  { name: "Aditya Kumar Bharti", role: "Co-Organizer", image: CoorganiserImg, linkedin: "https://www.linkedin.com/in/adityakumarbharti/" },
   { name: "Divyanshi Vishwakarma", role: "Head Operations", image: divi, linkedin: "#" },
   { name: "Harshika Singh", role: "Web Operations Team", image: harshika, linkedin: "#" },
   { name: "Jai Kishan Dhurwe", role: "Web Operations Team", image: jai, linkedin: "#" },
