@@ -23,16 +23,16 @@ const teamMembers = [
   { name: "Lakhan Varshney", role: "Organizer", image: OrganiserImg, linkedin: "https://www.linkedin.com/in/lakhanvarshney/" },
   { name: "Aditya Kumar Bharti", role: "Co-Organizer", image: CoorganiserImg, linkedin: "https://www.linkedin.com/in/adityakumarbharti/" },
   { name: "Divyanshi Vishwakarma", role: "Head Operations", image: divi, linkedin: "#" },
+  { name: "Adya Misra", role: "Head of Web Operations Team", image: a, linkedin: "#" },
+  { name: "Raman Choudhary", role: "Head of Design Team", image: abc, linkedin: "#" },
+  { name: "Saumya Rani", role: "Curation Head", image: saumya, linkedin: "#" },
   { name: "Harshika Singh", role: "Web Operations Team", image: harshika, linkedin: "#" },
   { name: "Jai Kishan Dhurwe", role: "Web Operations Team", image: jai, linkedin: "#" },
   { name: "Pankaj Pal", role: "Web Operations Team", image: pankaj, linkedin: "#" },
-  { name: "Adya Misra", role: "Head of Web Operations Team", image: a, linkedin: "#" },
+  { name: "Devansh Giri", role: "Head of Content Team", image: dev, linkedin: "#" },
   { name: "Nisha Tiwari", role: "Design Team", image: nisha, linkedin: "#" },
   { name: "Umra Shaheen", role: "Design Team", image: umra, linkedin: "#" },
   { name: "Kanak Singh", role: "Design Team", image: kanak, linkedin: "#" },
-  { name: "Devansh Giri", role: "Head of Content Team", image: dev, linkedin: "#" },
-  { name: "Saumya Rani", role: "Marketing Lead", image: saumya, linkedin: "#" },
-  { name: "Raman Choudhary", role: "Head of Design Team", image: abc, linkedin: "#" },
  
   
 
