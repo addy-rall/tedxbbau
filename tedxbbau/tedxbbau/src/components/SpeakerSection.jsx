@@ -36,8 +36,23 @@ const SpeakersTimeline = () => {
   
   const speakers = [
     { 
+        //    { 
+  //     id: 1, 
+  //     name: "Amresh Bharti", 
+  //     title: "Founder of WemakeCreators", 
+  //     topic: "", 
+  //     image: speaker1,
+  //     about: "Amresh Bharti is the visionary behind Mahatmaji Technical, a YouTube channel with over 6.9 million subscribers and 446 million views, empowering millions with insights on online earning, personal growth, and education. With a Bachelor of Science in Agriculture (B.Sc Ag) from PGC Ghazipur, His journey from a home tutor to a digital mentor is truly inspiring. His dedication has earned him multiple YouTube Creator Awards, including the Silver and Gold Play Buttons, and recognition in top media outlets. Through his practical, step-by-step guidance, Amresh continues to inspire individuals to pursue their goals with confidence and clarity."
+  //   },  { 
+  //     id: 2, 
+  //     name: "Himanshi Singh", 
+  //     title: "Educator, Creator and Founder of Let's Learn", 
+  //     topic: "", 
+  //     image: speaker2,
+  //     about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
+  // },
       { 
-      id: 5, 
+      id: 1, 
       name: "Saumya Singh", 
       title: "Tech Creator", 
       topic: "", 
@@ -144,21 +159,6 @@ const SpeakersTimeline = () => {
       image: speaker17,
       about: "Shrey Sharma is a Serial Entrepreneur, Educator, and Creator, leading Cyntexa — a company he grew from 5 to 300+ people in under four years without external funding, achieving 125% year-over-year growth. At 19, he started as a trainer and founded S2 Labs in 2015, which has now trained over 50,000 Salesforce professionals globally. Known as Salesforce Hulk, Shrey built the world’s largest Salesforce YouTube community with 110K+ subscribers and 11M+ views. He was named the Youngest Salesforce MVP in 2019 for his contributions to the community. An engaging speaker, Shrey presents on Salesforce, technology, entrepreneurship, and leadership at global conferences. He has judged major hackathons like the Smart India Hackathon and is known for blending technical expertise with business acumen, empathy, and a passion for revolutionizing businesses."
     },
-  //    { 
-  //     id: 1, 
-  //     name: "Amresh Bharti", 
-  //     title: "Founder of WemakeCreators", 
-  //     topic: "", 
-  //     image: speaker1,
-  //     about: "Amresh Bharti is the visionary behind Mahatmaji Technical, a YouTube channel with over 6.9 million subscribers and 446 million views, empowering millions with insights on online earning, personal growth, and education. With a Bachelor of Science in Agriculture (B.Sc Ag) from PGC Ghazipur, His journey from a home tutor to a digital mentor is truly inspiring. His dedication has earned him multiple YouTube Creator Awards, including the Silver and Gold Play Buttons, and recognition in top media outlets. Through his practical, step-by-step guidance, Amresh continues to inspire individuals to pursue their goals with confidence and clarity."
-  //   },  { 
-  //     id: 2, 
-  //     name: "Himanshi Singh", 
-  //     title: "Educator, Creator and Founder of Let's Learn", 
-  //     topic: "", 
-  //     image: speaker2,
-  //     about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
-  // },
 
   ];
 
