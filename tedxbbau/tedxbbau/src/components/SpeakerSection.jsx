@@ -35,7 +35,6 @@ const SpeakersTimeline = () => {
   const MAX_VERTICAL_MOVEMENT = 50;
   
   const speakers = [
-    { 
      { 
       id: 1, 
       name: "Amresh Bharti", 
