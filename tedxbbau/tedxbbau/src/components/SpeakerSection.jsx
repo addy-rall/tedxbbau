@@ -35,23 +35,17 @@ const SpeakersTimeline = () => {
   const MAX_VERTICAL_MOVEMENT = 50;
   
   const speakers = [
-    /*{ 
-      id: 1, 
-      name: "Amresh Bharti", 
-      title: "Founder of WemakeCreators", 
-      topic: "", 
-      image: speaker1,
-      about: "Amresh Bharti is the visionary behind Mahatmaji Technical, a YouTube channel with over 6.9 million subscribers and 446 million views, empowering millions with insights on online earning, personal growth, and education. With a Bachelor of Science in Agriculture (B.Sc Ag) from PGC Ghazipur, His journey from a home tutor to a digital mentor is truly inspiring. His dedication has earned him multiple YouTube Creator Awards, including the Silver and Gold Play Buttons, and recognition in top media outlets. Through his practical, step-by-step guidance, Amresh continues to inspire individuals to pursue their goals with confidence and clarity."
-    },  { 
-      id: 2, 
-      name: "Himanshi Singh", 
-      title: "Educator, Creator and Founder of Let's Learn", 
-      topic: "", 
-      image: speaker2,
-      about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
-  },
-  */
     { 
+      { 
+      id: 5, 
+      name: "Saumya Singh", 
+      title: "Tech Creator", 
+      topic: "", 
+      image: speaker5,
+      about: "Saumya Singh is a Software Engineer at Red Hat and a tech influencer with over 400,000 followers on Instagram. Recognized as a LinkedIn Top Voice, she has earned accolades like the International Open Source Award, Google Connect Winner (2019), and GHCI Scholar (2020). Passionate about mentoring, she uses her platform to demystify coding, share career insights, and empower aspiring technologists with practical skills and industry knowledge."
+    }, 
+    
+    {
       id: 3, 
       name: "Dr. Parth Goyal", 
       title: "Author, Founder of Medulla", 
@@ -59,15 +53,7 @@ const SpeakersTimeline = () => {
       image: speaker4,
       about: "Dr. Parth Goyal, is a multifaceted professional excelling as a doctor, educator, author, and entrepreneur. He secured an impressive All India Rank (AIR) of 223 in the National Eligibility cum Entrance Test (NEET) and AIR 5364 in the Joint Entrance Examination (JEE) Advanced. He authored the Biohack and Chemhack books, designed for rapid revision of biology and chemistry concepts, enabling students to review entire chapters in just 15-20 minutes. Dr. Goyal's entrepreneurial spirit is further exemplified by his co-founding of Medulla, a venture focused on healthcare innovation.  His dedication to improving health and education has made him a respected figure among students and professionals alike."
     },
-  
-    { 
-      id: 5, 
-      name: "Saumya Singh", 
-      title: "Tech Creator", 
-      topic: "", 
-      image: speaker5,
-      about: "Saumya Singh is a Software Engineer at Red Hat and a tech influencer with over 400,000 followers on Instagram. Recognized as a LinkedIn Top Voice, she has earned accolades like the International Open Source Award, Google Connect Winner (2019), and GHCI Scholar (2020). Passionate about mentoring, she uses her platform to demystify coding, share career insights, and empower aspiring technologists with practical skills and industry knowledge."
-    },
+    
     { 
       id: 7, 
       name: "Kunal Naik", 
@@ -76,6 +62,7 @@ const SpeakersTimeline = () => {
       image: speaker7,
       about: "Kunal Naik is the founder of Data Science Masterminds, an organization dedicated to bridging the gap between theoretical knowledge and practical application in data science. With extensive experience in the field, he has taught over 10,000 students and collaborated with more than 50 corporations and institutes, including CITI Bank, Genpact, Fidelity, and the Madras School of Economics.  Currently, Kunaal serves as a Senior Data Scientist at Dell Technologies in Bengaluru, India.  He is also a YouTuber and podcast host, focusing on data science education and discussions. "
     },
+        
     { 
       id: 8, 
       name: "Priyank Bhardwaj", 
@@ -157,6 +144,22 @@ const SpeakersTimeline = () => {
       image: speaker17,
       about: "Shrey Sharma is a Serial Entrepreneur, Educator, and Creator, leading Cyntexa — a company he grew from 5 to 300+ people in under four years without external funding, achieving 125% year-over-year growth. At 19, he started as a trainer and founded S2 Labs in 2015, which has now trained over 50,000 Salesforce professionals globally. Known as Salesforce Hulk, Shrey built the world’s largest Salesforce YouTube community with 110K+ subscribers and 11M+ views. He was named the Youngest Salesforce MVP in 2019 for his contributions to the community. An engaging speaker, Shrey presents on Salesforce, technology, entrepreneurship, and leadership at global conferences. He has judged major hackathons like the Smart India Hackathon and is known for blending technical expertise with business acumen, empathy, and a passion for revolutionizing businesses."
     },
+  //    { 
+  //     id: 1, 
+  //     name: "Amresh Bharti", 
+  //     title: "Founder of WemakeCreators", 
+  //     topic: "", 
+  //     image: speaker1,
+  //     about: "Amresh Bharti is the visionary behind Mahatmaji Technical, a YouTube channel with over 6.9 million subscribers and 446 million views, empowering millions with insights on online earning, personal growth, and education. With a Bachelor of Science in Agriculture (B.Sc Ag) from PGC Ghazipur, His journey from a home tutor to a digital mentor is truly inspiring. His dedication has earned him multiple YouTube Creator Awards, including the Silver and Gold Play Buttons, and recognition in top media outlets. Through his practical, step-by-step guidance, Amresh continues to inspire individuals to pursue their goals with confidence and clarity."
+  //   },  { 
+  //     id: 2, 
+  //     name: "Himanshi Singh", 
+  //     title: "Educator, Creator and Founder of Let's Learn", 
+  //     topic: "", 
+  //     image: speaker2,
+  //     about: "Himanshi Singh is a dedicated educator and mentor, empowering aspiring teachers through her YouTube channel, Let us Learn, with over 2 million subscribers. With a B.Ed. degree, she simplifies complex concepts for CTET and TET aspirants, making quality education accessible. Her journey, marked by perseverance, inspires thousands. Beyond academics, she instills confidence and motivation, shaping future educators. Her work proves that with the right guidance, dedication, and learning approach, anyone can achieve their dreams in the teaching profession."
+  // },
+
   ];
 
   useEffect(() => {
