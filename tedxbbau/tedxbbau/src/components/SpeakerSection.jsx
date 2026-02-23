@@ -35,14 +35,14 @@ const SpeakersTimeline = () => {
   const MAX_VERTICAL_MOVEMENT = 50;
   
   const speakers = [
-    { 
+    /*{ 
       id: 1, 
       name: "Amresh Bharti", 
       title: "Founder of WemakeCreators", 
       topic: "", 
       image: speaker1,
       about: "Amresh Bharti is the visionary behind Mahatmaji Technical, a YouTube channel with over 6.9 million subscribers and 446 million views, empowering millions with insights on online earning, personal growth, and education. With a Bachelor of Science in Agriculture (B.Sc Ag) from PGC Ghazipur, His journey from a home tutor to a digital mentor is truly inspiring. His dedication has earned him multiple YouTube Creator Awards, including the Silver and Gold Play Buttons, and recognition in top media outlets. Through his practical, step-by-step guidance, Amresh continues to inspire individuals to pursue their goals with confidence and clarity."
-    },
+    },/*
   /*  { 
       id: 2, 
       name: "Himanshi Singh", 
