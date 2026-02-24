@@ -26,7 +26,7 @@ const teamMembers = [
   { name: "Adya Misra", role: "Head of Web Operations Team", image: a, linkedin: "#" },
   { name: "Raman Choudhary", role: "Head of Design Team", image: abc, linkedin: "#" },
   { name: "Saumya Rani", role: "Curation Head", image: saumya, linkedin: "#" },
-  { name: "Devansh Giri", role: "Head of Content Team", image: dev, linkedin: "#" },
+  { name: "Devansh Giri", role: "Head of Content Team", image: dev, linkedin: "https://www.linkedin.com/in/devansh-giri-54a811350/" },
   { name: "Harshika Singh", role: "Web Operations Team", image: harshika, linkedin: "#" },
   { name: "Jai Kishan Dhurwe", role: "Web Operations Team", image: jai, linkedin: "#" },
   { name: "Pankaj Pal", role: "Web Operations Team", image: pankaj, linkedin: "#" },
