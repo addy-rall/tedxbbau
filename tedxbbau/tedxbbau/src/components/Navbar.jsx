@@ -144,17 +144,16 @@ const Navbar = () => {
           </div>
 
           {/* REGISTER NOW BUTTON */}
-          {/* <div className="hidden md:block">
+          <div className="hidden md:block">
             <a 
-              href="https://konfhub.com/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSflnFV6CJIUMDl1owwOLpLG7CrUBdt_CrRxkMSpxHmxHekP8A/viewform" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-4 py-2 rounded-lg transition-all duration-300" 
-              style={{ backgroundColor: `rgb(${255 - (scrollPercentage * 2.5)}, 0, 0)`, color: "white" }}
+              className="px-4 py-2 rounded-lg transition-all duration-300 bg-red-600 hover:bg-red-700" 
             >
-              Register Now
+              REGISTER
             </a>
-          </div> */}
+          </div>
 
           {/* MOBILE MENU BUTTON */}
           <div className="md:hidden">
@@ -195,3 +194,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
