@@ -177,14 +177,14 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Speakers</button>
               <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left" onClick={() => setIsOpen(false)}>Team</NavLink>
               <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Contact</button>
-              {/* <a 
-                href="https://konfhub.com/f062fb1c-b20e-42a0-9a9e-e7801882b363" 
+              /<a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSflnFV6CJIUMDl1owwOLpLG7CrUBdt_CrRxkMSpxHmxHekP8A/viewform" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-center"
               >
                 Register Now
-              </a> */}
+              </a> 
             </div>
           </div>
         )}
@@ -194,4 +194,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
