@@ -86,7 +86,7 @@ const ToBeAnnounced = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-8 py-4 bg-red-700 cursor-pointer text-white text-lg md:text-xl font-semibold rounded-xl hover:bg-red-800 transition duration-300">
+              <button className="px-8 py-4 bg-red-800 cursor-pointer text-white text-lg md:text-xl font-semibold rounded-xl hover:bg-red-800 transition duration-300">
                 Book Ticket
               </button>
             </a>
