@@ -153,18 +153,48 @@ const Graph = () => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        width: "100%",
-        height: "100vh",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        overflow: "hidden", 
-      }}
-    ></div>
+    <>
+      <style>
+        {`
+          @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+          }
+        `}
+      </style>
+      <div
+        style={{
+          position: "absolute",
+          top: "500px",
+          left: 0,
+          width: "100%",
+          backgroundColor: "#DC2626",
+          color: "white",
+          textAlign: "center",
+          padding: "8px 0",
+          fontSize: "20px",
+          fontWeight: "bold",
+          zIndex: 50,
+          animation: "flash 1s infinite",
+          animationDelay: "1s",
+        }}
+      >
+        PRE SALE TICKETS ARE LIVE!
+      </div>
+      <div
+        ref={containerRef}
+        style={{
+          width: "100%",
+          height: "100vh",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          overflow: "hidden", 
+        }}
+      ></div>
+    </>
   );
 };
 
 export default Graph;
+
