@@ -150,8 +150,8 @@ const App = () => {
           style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
         >
           <h1 className="text-center text-2xl sm:text-3xl md:text-5xl lg:text-3xl z-10 font-extrabold text-gray-100 leading-tight">
-            Breaking <span className="text-red-700">Myths,</span> <br />
-            <span className="text-red-700">Unveiling</span> Reality
+            Design, <span className="text-red-700">Decode</span> <br />
+            <span className="text-red-700">and</span> Disrupt
           </h1>
 
           <motion.p
