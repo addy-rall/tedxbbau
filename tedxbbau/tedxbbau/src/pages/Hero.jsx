@@ -93,9 +93,7 @@ const App = () => {
           <div className="block mx-auto leading-snug">
             <SplitText text="TEDxBBAU 2026 Season 2" />
           </div>
-          <div className="block text-red-700 mx-auto leading-snug">
-            <SplitText text="COMING SOON" />
-          </div>
+         
 
           <div className="absolute inset-x-0 bottom-0 w-full">
             <div className="w-24 mx-auto mt-2 border-b-4 border-white opacity-50 transform transition-all duration-300 hover:w-32 hover:opacity-100"></div>
