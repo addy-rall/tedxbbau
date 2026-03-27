@@ -167,7 +167,8 @@ const App = () => {
               hyphens: 'auto'
             }}
           >
-            Some truths remain buried, waiting to be discovered. This TED event peels back the layers of illusion, shatters misconceptions, and reveals the unseen forces shaping our world. Prepare to challenge what you know, question the unquestioned, and see reality in a whole new light. The truth is out there—are you ready to uncover it?
+            Decode, Design, Disrupt represents a journey of understanding, creativity, and transformation. *Decode* focuses on analyzing and questioning the world to uncover deeper insights. *Design* is about using those insights to create meaningful solutions and ideas. Disrupt encourages challenging the status quo to bring impactful change. Together, the theme inspires individuals to think critically, innovate purposefully, and drive progress.
+
           </motion.p>
         </motion.div>
       </div>
