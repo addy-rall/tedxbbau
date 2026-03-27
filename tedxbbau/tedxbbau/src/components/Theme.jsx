@@ -26,7 +26,7 @@ const ThemeSection = () => {
       <div className="flex flex-col items-center justify-center p-8 lg:p-2 max-w-screen-lg mx-auto">
        
         <h1 className="text-5xl sm:text-6xl font-extrabold text-red-600 text-center">
-          Theme <span className="text-white">2025</span>
+          Theme <span className="text-white">2026</span>
         </h1>
       
         <div className="w-24 h-1 bg-red-700 mx-auto mt-3"></div>
@@ -38,7 +38,7 @@ const ThemeSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="block"
           >
-            "Unveiling Hidden Truths" is about breaking through myths, questioning what we've always accepted, and uncovering the realities that often stay in the shadows.
+           Decode, Design, Disrupt is more than just a theme—it’s a mindset for navigating a rapidly evolving world. At its core, decode invites us to question everything we see and hear. 
           </motion.span>
 
           <motion.span
@@ -47,7 +47,7 @@ const ThemeSection = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
             className="block mt-2"
           >
-            It's about challenging the status quo, looking beyond the surface, and asking: Are we truly free to express ourselves, or is free speech just an illusion?
+            It urges us to break down complex ideas, challenge assumptions, and uncover the hidden truths behind societal norms, technologies, and personal beliefs.
           </motion.span>
         </motion.p>
 
