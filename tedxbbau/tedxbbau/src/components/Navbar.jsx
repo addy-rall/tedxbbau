@@ -177,7 +177,7 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('speakers')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Speakers</button>
               <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left" onClick={() => setIsOpen(false)}>Team</NavLink>
               <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Contact</button>
-              /<a 
+              <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLSflnFV6CJIUMDl1owwOLpLG7CrUBdt_CrRxkMSpxHmxHekP8A/viewform" 
                 target="_blank" 
                 rel="noopener noreferrer" 
