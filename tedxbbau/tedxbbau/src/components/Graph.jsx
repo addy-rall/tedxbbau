@@ -154,6 +154,11 @@ const Graph = () => {
 
   return (
     <>
+       <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet"
+      />
+
       <style>
         {`
           @keyframes flash {
@@ -167,6 +172,8 @@ const Graph = () => {
           position: "absolute",
           top: "500px",
           left: 0,
+          fontFamily: "'Poppins', sans-serif",   
+          letterSpacing: "1px", 
           width: "100%",
           backgroundColor: "#DC2626",
           color: "white",
