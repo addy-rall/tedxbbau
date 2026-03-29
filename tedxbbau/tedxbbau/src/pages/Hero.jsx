@@ -150,7 +150,7 @@ const App = () => {
           style={{ fontFamily: 'Poppins, sans-serif', maxWidth: '600px' }}
         >
           <h1 className="text-center text-2xl sm:text-3xl md:text-5xl lg:text-3xl z-10 font-extrabold text-gray-100 leading-tight">
-            Decode |<span className="text-red-700">Design</span> <br />
+            Decode | <span className="text-red-700">Design</span> <br />
             <span className="text-red-700">|</span> Disrupt
           </h1>
 
