@@ -178,7 +178,7 @@ const Navbar = () => {
               <NavLink to="/team" className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left" onClick={() => setIsOpen(false)}>Team</NavLink>
               <button onClick={() => scrollToSection('contact')} className="block hover:text-gray-300 cursor-pointer w-full py-2 text-left">Contact</button>
               <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSflnFV6CJIUMDl1owwOLpLG7CrUBdt_CrRxkMSpxHmxHekP8A/viewform" 
+                href="https://in.bookmyshow.com/events/tedxbbau/ET00494884" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg text-center"
