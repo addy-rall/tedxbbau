@@ -146,7 +146,7 @@ const Navbar = () => {
           {/* REGISTER NOW BUTTON */}
           <div className="hidden md:block">
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSflnFV6CJIUMDl1owwOLpLG7CrUBdt_CrRxkMSpxHmxHekP8A/viewform" 
+              href="https://in.bookmyshow.com/events/tedxbbau/ET00494884" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-4 py-2 rounded-lg transition-all duration-300 bg-red-600 hover:bg-red-700" 
